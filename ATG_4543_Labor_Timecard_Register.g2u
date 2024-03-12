@@ -1,0 +1,2159 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.SS_Form1..create
+Gui.SS_Form1..caption("Labor Timecard Regsiter")
+Gui.SS_Form1..size(6165,10140)
+Gui.SS_Form1..position(0,0)
+Gui.SS_Form1..event(UnLoad,ss_form1_unload)
+Gui.SS_Form1..forecolor(0)
+Gui.SS_Form1..fontstyle()
+Gui.SS_Form1..BackColor(-2147483633)
+Gui.SS_Form1..maxbutton(False)
+Gui.SS_Form1..minbutton(False)
+Gui.SS_Form1..mousepointer(0)
+Gui.SS_Form1..sizeable(False)
+Gui.SS_Form1..MinX(0)
+Gui.SS_Form1..MinY(0)
+Gui.SS_Form1.lbl_dtpStart.create(label,"Start Date",True,1800,195,1,30,540,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.dtpStart.create(datepicker)
+Gui.SS_Form1.dtpStart.size(1800,345)
+Gui.SS_Form1.dtpStart.position(30,735)
+Gui.SS_Form1.dtpStart.tabstop(True)
+Gui.SS_Form1.dtpStart.tabindex(1)
+Gui.SS_Form1.lbl_dtpStop.create(label,"Stop Date",True,1800,195,1,1905,540,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.dtpStop.create(datepicker)
+Gui.SS_Form1.dtpStop.size(1800,345)
+Gui.SS_Form1.dtpStop.position(1905,735)
+Gui.SS_Form1.dtpStop.tabstop(True)
+Gui.SS_Form1.dtpStop.tabindex(2)
+Gui.SS_Form1.lbl_txtBegDept.create(label,"Beginning Department",True,1800,195,1,30,1260,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.txtBegDept.create(textbox,"",True,1800,300,0,30,1455,True,0,Arial,8,16777215,1)
+Gui.SS_Form1.txtBegDept.event(GotFocus,txtbegdept_gotfocus)
+Gui.SS_Form1.txtBegDept.event(LostFocus,txtbegdept_lostfocus)
+Gui.SS_Form1.txtBegDept.tabstop(True)
+Gui.SS_Form1.txtBegDept.tabindex(3)
+Gui.SS_Form1.cmd_txtBegDept.create(button)
+Gui.SS_Form1.cmd_txtBegDept.caption("^")
+Gui.SS_Form1.cmd_txtBegDept.size(330,330)
+Gui.SS_Form1.cmd_txtBegDept.position(1905,1455)
+Gui.SS_Form1.cmd_txtBegDept.event(Click,cmd_txtbegdept_click)
+Gui.SS_Form1.cmd_txtBegDept.tabstop(True)
+Gui.SS_Form1.cmd_txtBegDept.tabindex(4)
+Gui.SS_Form1.lbl_txtEndDept.create(label,"Ending Department",True,1800,195,1,2385,1260,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.txtEndDept.create(textbox,"",True,1800,300,0,2385,1455,True,0,Arial,8,16777215,1)
+Gui.SS_Form1.txtEndDept.event(GotFocus,txtenddept_gotfocus)
+Gui.SS_Form1.txtEndDept.tabstop(True)
+Gui.SS_Form1.txtEndDept.tabindex(5)
+Gui.SS_Form1.cmd_txtEndDept.create(button)
+Gui.SS_Form1.cmd_txtEndDept.caption("^")
+Gui.SS_Form1.cmd_txtEndDept.size(330,330)
+Gui.SS_Form1.cmd_txtEndDept.position(4260,1455)
+Gui.SS_Form1.cmd_txtEndDept.event(Click,cmd_txtenddept_click)
+Gui.SS_Form1.cmd_txtEndDept.tabstop(True)
+Gui.SS_Form1.cmd_txtEndDept.tabindex(6)
+Gui.SS_Form1.chkDept.create(checkbox)
+Gui.SS_Form1.chkDept.caption("All Departments")
+Gui.SS_Form1.chkDept.size(1800,300)
+Gui.SS_Form1.chkDept.position(30,1950)
+Gui.SS_Form1.chkDept.event(Click,chkdept_click)
+Gui.SS_Form1.chkDept.tabstop(True)
+Gui.SS_Form1.chkDept.tabindex(8)
+Gui.SS_Form1.lbl_lvwDept.create(label,"Department Selections",True,1800,195,1,30,2340,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.lvwDept.create(listview)
+Gui.SS_Form1.lvwDept.view(3)
+Gui.SS_Form1.lvwDept.addlistviewcolumn("Beginning Department",2705,0)
+Gui.SS_Form1.lvwDept.addlistviewcolumn("Ending Department",2705,0)
+Gui.SS_Form1.lvwDept.size(5805,1995)
+Gui.SS_Form1.lvwDept.position(30,2535)
+Gui.SS_Form1.cmd_lvwDeptAdd.create(button)
+Gui.SS_Form1.cmd_lvwDeptAdd.caption("Add")
+Gui.SS_Form1.cmd_lvwDeptAdd.size(1005,330)
+Gui.SS_Form1.cmd_lvwDeptAdd.position(4740,1455)
+Gui.SS_Form1.cmd_lvwDeptAdd.event(Click,cmd_lvwdeptadd_click)
+Gui.SS_Form1.cmd_lvwDeptAdd.tabstop(True)
+Gui.SS_Form1.cmd_lvwDeptAdd.tabindex(7)
+Gui.SS_Form1.cmd_lvwDeptDelete.create(button)
+Gui.SS_Form1.cmd_lvwDeptDelete.caption("Delete")
+Gui.SS_Form1.cmd_lvwDeptDelete.size(1005,330)
+Gui.SS_Form1.cmd_lvwDeptDelete.position(30,4620)
+Gui.SS_Form1.cmd_lvwDeptDelete.event(Click,cmd_lvwdeptdelete_click)
+Gui.SS_Form1.cmd_lvwDeptClear.create(button)
+Gui.SS_Form1.cmd_lvwDeptClear.caption("Clear")
+Gui.SS_Form1.cmd_lvwDeptClear.size(1005,330)
+Gui.SS_Form1.cmd_lvwDeptClear.position(1110,4620)
+Gui.SS_Form1.cmd_lvwDeptClear.event(Click,cmd_lvwdeptclear_click)
+Gui.SS_Form1.lbl_txtBegEmp.create(label,"Beginning Employee",True,1800,195,1,30,5160,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.txtBegEmp.create(textbox,"",True,1800,300,0,30,5355,True,0,Arial,8,16777215,1)
+Gui.SS_Form1.txtBegEmp.event(GotFocus,txtbegemp_gotfocus)
+Gui.SS_Form1.txtBegEmp.event(LostFocus,txtbegemp_lostfocus)
+Gui.SS_Form1.txtBegEmp.tabstop(True)
+Gui.SS_Form1.txtBegEmp.tabindex(9)
+Gui.SS_Form1.cmd_txtBegEmp.create(button)
+Gui.SS_Form1.cmd_txtBegEmp.caption("^")
+Gui.SS_Form1.cmd_txtBegEmp.size(330,330)
+Gui.SS_Form1.cmd_txtBegEmp.position(1905,5355)
+Gui.SS_Form1.cmd_txtBegEmp.event(Click,cmd_txtbegemp_click)
+Gui.SS_Form1.cmd_txtBegEmp.tabstop(True)
+Gui.SS_Form1.cmd_txtBegEmp.tabindex(10)
+Gui.SS_Form1.lbl_txtEndEmp.create(label,"Ending Employee",True,1800,195,1,2385,5160,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.txtEndEmp.create(textbox,"",True,1800,300,0,2385,5355,True,0,Arial,8,16777215,1)
+Gui.SS_Form1.txtEndEmp.event(GotFocus,txtendemp_gotfocus)
+Gui.SS_Form1.txtEndEmp.tabstop(True)
+Gui.SS_Form1.txtEndEmp.tabindex(11)
+Gui.SS_Form1.cmd_txtEndEmp.create(button)
+Gui.SS_Form1.cmd_txtEndEmp.caption("^")
+Gui.SS_Form1.cmd_txtEndEmp.size(330,330)
+Gui.SS_Form1.cmd_txtEndEmp.position(4260,5355)
+Gui.SS_Form1.cmd_txtEndEmp.event(Click,cmd_txtendemp_click)
+Gui.SS_Form1.cmd_txtEndEmp.tabstop(True)
+Gui.SS_Form1.cmd_txtEndEmp.tabindex(12)
+Gui.SS_Form1.chkEmp.create(checkbox)
+Gui.SS_Form1.chkEmp.caption("All Employees")
+Gui.SS_Form1.chkEmp.size(1800,300)
+Gui.SS_Form1.chkEmp.position(30,5850)
+Gui.SS_Form1.chkEmp.event(Click,chkemp_click)
+Gui.SS_Form1.chkEmp.tabstop(True)
+Gui.SS_Form1.chkEmp.tabindex(14)
+Gui.SS_Form1.lbl_lvwEmp.create(label,"Employee Selections",True,1800,195,1,30,6240,True,0,Arial,8,-2147483633,0)
+Gui.SS_Form1.lvwEmp.create(listview)
+Gui.SS_Form1.lvwEmp.view(3)
+Gui.SS_Form1.lvwEmp.addlistviewcolumn("Beginning Employee",2705,0)
+Gui.SS_Form1.lvwEmp.addlistviewcolumn("Ending Employee",2705,0)
+Gui.SS_Form1.lvwEmp.size(5805,1995)
+Gui.SS_Form1.lvwEmp.position(30,6435)
+Gui.SS_Form1.cmd_lvwEmpAdd.create(button)
+Gui.SS_Form1.cmd_lvwEmpAdd.caption("Add")
+Gui.SS_Form1.cmd_lvwEmpAdd.size(1005,330)
+Gui.SS_Form1.cmd_lvwEmpAdd.position(4740,5355)
+Gui.SS_Form1.cmd_lvwEmpAdd.event(Click,cmd_lvwempadd_click)
+Gui.SS_Form1.cmd_lvwEmpAdd.tabstop(True)
+Gui.SS_Form1.cmd_lvwEmpAdd.tabindex(13)
+Gui.SS_Form1.cmd_lvwEmpDelete.create(button)
+Gui.SS_Form1.cmd_lvwEmpDelete.caption("Delete")
+Gui.SS_Form1.cmd_lvwEmpDelete.size(1005,330)
+Gui.SS_Form1.cmd_lvwEmpDelete.position(30,8520)
+Gui.SS_Form1.cmd_lvwEmpDelete.event(Click,cmd_lvwempdelete_click)
+Gui.SS_Form1.cmd_lvwEmpClear.create(button)
+Gui.SS_Form1.cmd_lvwEmpClear.caption("Clear")
+Gui.SS_Form1.cmd_lvwEmpClear.size(1005,330)
+Gui.SS_Form1.cmd_lvwEmpClear.position(1110,8520)
+Gui.SS_Form1.cmd_lvwEmpClear.event(Click,cmd_lvwempclear_click)
+Gui.SS_Form1.cmdPrint.create(button)
+Gui.SS_Form1.cmdPrint.caption("Print")
+Gui.SS_Form1.cmdPrint.size(1005,360)
+Gui.SS_Form1.cmdPrint.position(30,9060)
+Gui.SS_Form1.cmdPrint.event(Click,cmdprint_click)
+Gui.SS_Form1.cmdPrint.tabstop(True)
+Gui.SS_Form1.cmdPrint.tabindex(15)
+Gui.SS_Form1.chkPayCom.Create(CheckBox)
+Gui.SS_Form1.chkPayCom.Size(6165,300)
+Gui.SS_Form1.chkPayCom.Position(0,0)
+Gui.SS_Form1.chkPayCom.Caption("                 Generate PayCom Upload File")
+Gui.SS_Form1.chkPayCom.FontSize(10)
+Gui.SS_Form1.chkPayCom.FontStyle(True,False,False,False,False)
+Gui.SS_Form1.chkPayCom.BackColor(12632256)
+Gui.SS_Form1.chkPayCom.Event(Click,chkPayCom_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.iKey.Declare(Long,0)
+Variable.UDT.uDept.Define("Dept",String)
+Variable.uGlobal.uDept.Declare("uDept")
+Variable.Global.bChk.Declare(Boolean,True)
+Variable.UDT.uEmp.Define("Emp",String)
+Variable.UDT.uEmp.Define("Dept",String)
+Variable.uGlobal.uEmp.Declare("uEmp")
+Variable.UDT.uTime.Define("Terminal",String,"Terminal")
+Variable.UDT.uTime.Define("Date",Date,"Charge_Date")
+Variable.UDT.uTime.Define("Job",String,"Job")
+Variable.UDT.uTime.Define("Suffix",String,"Suffix")
+Variable.UDT.uTime.Define("Seq",String,"Sequence")
+Variable.UDT.uTime.Define("Rate",Float,"Rate")
+Variable.UDT.uTime.Define("WC",String,"Workcenter")
+Variable.UDT.uTime.Define("Part",String,"Part")
+Variable.UDT.uTime.Define("Qty",Float,"Quantity")
+Variable.UDT.uTime.Define("StdHrs",Float,"Standard_Hours")
+Variable.UDT.uTime.Define("Employee",String,"Employee")
+Variable.UDT.uTime.Define("Dept",String)
+Variable.UDT.uTime.Define("Shift",String,"Shift")
+Variable.UDT.uTime.Define("Override",String,"Override")
+Variable.UDT.uTime.Define("WrkHrs",Float,"Worked_Hours")
+Variable.UDT.uTime.Define("OTHrs",Float,"OT_Hours")
+Variable.UDT.uTime.Define("DolWrkd",Float,"Worked_Dollars")
+Variable.UDT.uTime.Define("DolOT",Float,"OT_Dollars")
+Variable.UDT.uTime.Define("DolShift",Float,"Shift_Dollars")
+Variable.UDT.uTime.Define("Scrap",Float,"Scrap_Quantity")
+Variable.UDT.uTime.Define("Indirect",String,"Indirect")
+Variable.uGlobal.uTime.Declare("uTime")
+Variable.UDT.uIncen.Define("Emp",String,"Employee")
+Variable.UDT.uIncen.Define("Part",String,"Part")
+Variable.UDT.uIncen.Define("WC",String,"Workcenter")
+Variable.UDT.uIncen.Define("Stdhrs",Float)
+Variable.UDT.uIncen.Define("Qty",Float)
+Variable.UDT.uIncen.Define("WrkHrs",Float)
+Variable.UDT.uIncen.Define("Rate",Float)
+Variable.UDT.uIncen.Define("IncenHrs",Float,"Incen_Hours")
+Variable.UDT.uIncen.Define("Flag",String)
+Variable.UDT.uIncen.Define("IncenDol",Float,"Incen_Dollars")
+Variable.UDT.uIncen.Define("Terminal",String,"Terminal")
+Variable.Global.sEmp.Declare(String)
+Variable.Global.sPart.Declare(String)
+Variable.Global.sWC.Declare(String)
+Variable.Global.fQty.Declare(Float,0)
+Variable.Global.fStdHrs.Declare(Float,0)
+Variable.Global.fWrkHrs.Declare(Float,0)
+Variable.Global.fRate.Declare(Float,0)
+Variable.uGlobal.uIncen.Declare("uIncen")
+Variable.UDT.uSample.Define("Emp",String,"Employee")
+Variable.UDT.uSample.Define("ActHrs",Float)
+Variable.UDT.uSample.Define("ActSampHrs",Float)
+Variable.UDT.uSample.Define("StdHrs",Float)
+Variable.UDT.uSample.Define("Flag",String)
+Variable.UDT.uSample.Define("SampHrs",Float,"Sample_Hours")
+Variable.UDT.uSample.Define("SampDol",Float,"Sample_Dollars")
+Variable.UDT.uSample.Define("Rate",Float)
+Variable.UDT.uSample.Define("Terminal",String,"Terminal")
+Variable.Global.sWO.Declare(String)
+Variable.Global.sSuff.Declare(String)
+Variable.uGlobal.uSample.Declare("uSample")
+V.Global.sDir.Declare
+V.Global.sPath.Declare
+V.Global.sFile.Declare
+V.Global.sDelFile.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+'TJS, August 2021 - VT
+'Project updated to bring in ladel premiums from designated workcenters.
+
+	'TJS, Apr 2021 - Modified to run on task scheduler (at customer's discretion) or menu item and export to csv for PayCom - Quote #12537
+	
+		'Coded by: mla
+		'Project Start Date: 7/28/2011
+		'Notes:
+		'  Piad
+
+F.Intrinsic.Control.If(V.Caller.GSSVersion,<=,"2018.1")
+	F.Intrinsic.Control.CallSub(SetIcon)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,500)
+
+'TJS - Provisioning for unattended task.
+
+'F.Intrinsic.Control.If(V.Caller.Switches,=,"M")
+'	Gui.SS_Form1..Show
+'F.Intrinsic.Control.Else
+'	Gui.SS_Form1.chkPayCom.Value(1)
+'	F.Intrinsic.Control.CallSub(cmdprint_click)
+'F.Intrinsic.Control.EndIf
+'/TJS
+
+Gui.SS_Form1..Show
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Main.End
+
+program.sub.cmd_txtbegdept_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtbegdept_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+
+V.Local.sSql.Set("Select DEPT_ID, DEPT_NAME from V_DEPARTMENTS order by DEPT_ID")
+V.Local.sTitles.Set("Department*!*Department Name")
+V.Local.sWidths.Set("1500*!*5200")
+
+F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select Departement","con",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,5000,8000,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.SS_Form1.txtBegDept.Text(V.Local.sRet.Trim)
+	Gui.SS_Form1.txtEndDept.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtbegdept_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_txtbegdept_click.End
+
+program.sub.cmd_txtenddept_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtenddept_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+
+V.Local.sSql.Set("Select DEPT_ID, DEPT_NAME from V_DEPARTMENTS order by DEPT_ID")
+V.Local.sTitles.Set("Department*!*Department Name")
+V.Local.sWidths.Set("1500*!*5200")
+
+F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select Departement","con",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,5000,8000,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.SS_Form1.txtEndDept.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtenddept_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_txtenddept_click.End
+
+program.sub.txtbegdept_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtbegdept_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_Form1.txtEndDept.Text(V.Screen.SS_Form1!txtBegDept.Text)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtbegdept_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.txtbegdept_lostfocus.End
+
+program.sub.cmd_lvwdeptadd_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvwdeptadd_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+
+F.Intrinsic.String.Concat("Select DEPT_ID from V_DEPARTMENTS where DEPT_ID = '",V.Screen.SS_Form1!txtBegDept.Text,"'",V.Local.sSql)
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+	F.ODBC.con!rst.Close
+	F.Intrinsic.UI.Msgbox("Invalid beginning department!","Invalid Department")
+F.Intrinsic.Control.Else
+	F.ODBC.con!rst.Close
+	F.Intrinsic.String.Concat("Select DEPT_ID from V_DEPARTMENTS where DEPT_ID = '",V.Screen.SS_Form1!txtEndDept.Text,"'",V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+		F.ODBC.con!rst.Close
+		F.Intrinsic.UI.Msgbox("Invalid ending department!","Invalid Department")
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Close
+		F.Intrinsic.Math.Add(V.Global.iKey,1,V.Global.iKey)
+		Gui.SS_Form1.lvwDept.AddListItem(V.Global.iKey,V.Screen.SS_Form1!txtBegDept.Text)
+		Gui.SS_Form1.lvwDept.SetListItemSubItemText(V.Global.iKey,1,V.Screen.SS_Form1!txtEndDept.Text)
+		Gui.SS_Form1.txtBegDept.Text("")
+		Gui.SS_Form1.txtEndDept.Text("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvwdeptadd_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+program.sub.cmd_lvwdeptadd_click.End
+
+program.sub.chkdept_click.start
+F.Intrinsic.Control.SetErrorHandler("chkdept_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chkDept.Value,=,1)
+	Gui.SS_Form1.txtBegDept.Enabled(False)
+	Gui.SS_Form1.cmd_txtBegDept.Enabled(False)
+	Gui.SS_Form1.txtEndDept.Enabled(False)
+	Gui.SS_Form1.cmd_txtEndDept.Enabled(False)
+	Gui.SS_Form1.txtBegDept.Text("")
+	Gui.SS_Form1.txtEndDept.Text("")
+	Gui.SS_Form1.cmd_lvwDeptAdd.Enabled(False)
+	Gui.SS_Form1.cmd_lvwDeptClear.Enabled(False)
+	Gui.SS_Form1.cmd_lvwDeptDelete.Enabled(False)
+	Gui.SS_Form1.lvwDept.Enabled(False)
+F.Intrinsic.Control.Else
+	Gui.SS_Form1.txtBegDept.Enabled(True)
+	Gui.SS_Form1.cmd_txtBegDept.Enabled(True)
+	Gui.SS_Form1.txtEndDept.Enabled(True)
+	Gui.SS_Form1.cmd_txtEndDept.Enabled(True)
+	Gui.SS_Form1.cmd_lvwDeptAdd.Enabled(True)
+	Gui.SS_Form1.cmd_lvwDeptClear.Enabled(True)
+	Gui.SS_Form1.cmd_lvwDeptDelete.Enabled(True)
+	Gui.SS_Form1.lvwDept.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chkdept_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.chkdept_click.End
+
+program.sub.cmd_lvwdeptdelete_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvwdeptdelete_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iKey.Declare(Long)
+V.Local.iOrd.Declare(Long)
+
+V.Local.iKey.Set(V.Screen.SS_Form1!lvwDept.SelectedItemKey)
+Gui.SS_Form1.lvwDept.RemoveItem(V.Local.iKey)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvwdeptdelete_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_lvwdeptdelete_click.End
+
+program.sub.cmd_lvwdeptclear_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvwdeptclear_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_Form1.lvwDept.ClearItems
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvwdeptclear_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_lvwdeptclear_click.End
+
+program.sub.cmdprint_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdprint_click_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.dStartDate.Declare
+V.Local.dEndDate.Declare
+
+'TJS - Setting start and stop dates to the previous week if we are outputting to PayCom through the task scheduler.
+'F.Intrinsic.Control.If(V.Screen.SS_Form1!chkPayCom.Value,=,1,"AND",V.Caller.Switches,<>,"M")
+'	F.Intrinsic.Date.DateAdd("d",-7,V.Ambient.Date,V.Local.dStartDate)
+'	F.Intrinsic.Date.DateAdd("d",-1,V.Ambient.Date,V.Local.dEndDate)
+'	Gui.SS_Form1.dtpStart.Value(V.Local.dStartDate)
+'	Gui.SS_Form1.dtpStop.Value(V.Local.dDate)
+'F.Intrinsic.Control.EndIf
+'/TJS
+
+F.Intrinsic.Control.CallSub(Chkopt)
+F.Intrinsic.Control.If(V.Global.bChk,=,True)
+	Gui.SS_Form1..Visible(False)
+	F.Intrinsic.Control.CallSub(Loaddeptudt)
+	F.Intrinsic.Control.CallSub(Loadempudt)
+	F.Intrinsic.Control.CallSub(Loadtimeudt)
+	F.Intrinsic.Control.CallSub(Calcincen)
+	F.Intrinsic.Control.CallSub(Calcsample)
+	
+	F.Intrinsic.Control.CallSub(Loadrst)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdprint_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmdprint_click.End
+
+Program.Sub.LoadDeptUDT.Start
+F.Intrinsic.Control.SetErrorHandler("LoadDeptUDT_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.iUB.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sLVRet.Declare(String)
+V.Local.sLVRow.Declare(String)
+V.Local.i.Declare(Long)
+
+'set up the uDept udt
+V.uGlobal.uDept.Redim(-1,-1)
+
+'Check if the check box for all departments is checked (1=true)
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chkDept.Value,=,1)
+	'If Checked Set Sql Query to get all Dept_ID from the v_Departments table.
+	V.Local.sSql.Set("Select DEPT_ID From V_DEPARTMENTS")
+	'Open connection to the record set
+	F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+
+	'Loop through all the records till EOF is reached
+	F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+		'Check to see if any data has been written to the uDept udt
+		F.Intrinsic.Control.If(V.uGlobal.uDept.UBound,=,-1)
+			'If No Data has been written initialize the uDept udt
+			V.uGlobal.uDept.Redim(0,0)
+			'Set the Dept value with the value from the current record.
+			V.uGlobal.uDept!Dept.Set(V.ODBC.con!rst.FieldValTrim!DEPT_ID)
+		F.Intrinsic.Control.Else
+			'If Yes Data has been written then increase the size of the uDept udt by 1
+			V.Local.iUB.Set(V.uGlobal.uDept.UBound)
+			F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+			V.uGlobal.uDept.RedimPreserve(V.uGlobal.uDept.LBound,V.Local.iUB)
+			'Save Dept value with the value from the current record.
+			V.uGlobal.uDept(V.Local.iUB)!Dept.Set(V.ODBC.con!rst.FieldValTrim!DEPT_ID)
+		F.Intrinsic.Control.EndIf
+		'move to next record in the record set
+		F.ODBC.con!rst.MoveNext
+	'Do Until Loop
+	F.Intrinsic.Control.Loop
+
+	'Close connection to the record set.
+	F.ODBC.con!rst.Close
+
+F.Intrinsic.Control.Else
+
+	'If Check Box is not checked retreive all Item keys
+	Gui.SS_Form1.lvwDept.RetrieveAllListItems(V.Local.sRet)
+	'Check to see if values were returned
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+		'Set sLVRet with the values for the list view
+		V.Local.sLVRet.Set(V.Screen.SS_Form1!lvwDept.ListViewContents)
+		'Split the rows
+		F.Intrinsic.String.Split(V.Local.sLVRet,"$@$",V.Local.sLVRet)
+		
+		'Loop through each row
+		F.Intrinsic.Control.For(V.Local.i,V.Local.sLVRet.LBound,V.Local.sLVRet.UBound,1)
+			'Split the rows into columns
+			F.Intrinsic.String.Split(V.Local.sLVRet(V.Local.i),"*!*",V.Local.sLVRow)
+			'SQL Query to get Dept IDs from table based on user selections
+			F.Intrinsic.String.Concat("Select DEPT_ID from V_DEPARTMENTS where DEPT_ID between '",V.Local.sLVRow(0),"' and '",V.Local.sLVRow(1),"' ORDER BY DEPT_ID",V.Local.sSql)
+			'Connect to record set
+			F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+			'Loop till EOF is reached.
+			F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+				'Check to see if uDept has any values
+				F.Intrinsic.Control.If(V.uGlobal.uDept.UBound,=,-1)
+					'If no then Initialize
+					V.uGlobal.uDept.Redim(0,0)
+					'Set first value
+					V.uGlobal.uDept!Dept.Set(V.ODBC.con!rst.FieldValTrim!DEPT_ID)
+				F.Intrinsic.Control.Else
+					'Else increment uDept to hold next value and set the vallue
+					V.Local.iUB.Set(V.uGlobal.uDept.UBound)
+					F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+					V.uGlobal.uDept.RedimPreserve(V.uGlobal.uDept.LBound,V.Local.iUB)
+					V.uGlobal.uDept(V.Local.iUB)!Dept.Set(V.ODBC.con!rst.FieldValTrim!DEPT_ID)
+				F.Intrinsic.Control.EndIf
+				'Move to next record in the record set
+				F.ODBC.con!rst.MoveNext
+			'Loop through next set of values in the Record set
+			F.Intrinsic.Control.Loop
+			'Close connection to the record set
+			F.ODBC.con!rst.Close
+		'Loop through next set of values in the list view
+		F.Intrinsic.Control.Next(V.Local.i)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadDeptUDT_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.LoadDeptUDT.End
+
+Program.Sub.ChkOpt.Start
+F.Intrinsic.Control.SetErrorHandler("ChkOpt_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+'Set variable that will hold value for all departments to true
+V.Global.bChk.Set(True)
+'Check to see if the check box for all departments is not checked
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chkDept.Value,<>,1)
+	'Retreives all Item keys
+	Gui.SS_Form1.lvwDept.RetrieveAllListItems(V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,=,"***NORETURN***")
+		Gui.SS_Form1.lvwEmp.RetrieveAllListItems(V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,=,"***NORETURN***")
+			F.Intrinsic.UI.Msgbox("Please select a valid department or employee range","Invalid Range")
+			V.Global.bChk.Set(False)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ChkOpt_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.ChkOpt.End
+
+Program.Sub.LoadEmpUDT.Start
+F.Intrinsic.Control.SetErrorHandler("LoadEmpUDT_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.sSql.Declare(String)
+V.Local.iUB.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sLVRet.Declare(String)
+V.Local.sLVRow.Declare(String)
+
+'Create uEmp so it is empty
+V.uGlobal.uEmp.Redim(-1,-1)
+'Check to see uDept is empty
+F.Intrinsic.Control.If(V.uGlobal.uDept.UBound,=,-1)
+	'If yes check to see if the check box for all employees is checked.
+	F.Intrinsic.Control.If(V.Screen.SS_Form1!chkEmp.Value,=,1)
+		'If yes then set SQL Query to get Employee and Dept from the employee master table
+		V.Local.sSql.Set("Select EMPLOYEE, DEPT_EMPLOYEE from V_EMPLOYEE_MSTR")
+		'Open connection to the record set
+		F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+		'Loop through records till EOF is true
+		F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+			'Check to see if uEmp is Empty
+			F.Intrinsic.Control.If(V.uGlobal.uEmp.UBound,=,-1)
+				'If yes initialize uEmp and set employee # and associated Dept
+				V.uGlobal.uEmp.Redim(0,0)
+				V.uGlobal.uEmp!Emp.Set(V.ODBC.con!rst.FieldValTrim!EMPLOYEE)
+				V.uGlobal.uEmp!Dept.Set(V.ODBC.con!rst.FieldValTrim!DEPT_EMPLOYEE)
+			F.Intrinsic.Control.Else
+				'Else increase uEmp by 1 and set Employee # and associated Dept
+				V.Local.iUB.Set(V.uGlobal.uEmp.UBound)
+				F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+				V.uGlobal.uEmp.RedimPreserve(V.uGlobal.uEmp.LBound,V.Local.iUB)
+				V.uGlobal.uEmp(V.Local.iUB)!Emp.Set(V.ODBC.con!rst.FieldValTrim!EMPLOYEE)
+				V.uGlobal.uEmp(V.Local.iUB)!Dept.Set(V.ODBC.con!rst.FieldValTrim!DEPT_EMPLOYEE)
+			F.Intrinsic.Control.EndIf
+			'Move to next Record
+			F.ODBC.con!rst.MoveNext
+		'Loop through records
+		F.Intrinsic.Control.Loop
+		'Close connection to the record set
+		F.ODBC.con!rst.Close
+	F.Intrinsic.Control.Else
+		'Get contents of all employees in the list view
+		V.Local.sLVRet.Set(V.Screen.SS_Form1!lvwEmp.ListViewContents)
+		'Split the contents by row
+		F.Intrinsic.String.Split(V.Local.sLVRet,"$@$",V.Local.sLVRet)
+		'Loop through each beginning and ending value for Employee
+		F.Intrinsic.Control.For(V.Local.i,V.Local.sLVRet.LBound,V.Local.sLVRet.UBound,1)
+			'Split beginning and ending value for employee
+			F.Intrinsic.String.Split(V.Local.sLVRet(V.Local.i),"*!*",V.Local.sLVRow)
+			'Set SQL Query for Employee and Dept from Employee master Table where employee is between the beginning and ending values given by the user.
+			F.Intrinsic.String.Concat("Select EMPLOYEE, DEPT_EMPLOYEE from V_EMPLOYEE_MSTR where EMPLOYEE between '",V.Local.sLVRow(0),"' and '",V.Local.sLVRow(1),"' ORDER BY EMPLOYEE",V.Local.sSql)
+			'Open connection to the record set
+			F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+			'Loop through record set till EOF is true.
+			F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+				'Check to see if uEmp has any values in it
+				F.Intrinsic.Control.If(V.uGlobal.uEmp.UBound,=,-1)
+					'If no Initalize uEmp and save Employee # and associated Dept
+					V.uGlobal.uEmp.Redim(0,0)
+					V.uGlobal.uEmp!Emp.Set(V.ODBC.con!rst.FieldValTrim!EMPLOYEE)
+					V.uGlobal.uEmp!Dept.Set(V.ODBC.con!rst.FieldValTrim!DEPT_EMPLOYEE)
+				F.Intrinsic.Control.Else
+					'Else increase uEmp by 1 and set Employee # and associated Dept
+					V.Local.iUB.Set(V.uGlobal.uEmp.UBound)
+					F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+					V.uGlobal.uEmp.RedimPreserve(V.uGlobal.uEmp.LBound,V.Local.iUB)
+					V.uGlobal.uEmp(V.Local.iUB)!Emp.Set(V.ODBC.con!rst.FieldValTrim!EMPLOYEE)
+					V.uGlobal.uEmp(V.Local.iUB)!Dept.Set(V.ODBC.con!rst.FieldValTrim!DEPT_EMPLOYEE)
+				F.Intrinsic.Control.EndIf
+				'Move to next record
+				F.ODBC.con!rst.MoveNext
+			'Loop through all the records
+			F.Intrinsic.Control.Loop
+			'Close connection
+			F.ODBC.con!rst.Close
+		'Loop through next set of employees given in the list view
+		F.Intrinsic.Control.Next(V.Local.i)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	'Else uDept has values check to see if all employees check box is checked.
+	F.Intrinsic.Control.If(V.Screen.SS_Form1!chkEmp.Value,=,1)
+		'Loop through uDept
+		F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uDept.LBound,V.uGlobal.uDept.UBound,1)
+			'Set SQL Query for Employee from Employee Master Table where Dept comes from uDept
+			F.Intrinsic.String.Concat("Select EMPLOYEE from V_EMPLOYEE_MSTR where DEPT_EMPLOYEE = '",V.uGlobal.uDept(V.Local.i)!Dept,"'",V.Local.sSql)
+			'Open connection to the Record set
+			F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+			'Loop through all records till EOF is true
+			F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+				'Check to see uEmp has any values in it
+				F.Intrinsic.Control.If(V.uGlobal.uEmp.UBound,=,-1)
+					'If no initialize uEmp and save Employee from record and Dept from uDept
+					V.uGlobal.uEmp.Redim(0,0)
+					V.uGlobal.uEmp!Emp.Set(V.ODBC.con!rst.FieldValTrim!EMPLOYEE)
+					V.uGlobal.uEmp!Dept.Set(V.uGlobal.uDept(V.Local.i)!Dept)
+				F.Intrinsic.Control.Else
+					'Else increase uEmp by 1 and save Employee from record and Dept from uDept
+					V.Local.iUB.Set(V.uGlobal.uEmp.UBound)
+					F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+					V.uGlobal.uEmp.RedimPreserve(V.uGlobal.uEmp.LBound,V.Local.iUB)
+					V.uGlobal.uEmp(V.Local.iUB)!Emp.Set(V.ODBC.con!rst.FieldValTrim!EMPLOYEE)
+					V.uGlobal.uEmp(V.Local.iUB)!Dept.Set(V.uGlobal.uDept(V.Local.i)!Dept)
+				F.Intrinsic.Control.EndIf
+				'Move to next record
+				F.ODBC.con!rst.MoveNext
+			'Loop through all records
+			F.Intrinsic.Control.Loop
+			'Close Connection to record set
+			F.ODBC.con!rst.Close
+		'Loop through all of uDept
+		F.Intrinsic.Control.Next(V.Local.i)
+	F.Intrinsic.Control.Else
+		'Else if all Employees is not checked retreive item keys of the Employee list view
+		Gui.SS_Form1.lvwEmp.RetrieveAllListItems(V.Local.sRet)
+		'Check to see if there were no values returned
+		F.Intrinsic.Control.If(V.Local.sRet,=,"***NORETURN***")
+			'If True loop through uDept
+			F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uDept.LBound,V.uGlobal.uDept.UBound,1)
+				'Set SQL Query for Employee in employee master based on Dept
+				F.Intrinsic.String.Concat("Select EMPLOYEE from V_EMPLOYEE_MSTR where DEPT_EMPLOYEE = '",V.uGlobal.uDept(V.Local.i)!Dept,"'",V.Local.sSql)
+				'Open connection to record set
+				F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+				'Loop through all records till EOF is reached
+				F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+					'Check to see if uEmp has any values in it
+					F.Intrinsic.Control.If(V.uGlobal.uEmp.UBound,=,-1)
+						'If no Initialize uEmp and set Employee # from record and Dept from uDept
+						V.uGlobal.uEmp.Redim(0,0)
+						V.uGlobal.uEmp!Emp.Set(V.ODBC.con!rst.FieldValTrim!EMPLOYEE)
+						V.uGlobal.uEmp!Dept.Set(V.uGlobal.uDept(V.Local.i)!Dept)
+					F.Intrinsic.Control.Else
+						'Else increase uEmp by 1 and save Employee from record and Dept from uDept
+						V.Local.iUB.Set(V.uGlobal.uEmp.UBound)
+						F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+						V.uGlobal.uEmp.RedimPreserve(V.uGlobal.uEmp.LBound,V.Local.iUB)
+						V.uGlobal.uEmp(V.Local.iUB)!Emp.Set(V.ODBC.con!rst.FieldValTrim!EMPLOYEE)
+						V.uGlobal.uEmp(V.Local.iUB)!Dept.Set(V.uGlobal.uDept(V.Local.i)!Dept)
+					F.Intrinsic.Control.EndIf
+					'Move to next record
+					F.ODBC.con!rst.MoveNext
+				'Loop through record set
+				F.Intrinsic.Control.Loop
+				'Close Connection to record set
+				F.ODBC.con!rst.Close
+			'Loop through uDept
+			F.Intrinsic.Control.Next(V.Local.i)
+		F.Intrinsic.Control.Else
+			'Get List view contents
+			V.Local.sLVRet.Set(V.Screen.SS_Form1!lvwEmp.ListViewContents)
+			'Split contents by row
+			F.Intrinsic.String.Split(V.Local.sLVRet,"$@$",V.Local.sLVRet)
+			'Loop through the rows from the list view
+			F.Intrinsic.Control.For(V.Local.i,V.Local.sLVRet.LBound,V.Local.sLVRet.UBound,1)
+				'Split the row into columns
+				F.Intrinsic.String.Split(V.Local.sLVRet(V.Local.i),"*!*",V.Local.sLVRow)
+				'Set SQL Query for employee and Dept from Employee master where the employee # comes from row of list view
+				F.Intrinsic.String.Concat("Select EMPLOYEE, DEPT_EMPLOYEE from V_EMPLOYEE_MSTR where EMPLOYEE between '",V.Local.sLVRow(0),"' and '",V.Local.sLVRow(1),"' ORDER BY EMPLOYEE",V.Local.sSql)
+				'Open record set
+				F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+				'Loop through record set till EOF is true
+				F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+					'Search uDept based off Dept from record
+					F.Intrinsic.Variable.UDTSeek(V.uGlobal.uDept!Dept,V.ODBC.con!rst.FieldValTrim!DEPT_EMPLOYEE,0,V.Local.sRet)
+					'check that return is not blank
+					F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+						'If not blank check that uEmp is empty
+						F.Intrinsic.Control.If(V.uGlobal.uEmp.UBound,=,-1)
+							'If yes initialize uEmp and save Employee from record and Dept from uDept
+							V.uGlobal.uEmp.Redim(0,0)
+							V.uGlobal.uEmp!Emp.Set(V.ODBC.con!rst.FieldValTrim!EMPLOYEE)
+							V.uGlobal.uEmp!Dept.Set(V.uGlobal.uDept(V.Local.i)!Dept)
+						F.Intrinsic.Control.Else
+							'Else increase uEmp by 1 and save Employee from record and Dept from uDept
+							V.Local.iUB.Set(V.uGlobal.uEmp.UBound)
+							F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+							V.uGlobal.uEmp.RedimPreserve(V.uGlobal.uEmp.LBound,V.Local.iUB)
+							V.uGlobal.uEmp(V.Local.iUB)!Emp.Set(V.ODBC.con!rst.FieldValTrim!EMPLOYEE)
+							V.uGlobal.uEmp(V.Local.iUB)!Dept.Set(V.uGlobal.uDept(V.Local.i)!Dept)
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.EndIf
+					'Move to next record
+					F.ODBC.con!rst.MoveNext
+				'Loop through record set
+				F.Intrinsic.Control.Loop
+				'Close connection
+				F.ODBC.con!rst.Close
+			'Loop through values from the list view
+			F.Intrinsic.Control.Next(V.Local.i)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadEmpUDT_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.LoadEmpUDT.End
+
+Program.Sub.LoadTimeUDT.Start
+F.Intrinsic.Control.SetErrorHandler("LoadTimeUDT_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.iUB.Declare(Long)
+V.Local.sSql.Declare(String)
+V.Local.dStart.Declare(Date)
+V.Local.dStop.Declare(Date)
+V.Local.fWOQty.Declare(Float)
+V.Local.fStdHrs.Declare(Float)
+V.Local.dDate.Declare(Date)
+V.Local.sShift.Declare(String)
+V.Local.fOTRate.Declare(Float)
+V.Local.fOTDollars.Declare(Float)
+V.Local.fDollars.Declare(Float)
+V.Local.fShiftDollars.Declare(Float)
+V.Local.sDesc.Declare(String)
+V.Local.sOperWC.Declare(String)
+V.Local.sSftDiffExmt.Declare
+V.Local.bRet.Declare
+V.Local.sRegString.Declare
+
+'set uTime, uIncen, and uSample so they are empty
+V.uGlobal.uTime.Redim(-1,-1)
+V.uGlobal.uIncen.Redim(-1,-1)
+V.uGlobal.uSample.Redim(-1,-1)
+'Set iUB to -1
+V.Local.iUB.Set(-1)
+'Check if uEmp is empty
+F.Intrinsic.Control.If(V.uGlobal.uEmp.UBound,=,-1)
+	'If yes inform user no employees found for seleted departments
+	F.Intrinsic.UI.Msgbox("No employees found for selected departments","Invalid Employee")
+	'call unload sub
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+F.Intrinsic.Control.Else
+	'If No set start date and end date from date picker values
+	V.Local.dStart.Set(V.Screen.SS_Form1!dtpStart.Value)
+	V.Local.dStop.Set(V.Screen.SS_Form1!dtpStop.Value)
+	'Loop through uEmp
+	F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uEmp.LBound,V.uGlobal.uEmp.UBound,1)
+		'Set SQL Query to pull record from job detail between user selected dates for values in uEmp where LMO = L and Edited_WO_DTL is not R
+		F.Intrinsic.String.Concat("Select * from V_JOB_DETAIL where DATE_SEQUENCE between '",V.Local.dStart.PervasiveDate,"' and '",V.Local.dStop.PervasiveDate,"' and EMPL = '",V.uGlobal.uEmp(V.Local.i)!Emp,"' and LMO = 'L' and EDITED_WO_DTL <> 'R' order by DATE_SEQUENCE",V.Local.sSql)
+		'Open connection to record set
+		F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+		'Loop through records till EOF is true
+		F.Intrinsic.Control.DoUntil(V.ODBC.con!rst.EOF,=,True)
+			'Check to see if uTime is empty
+			F.Intrinsic.Control.If(V.uGlobal.uTime.UBound,=,-1)
+				'If Yes initialize uTime
+				V.uGlobal.uTime.Redim(0,0)
+			F.Intrinsic.Control.EndIf
+			'increase uTime by 1 and save the new data
+			F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+			V.uGlobal.uTime.RedimPreserve(V.uGlobal.uTime.LBound,V.Local.iUB)
+			'terminial comes from v.Caller
+			V.uGlobal.uTime(V.Local.iUB)!Terminal.Set(V.Caller.Terminal)
+			'Employee comes from uEmp
+			V.uGlobal.uTime(V.Local.iUB)!Employee.Set(V.uGlobal.uEmp(V.Local.i)!Emp)
+			'Dept comes from uEmp
+			V.uGlobal.uTime(V.Local.iUB)!Dept.Set(V.uGlobal.uEmp(V.Local.i)!Dept)
+			'Date, job, suffix, seq, and work hours come from record
+			V.uGlobal.uTime(V.Local.iUB)!Date.Set(V.ODBC.con!rst.FieldVal!DATE_SEQUENCE)
+			V.uGlobal.uTime(V.Local.iUB)!Job.Set(V.ODBC.con!rst.FieldValTrim!JOB)
+			V.uGlobal.uTime(V.Local.iUB)!Suffix.Set(V.ODBC.con!rst.FieldValTrim!SUFFIX)
+			V.uGlobal.uTime(V.Local.iUB)!Seq.Set(V.ODBC.con!rst.FieldValTrim!SEQ)
+			V.uGlobal.uTime(V.Local.iUB)!WrkHrs.Set(V.ODBC.con!rst.FieldValFloat!HOURS_WORKED)
+			
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValTrim!FLAG_INDIRECT,=,"I")
+				F.Intrinsic.String.Concat("Select DESCRIPTION from V_JOB_OPERATIONS where JOB = '",V.ODBC.con!rst.FieldValTrim!JOB,"' and SUFFIX = '",V.ODBC.con!rst.FieldValTrim!SUFFIX,"' and SEQ = '",V.ODBC.con!rst.FieldValTrim!SEQ,"'",V.Local.sSql)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSql)
+				F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,=,True)
+					V.uGlobal.uTime(V.Local.iUB)!WC.Set(V.ODBC.con!rst.FieldValTrim!MACHINE)
+				F.Intrinsic.Control.Else
+					V.Local.sDesc.Set(V.ODBC.con!rstA.FieldValTrim!DESCRIPTION)
+					F.Intrinsic.String.Left(V.Local.sDesc,4,V.Local.sDesc)
+					V.uGlobal.uTime(V.Local.iUB)!WC.Set(V.Local.sDesc)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.con!rstA.Close
+			F.Intrinsic.Control.Else
+				V.uGlobal.uTime(V.Local.iUB)!WC.Set(V.ODBC.con!rst.FieldValTrim!MACHINE)
+			F.Intrinsic.Control.EndIf
+			V.uGlobal.uTime(V.Local.iUB)!Rate.Set(V.ODBC.con!rst.FieldValFloat!RATE_EMPLOYEE)
+			V.uGlobal.uTime(V.Local.iUB)!Indirect.Set(V.ODBC.con!rst.FieldValTrim!FLAG_INDIRECT)
+			'Getting part number and work order quantity from job header
+			F.Intrinsic.String.Concat("Select PART, QTY_ORDER from V_JOB_HEADER where JOB = '",V.ODBC.con!rst.FieldValTrim!JOB,"' and SUFFIX = '",V.ODBC.con!rst.FieldValTrim!SUFFIX,"'",V.Local.sSql)
+			F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSql)
+			F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,<>,True)
+				V.uGlobal.uTime(V.Local.iUB)!Part.Set(V.ODBC.con!rstA.FieldValTrim!PART)
+				V.Local.fWOQty.Set(V.ODBC.con!rstA.FieldValFloat!QTY_ORDER)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rstA.Close
+			'Calculating estimated time as they want estimated time to show as minutes per piece on the report
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValFloat!PIECES_COMPLTD,=,0)
+				V.uGlobal.uTime(V.Local.iUB)!Qty.Set(0)
+				V.uGlobal.uTime(V.Local.iUB)!StdHrs.Set(0)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Concat("Select PART from V_JOB_OPERATIONS where JOB = '",V.uGlobal.uTime(V.Local.iUB)!Job,"' and SUFFIX= '",V.uGlobal.uTime(V.Local.iUB)!Suffix,"' and SEQ = '",V.uGlobal.uTime(V.Local.iUB)!Seq,"'",V.Local.sSql)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSql)
+				F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,<>,True)
+					V.Local.sOperWC.Set(V.ODBC.con!rstA.FieldValTrim!PART)
+				F.Intrinsic.Control.Else
+					V.Local.sOperWC.Set("NOTWC")
+				F.Intrinsic.Control.EndIf
+				F.ODBC.con!rstA.Close
+				F.Intrinsic.String.Concat("Select RUN_TIME from V_ROUTER_LINE where ROUTER = '",V.uGlobal.uTime(V.Local.iUB)!Part,"' and PART_WC_OUTSIDE = '",V.Local.sOperWC,"'",V.Local.sSql)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSql)
+				F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,<>,True)
+					F.Intrinsic.Control.If(V.ODBC.con!rstA.FieldValFloat!RUN_TIME,=,0)
+						V.Local.fStdHrs.Set(0)
+					F.Intrinsic.Control.Else
+						F.Intrinsic.Control.If(V.Local.fWOQty,=,0)
+							V.Local.fStdHrs.Set(0)
+						F.Intrinsic.Control.Else
+							'Calculating minutes per part
+							F.Intrinsic.Math.Div(60,V.ODBC.con!rstA.FieldValFloat!RUN_TIME,V.Local.fStdHrs)
+'							'Calculating hours per part
+'							F.Intrinsic.Math.Div(V.Local.fStdHrs,60,V.Local.fStdHrs)
+'							F.Intrinsic.Math.Round(V.Local.fStdHrs,2,V.Local.fStdHrs)
+'							F.Intrinsic.Math.Mult(V.ODBC.con!rst.FieldValFloat!PIECES_COMPLTD,V.Local.fStdHrs,V.Local.fStdHrs)
+'							F.Intrinsic.Math.Round(V.Local.fStdHrs,2,V.Local.fStdHrs)
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.EndIf
+					F.ODBC.con!rstA.Close
+				F.Intrinsic.Control.Else
+					F.ODBC.con!rstA.Close
+					F.Intrinsic.Control.If(V.uGlobal.uTime(V.Local.iUB)!WC,=,"HLPR")
+						F.Intrinsic.String.Concat("Select RUN_TIME from V_ROUTER_LINE where ROUTER = '",V.uGlobal.uTime(V.Local.iUB)!Part,"' and PART_WC_OUTSIDE in ('TBL', 'TBLA', 'MCH1', 'MCH2', 'MCH3', 'MCH4', 'MCH5', 'MCH6', 'MCH7', 'MCH8', 'MCH9')",V.Local.sSql)
+						F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSql)
+						F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,<>,True)
+							F.Intrinsic.Control.If(V.ODBC.con!rstA.FieldValFloat!RUN_TIME,=,0)
+								V.Local.fStdHrs.Set(0)
+							F.Intrinsic.Control.Else
+								F.Intrinsic.Control.If(V.Local.fWOQty,=,0)
+									V.Local.fStdHrs.Set(0)
+								F.Intrinsic.Control.Else
+									'Calculating minutes per part
+									F.Intrinsic.Math.Div(60,V.ODBC.con!rstA.FieldValFloat!RUN_TIME,V.Local.fStdHrs)
+		'							'Calculating hours per part
+		'							F.Intrinsic.Math.Div(V.Local.fStdHrs,60,V.Local.fStdHrs)
+		'							F.Intrinsic.Math.Round(V.Local.fStdHrs,2,V.Local.fStdHrs)
+		'							F.Intrinsic.Math.Mult(V.ODBC.con!rst.FieldValFloat!PIECES_COMPLTD,V.Local.fStdHrs,V.Local.fStdHrs)
+		'							F.Intrinsic.Math.Round(V.Local.fStdHrs,2,V.Local.fStdHrs)
+								F.Intrinsic.Control.EndIf
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.Else
+							V.Local.fStdHrs.Set(0)
+						F.Intrinsic.Control.EndIf
+						F.ODBC.con!rstA.Close
+					F.Intrinsic.Control.Else
+						V.Local.fStdHrs.Set(0)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+'				'Getting estimated time from job operations in order to perform conversion
+'				F.Intrinsic.String.Concat("Select HOURS_ESTIMATED from V_JOB_OPERATIONS where JOB = '",V.ODBC.con!rst.FieldValTrim!JOB,"' and SUFFIX = '",V.ODBC.con!rst.FieldValTrim!SUFFIX,"' and SEQ = '",V.ODBC.con!rst.FieldValTrim!SEQ,"'",V.Local.sSql)
+'				F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSql)
+'				F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,<>,True)
+'					F.Intrinsic.Control.If(V.ODBC.con!rstA.FieldValFloat!HOURS_ESTIMATED,=,0)
+'						V.Local.fStdHrs.Set(0)
+'					F.Intrinsic.Control.Else
+'						F.Intrinsic.Control.If(V.Local.fWOQty,=,0)
+'							V.Local.fStdHrs.Set(0)
+'						F.Intrinsic.Control.Else
+'							F.Intrinsic.Math.Div(V.ODBC.con!rstA.FieldValFloat!HOURS_ESTIMATED,V.Local.fWOQty,V.Local.fStdHrs)
+'						F.Intrinsic.Control.EndIf
+'						F.Intrinsic.Math.Mult(V.Local.fStdHrs,60,V.Local.fStdHrs)
+'						F.Intrinsic.Math.Round(V.Local.fStdHrs,2,V.Local.fStdHrs)
+'					F.Intrinsic.Control.EndIf
+'				F.Intrinsic.Control.Else
+'					V.Local.fStdHrs.Set(0)
+'				F.Intrinsic.Control.EndIf
+'				F.ODBC.con!rstA.Close
+				V.uGlobal.uTime(V.Local.iUB)!Qty.Set(V.ODBC.con!rst.FieldValFloat!PIECES_COMPLTD)
+				V.uGlobal.uTime(V.Local.iUB)!StdHrs.Set(V.Local.fStdHrs)
+			F.Intrinsic.Control.EndIf
+			'Checking to for shift if not found defaulting to employee master shift and checking to see if rate was overidden
+			V.Local.dDate.Set(V.ODBC.con!rst.FieldVal!DATE_SEQUENCE)
+
+			F.Intrinsic.String.Concat("Select Shift, Override from ATG_4543_Timcrd_Shft where Work_Order = '",V.ODBC.con!rst.FieldValTrim!JOB,"' and Suffix = '",V.ODBC.con!rst.FieldValTrim!SUFFIX,"' and Sequence = '",V.ODBC.con!rst.FieldValTrim!SEQ,"' and Workcenter = '",V.ODBC.con!rst.FieldValTrim!MACHINE,"' and Charge_Date = '",V.Local.dDate.PervasiveDate,"' and Employee = '",V.ODBC.con!rst.FieldValTrim!EMPL,"'",V.Local.sSql)
+			F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSql)
+			F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,=,True)
+				F.ODBC.con!rstA.Close
+				V.uGlobal.uTime(V.Local.iUB)!Override.Set("")
+				F.Intrinsic.String.Concat("Select SHIFT from V_EMPLOYEE_MSTR where EMPLOYEE = '",V.ODBC.con!rst.FieldValTrim!EMPL,"'",V.Local.sSql)
+				F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSql)
+				F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,=,True)
+					V.uGlobal.uTime(V.Local.iUB)!Shift.Set("")
+				F.Intrinsic.Control.Else
+					V.uGlobal.uTime(V.Local.iUB)!Shift.Set(V.ODBC.con!rstA.FieldValTrim!SHIFT)
+					V.Local.sShift.Set(V.ODBC.con!rstA.FieldValTrim!SHIFT)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.con!rstA.Close
+			F.Intrinsic.Control.Else
+				V.uGlobal.uTime(V.Local.iUB)!Override.Set(V.ODBC.con!rstA.FieldValTrim!Override)
+				V.uGlobal.uTime(V.Local.iUB)!Shift.Set(V.ODBC.con!rstA.FieldValTrim!Shift)
+				V.Local.sShift.Set(V.ODBC.con!rstA.FieldValTrim!Shift)
+				F.ODBC.con!rstA.Close
+			F.Intrinsic.Control.EndIf
+			'Calculating OT and worked dollars and rate
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValTrim!RATE_TYPE,<>,"R")
+				V.uGlobal.uTime(V.Local.iUB)!OTHrs.Set(V.ODBC.con!rst.FieldValFloat!HOURS_WORKED)
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValTrim!RATE_TYPE,=,"O")
+					F.Intrinsic.Math.Mult(V.ODBC.con!rst.FieldValFloat!RATE_EMPLOYEE,1.5,V.Local.fOTRate)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.Math.Mult(V.ODBC.con!rst.FieldValFloat!RATE_EMPLOYEE,2,V.Local.fOTRate)
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Math.Round(V.Local.fOTRate,2,V.Local.fOTRate)
+				F.Intrinsic.Math.Sub(V.Local.fOTRate,V.ODBC.con!rst.FieldValFloat!RATE_EMPLOYEE,V.Local.fOTRate)
+				F.Intrinsic.Math.Mult(V.ODBC.con!rst.FieldValFloat!HOURS_WORKED,V.Local.fOTRate,V.Local.fOTDollars)
+				V.uGlobal.uTime(V.Local.iUB)!DolOT.Set(V.Local.fOTDollars)
+				F.Intrinsic.Math.Sub(V.ODBC.con!rst.FieldValFloat!AMOUNT_LABOR,V.Local.fOTDollars,V.Local.fDollars)
+				V.uGlobal.uTime(V.Local.iUB)!DolWrkd.Set(V.Local.fDollars)
+			F.Intrinsic.Control.Else
+				V.uGlobal.uTime(V.Local.iUB)!OTHrs.Set(0)
+				V.uGlobal.uTime(V.Local.iUB)!DolOT.Set(0)
+				V.uGlobal.uTime(V.Local.iUB)!DolWrkd.Set(V.ODBC.con!rst.FieldValFloat!AMOUNT_LABOR)
+			F.Intrinsic.Control.EndIf
+			'Calculating Shift Differential
+			F.Intrinsic.Control.If(V.Local.sShift.IsNumeric)
+			F.Intrinsic.Control.Else
+				V.Local.sShift.Set("1")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.Local.sShift,>,1)
+				'TJS - Departments excluded from Shift Differential
+				F.Global.Registry.ReadValue(-4543,V.Caller.CompanyCode,"GCG_4543_MX.g2u",4543,2000,6,"",V.Local.sSftDiffExmt)
+				F.Intrinsic.String.IsInString(V.Local.sSftDiffExmt,V.uGlobal.uTime(V.Local.iUB)!Dept,True,V.Local.bRet)
+				F.Intrinsic.Control.If(V.Local.bRet,=,False)
+					'TJS - Differential pay multiplier (CURRENT_RATE*!*OLD_RATE*!*EFFECTIVE_DATE)
+					F.Global.Registry.ReadValue(-4543,V.Caller.CompanyCode,"GCG_4543_MX.g2u",4543,1000,6,"",V.Local.sRegString)
+					F.Intrinsic.String.Split(V.Local.sRegString,"*!*",V.Local.sRegString)
+					F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValPervasiveDate!Charge_Date,>,V.Local.sRegString(2))
+						F.Intrinsic.Math.Mult(V.ODBC.con!rst.FieldValFloat!HOURS_WORKED,V.Local.sRegString(0).Float,V.Local.fShiftDollars)
+					F.Intrinsic.Control.Else
+						F.Intrinsic.Math.Mult(V.ODBC.con!rst.FieldValFloat!HOURS_WORKED,V.Local.sRegString(1).Float,V.Local.fShiftDollars)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+				V.uGlobal.uTime(V.Local.iUB)!DolShift.Set(V.Local.fShiftDollars)
+			F.Intrinsic.Control.Else
+				V.Local.fShiftDollars.Set(0)
+				V.uGlobal.uTime(V.Local.iUB)!DolShift.Set(V.Local.fShiftDollars)
+			F.Intrinsic.Control.EndIf
+			'Determining if mold icentive pay needs to be made or not
+			V.Global.sEmp.Set(V.uGlobal.uEmp(V.Local.i)!Emp)
+			V.Global.sPart.Set(V.uGlobal.uTime(V.Local.iUB)!Part)
+			V.Global.sWC.Set(V.uGlobal.uTime(V.Local.iUB)!WC)
+			V.Global.fRate.Set(V.uGlobal.uTime(V.Local.iUB)!Rate)
+			V.Global.fStdHrs.Set(V.uGlobal.uTime(V.Local.iUB)!StdHrs)
+			V.Global.fQty.Set(V.uGlobal.uTime(V.Local.iUB)!Qty)
+			V.Global.fWrkHrs.Set(V.uGlobal.uTime(V.Local.iUB)!WrkHrs)
+			V.Global.sWO.Set(V.uGlobal.uTime(V.Local.iUB)!Job)
+			V.Global.sSuff.Set(V.uGlobal.uTime(V.Local.iUB)!Suffix)
+			F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValTrim!FLAG_INDIRECT,=,"D")
+				F.Intrinsic.Control.CallSub(Loadincenudt)
+			F.Intrinsic.Control.EndIf
+			'Determing sample incentive
+			F.Intrinsic.Control.CallSub(Loadsampleudt)
+			F.ODBC.con!rst.MoveNext
+		F.Intrinsic.Control.Loop
+		F.ODBC.con!rst.Close
+	F.Intrinsic.Control.Next(V.Local.i)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadTimeUDT_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.LoadTimeUDT.End
+
+Program.Sub.LoadIncenUDT.Start
+F.Intrinsic.Control.SetErrorHandler("LoadIncenUDT_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iUB.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.fWrkHrs.Declare(Float)
+V.Local.fQty.Declare(Float)
+V.Local.bChk.Declare(Boolean)
+
+'If workcenter is HLPR then incentive applies
+F.Intrinsic.Control.If(V.Global.sWC,=,"HLPR")
+	F.Intrinsic.Control.If(V.uGlobal.uIncen.UBound,=,-1)
+		V.uGlobal.uIncen.Redim(0,0)
+		V.uGlobal.uIncen!Emp.Set(V.Global.sEmp)
+		V.uGlobal.uIncen!Part.Set(V.Global.sPart)
+		V.uGlobal.uIncen!WC.Set(V.Global.sWC)
+		V.uGlobal.uIncen!Stdhrs.Set(V.Global.fStdHrs)
+		V.uGlobal.uIncen!WrkHrs.Set(V.Global.fWrkHrs)
+		V.uGlobal.uIncen!Rate.Set(V.Global.fRate)
+		V.uGlobal.uIncen!Qty.Set(V.Global.fQty)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uIncen!Emp,V.Global.sEmp,V.uGlobal.uIncen!Part,V.Global.sPart,V.uGlobal.uIncen!WC,V.Global.sWC,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,=,"")
+			V.Local.iUB.Set(V.uGlobal.uIncen.UBound)
+			F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+			V.uGlobal.uIncen.RedimPreserve(V.uGlobal.uIncen.LBound,V.Local.iUB)
+			V.uGlobal.uIncen(V.Local.iUB)!Emp.Set(V.Global.sEmp)
+			V.uGlobal.uIncen(V.Local.iUB)!Part.Set(V.Global.sPart)
+			V.uGlobal.uIncen(V.Local.iUB)!WC.Set(V.Global.sWC)
+			V.uGlobal.uIncen(V.Local.iUB)!Stdhrs.Set(V.Global.fStdHrs)
+			V.uGlobal.uIncen(V.Local.iUB)!WrkHrs.Set(V.Global.fWrkHrs)
+			V.uGlobal.uIncen(V.Local.iUB)!Rate.Set(V.Global.fRate)
+			V.uGlobal.uIncen(V.Local.iUB)!Qty.Set(V.Global.fQty)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			V.uGlobal.uIncen(V.Local.sRet.Long)!Emp.Set(V.Global.sEmp)
+			V.uGlobal.uIncen(V.Local.sRet.Long)!Part.Set(V.Global.sPart)
+			V.uGlobal.uIncen(V.Local.sRet.Long)!WC.Set(V.Global.sWC)
+			V.uGlobal.uIncen(V.Local.sRet.Long)!Stdhrs.Set(V.Global.fStdHrs)
+			F.Intrinsic.Math.Add(V.uGlobal.uIncen(V.Local.sRet.Long)!WrkHrs,V.Global.fWrkHrs,V.Local.fWrkHrs)
+			V.uGlobal.uIncen(V.Local.sRet.Long)!WrkHrs.Set(V.Local.fWrkHrs)
+			V.uGlobal.uIncen(V.Local.sRet.Long)!Rate.Set(V.Global.fRate)
+			F.Intrinsic.Math.Add(V.uGlobal.uIncen(V.Local.sRet.Long)!Qty,V.Global.fQty,V.Local.fQty)
+			V.uGlobal.uIncen(V.Local.sRet.Long)!Qty.Set(V.Local.fQty)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	V.Local.bChk.Set(False)
+	'Checking to see if the workcenter is in one of the following workgroups, if so adding for incentive
+	F.Intrinsic.String.Concat("Select * from V_WORKGROUP_LINE where WORKCENTER = '",V.Global.sWC,"'",V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,<>,True)
+		F.Intrinsic.Control.SelectCase(V.ODBC.con!rstA.FieldValTrim!WORKGROUP)
+			F.Intrinsic.Control.Case("MCH1")
+				V.Local.bChk.Set(True)
+			F.Intrinsic.Control.Case("MCH2")
+				V.Local.bChk.Set(True)
+			F.Intrinsic.Control.Case("MCH3")
+				V.Local.bChk.Set(True)
+			F.Intrinsic.Control.Case("MCH4")
+				V.Local.bChk.Set(True)
+			F.Intrinsic.Control.Case("MCH5")
+				V.Local.bChk.Set(True)
+			F.Intrinsic.Control.Case("MCH6")
+				V.Local.bChk.Set(True)
+			F.Intrinsic.Control.Case("MCH7")
+				V.Local.bChk.Set(True)
+			F.Intrinsic.Control.Case("MCH8")
+				V.Local.bChk.Set(True)
+			F.Intrinsic.Control.Case("MCH9")
+				V.Local.bChk.Set(True)
+			F.Intrinsic.Control.Case("TBL")
+				V.Local.bChk.Set(True)
+			F.Intrinsic.Control.Case("TBLA")
+				V.Local.bChk.Set(True)
+		F.Intrinsic.Control.EndSelect
+		F.Intrinsic.Control.If(V.Local.bChk,=,True)
+			F.Intrinsic.Control.If(V.uGlobal.uIncen.UBound,=,-1)
+				V.uGlobal.uIncen.Redim(0,0)
+				V.uGlobal.uIncen!Emp.Set(V.Global.sEmp)
+				V.uGlobal.uIncen!Part.Set(V.Global.sPart)
+				V.uGlobal.uIncen!WC.Set(V.Global.sWC)
+				V.uGlobal.uIncen!Stdhrs.Set(V.Global.fStdHrs)
+				V.uGlobal.uIncen!WrkHrs.Set(V.Global.fWrkHrs)
+				V.uGlobal.uIncen!Rate.Set(V.Global.fRate)
+				V.uGlobal.uIncen!Qty.Set(V.Global.fQty)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uIncen!Emp,V.Global.sEmp,V.uGlobal.uIncen!Part,V.Global.sPart,V.uGlobal.uIncen!WC,V.Global.sWC,V.Local.sRet)
+				F.Intrinsic.Control.If(V.Local.sRet,=,"")
+					V.Local.iUB.Set(V.uGlobal.uIncen.UBound)
+					F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+					V.uGlobal.uIncen.RedimPreserve(V.uGlobal.uIncen.LBound,V.Local.iUB)
+					V.uGlobal.uIncen(V.Local.iUB)!Emp.Set(V.Global.sEmp)
+					V.uGlobal.uIncen(V.Local.iUB)!Part.Set(V.Global.sPart)
+					V.uGlobal.uIncen(V.Local.iUB)!WC.Set(V.Global.sWC)
+					V.uGlobal.uIncen(V.Local.iUB)!Stdhrs.Set(V.Global.fStdHrs)
+					V.uGlobal.uIncen(V.Local.iUB)!WrkHrs.Set(V.Global.fWrkHrs)
+					V.uGlobal.uIncen(V.Local.iUB)!Rate.Set(V.Global.fRate)
+					V.uGlobal.uIncen(V.Local.iUB)!Qty.Set(V.Global.fQty)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+					V.uGlobal.uIncen(V.Local.sRet.Long)!Emp.Set(V.Global.sEmp)
+					V.uGlobal.uIncen(V.Local.sRet.Long)!Part.Set(V.Global.sPart)
+					V.uGlobal.uIncen(V.Local.sRet.Long)!WC.Set(V.Global.sWC)
+					V.uGlobal.uIncen(V.Local.sRet.Long)!Stdhrs.Set(V.Global.fStdHrs)
+					F.Intrinsic.Math.Add(V.uGlobal.uIncen(V.Local.sRet.Long)!WrkHrs,V.Global.fWrkHrs,V.Local.fWrkHrs)
+					V.uGlobal.uIncen(V.Local.sRet.Long)!WrkHrs.Set(V.Local.fWrkHrs)
+					V.uGlobal.uIncen(V.Local.sRet.Long)!Rate.Set(V.Global.fRate)
+					F.Intrinsic.Math.Add(V.uGlobal.uIncen(V.Local.sRet.Long)!Qty,V.Global.fQty,V.Local.fQty)
+					V.uGlobal.uIncen(V.Local.sRet.Long)!Qty.Set(V.Local.fQty)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rstA.Close
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadIncenUDT_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.LoadIncenUDT.End
+
+Program.Sub.LoadSampleUDT.Start
+F.Intrinsic.Control.SetErrorHandler("LoadSampleUDT_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.bChk.Declare(Boolean)
+V.Local.sSql.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iUB.Declare(Long)
+V.Local.fHrs.Declare(Float)
+
+V.Local.bChk.Set(False)
+F.Intrinsic.Control.SelectCase(V.Global.sWC)
+	F.Intrinsic.Control.Case("SCMC")
+		V.Local.bChk.Set(True)
+	F.Intrinsic.Control.Case("SCTB")
+		V.Local.bChk.Set(True)
+	F.Intrinsic.Control.Case("SHLP")
+		V.Local.bChk.Set(True)
+F.Intrinsic.Control.EndSelect
+F.Intrinsic.String.Concat("Select *from V_IND_LBR_ACCTS where JOB = '",V.Global.sWO,"' and SUFFIX = '",V.Global.sSuff,"'",V.Local.sSql)
+F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,<>,False)
+	F.Intrinsic.Control.SelectCase(V.ODBC.con!rst.FieldValTrim!SEQ)
+		F.Intrinsic.Control.Case("048000")
+			V.Local.bChk.Set(True)
+		F.Intrinsic.Control.Case("050000")
+			V.Local.bChk.Set(True)
+		F.Intrinsic.Control.Case("051000")
+			V.Local.bChk.Set(True)
+		F.Intrinsic.Control.Case("052000")
+			V.Local.bChk.Set(True)
+	F.Intrinsic.Control.EndSelect
+F.Intrinsic.Control.EndIf
+F.ODBC.con!rstA.Close
+F.Intrinsic.Control.If(V.Local.bChk,=,True)
+	F.Intrinsic.Control.If(V.uGlobal.uSample.UBound,=,-1)
+		V.uGlobal.uSample.Redim(0,0)
+		V.uGlobal.uSample!Emp.Set(V.Global.sEmp)
+		V.uGlobal.uSample!ActSampHrs.Set(V.Global.fWrkHrs)
+		V.uGlobal.uSample!Flag.Set("S")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Variable.UDTSeek(V.uGlobal.uSample!Emp,V.Global.sEmp,0,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,=,"")
+			V.Local.iUB.Set(V.uGlobal.uSample.UBound)
+			F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+			V.uGlobal.uSample.RedimPreserve(V.uGlobal.uSample.LBound,V.Local.iUB)
+			V.uGlobal.uSample(V.Local.iUB)!Emp.Set(V.Global.sEmp)
+			V.uGlobal.uSample(V.Local.iUB)!ActSampHrs.Set(V.Global.fWrkHrs)
+			V.uGlobal.uSample!Flag.Set("S")
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			F.Intrinsic.Math.Add(V.uGlobal.uSample(V.Local.sRet.Long)!ActSampHrs,V.Global.fWrkHrs,V.uGlobal.uSample(V.Local.sRet.Long)!ActSampHrs)
+			V.uGlobal.uSample!Flag.Set("S")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.Math.Div(V.Global.fStdHrs,60,V.Local.fHrs)
+	F.Intrinsic.Math.Mult(V.Local.fHrs,V.Global.fQty,V.Local.fHrs)
+	F.Intrinsic.Control.If(V.Global.sWC,=,"HLPR")
+		F.Intrinsic.Control.If(V.uGlobal.uSample.UBound,=,-1)
+			V.uGlobal.uSample.Redim(0,0)
+			V.uGlobal.uSample!Emp.Set(V.Global.sEmp)
+			V.uGlobal.uSample!ActHrs.Set(V.Global.fWrkHrs)
+			V.uGlobal.uSample!StdHrs.Set(V.Local.fHrs)
+			V.uGlobal.uSample!Rate.Set(V.Global.fRate)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Variable.UDTSeek(V.uGlobal.uSample!Emp,V.Global.sEmp,0,V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,=,"")
+				V.Local.iUB.Set(V.uGlobal.uSample.UBound)
+				F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+				V.uGlobal.uSample.RedimPreserve(V.uGlobal.uSample.LBound,V.Local.iUB)
+				V.uGlobal.uSample(V.Local.iUB)!Emp.Set(V.Global.sEmp)
+				V.uGlobal.uSample(V.Local.iUB)!ActHrs.Set(V.Global.fWrkHrs)
+				V.uGlobal.uSample(V.Local.iUB)!StdHrs.Set(V.Local.fHrs)
+				V.uGlobal.uSample(V.Local.iUB)!Rate.Set(V.Global.fRate)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+				F.Intrinsic.Math.Add(V.uGlobal.uSample(V.Local.sRet.Long)!ActHrs,V.Global.fWrkHrs,V.uGlobal.uSample(V.Local.sRet.Long)!ActHrs)
+				F.Intrinsic.Math.Add(V.uGlobal.uSample(V.Local.sRet.Long)!StdHrs,V.Local.fHrs,V.uGlobal.uSample(V.Local.sRet.Long)!StdHrs)
+				V.uGlobal.uSample(V.Local.sRet.Long)!Rate.Set(V.Global.fRate)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		V.Local.bChk.Set(False)
+		F.Intrinsic.String.Concat("Select * from V_WORKGROUP_LINE where WORKCENTER = '",V.Global.sWC,"'",V.Local.sSql)
+		F.ODBC.Connection!con.OpenRecordsetRO("rstA",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.con!rstA.EOF,<>,True)
+			F.Intrinsic.Control.SelectCase(V.ODBC.con!rstA.FieldValTrim!WORKGROUP)
+				F.Intrinsic.Control.Case("MCH1")
+					V.Local.bChk.Set(True)
+				F.Intrinsic.Control.Case("MCH2")
+					V.Local.bChk.Set(True)
+				F.Intrinsic.Control.Case("MCH3")
+					V.Local.bChk.Set(True)
+				F.Intrinsic.Control.Case("MCH4")
+					V.Local.bChk.Set(True)
+				F.Intrinsic.Control.Case("MCH5")
+					V.Local.bChk.Set(True)
+				F.Intrinsic.Control.Case("MCH6")
+					V.Local.bChk.Set(True)
+				F.Intrinsic.Control.Case("MCH7")
+					V.Local.bChk.Set(True)
+				F.Intrinsic.Control.Case("MCH8")
+					V.Local.bChk.Set(True)
+				F.Intrinsic.Control.Case("MCH9")
+					V.Local.bChk.Set(True)
+				F.Intrinsic.Control.Case("TBL")
+					V.Local.bChk.Set(True)
+				F.Intrinsic.Control.Case("TBLA")
+					V.Local.bChk.Set(True)
+			F.Intrinsic.Control.EndSelect
+			F.Intrinsic.Control.If(V.Local.bChk,=,True)
+				F.Intrinsic.Control.If(V.uGlobal.uSample.UBound,=,-1)
+					V.uGlobal.uSample.Redim(0,0)
+					V.uGlobal.uSample!Emp.Set(V.Global.sEmp)
+					V.uGlobal.uSample!ActHrs.Set(V.Global.fWrkHrs)
+					V.uGlobal.uSample!StdHrs.Set(V.Local.fHrs)
+					V.uGlobal.uSample!Rate.Set(V.Global.fRate)
+				F.Intrinsic.Control.Else
+					F.Intrinsic.Variable.UDTSeek(V.uGlobal.uSample!Emp,V.Global.sEmp,0,V.Local.sRet)
+					F.Intrinsic.Control.If(V.Local.sRet,=,"")
+						V.Local.iUB.Set(V.uGlobal.uSample.UBound)
+						F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+						V.uGlobal.uSample.RedimPreserve(V.uGlobal.uSample.LBound,V.Local.iUB)
+						V.uGlobal.uSample(V.Local.iUB)!Emp.Set(V.Global.sEmp)
+						V.uGlobal.uSample(V.Local.iUB)!ActHrs.Set(V.Global.fWrkHrs)
+						V.uGlobal.uSample(V.Local.iUB)!StdHrs.Set(V.Local.fHrs)
+						V.uGlobal.uSample(V.Local.iUB)!Rate.Set(V.Global.fRate)
+					F.Intrinsic.Control.Else
+						F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+						F.Intrinsic.Math.Add(V.uGlobal.uSample(V.Local.sRet.Long)!ActHrs,V.Global.fWrkHrs,V.uGlobal.uSample(V.Local.sRet.Long)!ActHrs)
+						F.Intrinsic.Math.Add(V.uGlobal.uSample(V.Local.sRet.Long)!StdHrs,V.Local.fHrs,V.uGlobal.uSample(V.Local.sRet.Long)!StdHrs)
+						V.uGlobal.uSample(V.Local.sRet.Long)!Rate.Set(V.Global.fRate)
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rstA.Close
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadSampleUDT_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.LoadSampleUDT.End
+
+Program.Sub.CalcIncen.Start
+F.Intrinsic.Control.SetErrorHandler("CalcIncen_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.fIncenHrs.Declare(Float)
+
+F.Intrinsic.Control.If(V.uGlobal.uIncen.UBound,<>,-1)
+	F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uIncen.LBound,V.uGlobal.uIncen.UBound,1)
+		F.Intrinsic.Control.If(V.uGlobal.uIncen(V.Local.i)!Stdhrs,<>,0)
+			'Calculating hours per part
+			F.Intrinsic.Math.Div(V.uGlobal.uIncen(V.Local.i)!Stdhrs,60,V.Local.fIncenHrs)
+			F.Intrinsic.Math.Mult(V.uGlobal.uIncen(V.Local.i)!Qty,V.Local.fIncenHrs,V.Local.fIncenHrs)
+			F.Intrinsic.Math.Round(V.Local.fIncenHrs,2,V.Local.fIncenHrs)
+			F.Intrinsic.Math.Sub(V.Local.fIncenHrs,V.uGlobal.uIncen(V.Local.i)!WrkHrs,V.Local.fIncenHrs)
+			F.Intrinsic.Control.If(V.Local.fIncenHrs,>,0)
+				V.uGlobal.uIncen(V.Local.i)!IncenHrs.Set(V.Local.fIncenHrs)
+				F.Intrinsic.Math.Mult(V.uGlobal.uIncen(V.Local.i)!Rate,V.Local.fIncenHrs,V.uGlobal.uIncen(V.Local.i)!IncenDol)
+			F.Intrinsic.Control.Else
+				V.uGlobal.uIncen(V.Local.i)!Flag.Set("D")
+			F.Intrinsic.Control.EndIf
+'			F.Intrinsic.Math.Mult(V.uGlobal.uIncen(V.Local.i)!Qty,V.uGlobal.uIncen(V.Local.i)!Stdhrs,V.Local.fIncenHrs)
+'			F.Intrinsic.Control.If(V.Local.fIncenHrs,>,0)
+'				F.Intrinsic.Math.Div(V.Local.fIncenHrs,60,V.Local.fIncenHrs)
+'				F.Intrinsic.Math.Sub(V.Local.fIncenHrs,V.uGlobal.uIncen(V.Local.i)!WrkHrs,V.Local.fIncenHrs)
+'				F.Intrinsic.Control.If(V.Local.fIncenHrs,>,0)
+'					V.uGlobal.uIncen(V.Local.i)!IncenHrs.Set(V.Local.fIncenHrs)
+'					F.Intrinsic.Math.Mult(V.uGlobal.uIncen(V.Local.i)!Rate,V.Local.fIncenHrs,V.uGlobal.uIncen(V.Local.i)!IncenDol)
+'				F.Intrinsic.Control.Else
+'					V.uGlobal.uIncen(V.Local.i)!Flag.Set("D")
+'				F.Intrinsic.Control.EndIf
+'			F.Intrinsic.Control.Else
+'				V.uGlobal.uIncen(V.Local.i)!Flag.Set("D")
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uIncen!Flag,"D")
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uIncen)
+	F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uIncen!Terminal,V.Caller.Terminal)
+'	F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uIncen.LBound,V.uGlobal.uIncen.UBound,1)
+'		F.Intrinsic.Control.If(V.uGlobal.uIncen(V.Local.i)!Stdhrs,<>,0)
+'			F.Intrinsic.Math.Mult(V.uGlobal.uIncen(V.Local.i)!Qty,V.uGlobal.uIncen(V.Local.i)!Stdhrs,V.Local.fIncenHrs)
+'			F.Intrinsic.Control.If(V.Local.fIncenHrs,>,0)
+'				F.Intrinsic.Math.Div(V.Local.fIncenHrs,60,V.Local.fIncenHrs)
+'				F.Intrinsic.Math.Sub(V.Local.fIncenHrs,V.uGlobal.uIncen(V.Local.i)!WrkHrs,V.Local.fIncenHrs)
+'				F.Intrinsic.Control.If(V.Local.fIncenHrs,>,0)
+'					V.uGlobal.uIncen(V.Local.i)!IncenHrs.Set(V.Local.fIncenHrs)
+'					F.Intrinsic.Math.Mult(V.uGlobal.uIncen(V.Local.i)!Rate,V.Local.fIncenHrs,V.uGlobal.uIncen(V.Local.i)!IncenDol)
+'				F.Intrinsic.Control.Else
+'					V.uGlobal.uIncen(V.Local.i)!Flag.Set("D")
+'				F.Intrinsic.Control.EndIf
+'			F.Intrinsic.Control.Else
+'				V.uGlobal.uIncen(V.Local.i)!Flag.Set("D")
+'			F.Intrinsic.Control.EndIf
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.Next(V.Local.i)
+'	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uIncen!Flag,"D")
+'	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uIncen)
+'	F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uIncen!Terminal,V.Caller.Terminal)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CalcIncen_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.CalcIncen.End
+
+Program.Sub.CalcSample.Start
+F.Intrinsic.Control.SetErrorHandler("CalcSample_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.i.Declare(Long)
+V.Local.fNum.Declare(Float)
+
+F.Intrinsic.Control.If(V.uGlobal.uSample.UBound,<>,-1)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uSample!Flag,"")
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uSample)
+	F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uSample.LBound,V.uGlobal.uSample.UBound,1)
+		F.Intrinsic.Control.If(V.uGlobal.uSample(V.Local.i)!StdHrs,<>,0)
+			F.Intrinsic.Control.If(V.uGlobal.uSample(V.Local.i)!ActHrs,<>,0)
+				F.Intrinsic.Math.Div(V.uGlobal.uSample(V.Local.i)!StdHrs,V.uGlobal.uSample(V.Local.i)!ActHrs,V.Local.fNum)
+				F.Intrinsic.Math.Sub(V.Local.fNum,1,V.Local.fNum)
+				F.Intrinsic.Math.Mult(V.uGlobal.uSample(V.Local.i)!ActSampHrs,V.Local.fNum,V.Local.fNum)
+				F.Intrinsic.Control.If(V.Local.fNum,>,0)
+					V.uGlobal.uSample(V.Local.i)!SampHrs.Set(V.Local.fNum)
+					F.Intrinsic.Math.Mult(V.Local.fNum,V.uGlobal.uSample(V.Local.i)!Rate,V.uGlobal.uSample(V.Local.i)!SampDol)
+				F.Intrinsic.Control.Else
+					V.uGlobal.uSample(V.Local.i)!Flag.Set("D")
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				V.uGlobal.uSample(V.Local.i)!Flag.Set("D")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			V.uGlobal.uSample(V.Local.i)!Flag.Set("D")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i)
+	F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uSample!Flag,"D")
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uSample)
+	F.Intrinsic.Variable.UDTSetMemberValue(V.uGlobal.uSample!Terminal,V.Caller.Terminal)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("CalcSample_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.CalcSample.End
+
+Program.Sub.LoadRST.Start
+F.Intrinsic.Control.SetErrorHandler("LoadRST_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+
+F.Intrinsic.String.Concat("Delete ATG_4543_Timecard_Rg where Terminal = '",V.Caller.Terminal,"'",V.Local.sSql)
+F.ODBC.Connection!con.Execute(V.Local.sSql)
+F.Intrinsic.String.Concat("Delete ATG_4543_Sample_Incn where Terminal = '",V.Caller.Terminal,"'",V.Local.sSql)
+F.ODBC.Connection!con.Execute(V.Local.sSql)
+F.Intrinsic.String.Concat("Delete ATG_4543_BI_INCEN where Terminal = '",V.Caller.Terminal,"'",V.Local.sSql)
+F.ODBC.Connection!con.Execute(V.Local.sSql)
+F.Intrinsic.Control.If(V.uGlobal.uTime.UBound,<>,-1)
+	F.Intrinsic.String.Concat("Select * from ATG_4543_Timecard_Rg where Terminal = '",V.Caller.Terminal,"'",V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSql)
+	F.Intrinsic.Variable.SaveUDTToRecordset("con","rst","Variable.uGlobal.uTime")
+	F.ODBC.con!rst.Close
+	F.Intrinsic.Control.If(V.uGlobal.uSample.UBound,<>,-1)
+		F.Intrinsic.String.Concat("Select * from ATG_4543_Sample_Incn where Terminal = '",V.Caller.Terminal,"'",V.Local.sSql)
+		F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSql)
+		F.Intrinsic.Variable.SaveUDTToRecordset("con","rst","Variable.uGlobal.uSample")
+		F.ODBC.con!rst.Close
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.If(V.uGlobal.uIncen.UBound,<>,-1)
+		F.Intrinsic.String.Concat("Select * from ATG_4543_BI_INCEN where Terminal = '",V.Caller.Terminal,"'",V.Local.sSql)
+		F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSql)
+		F.Intrinsic.Variable.SaveUDTToRecordset("con","rst","Variable.uGlobal.uIncen")
+		F.ODBC.con!rst.Close
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chkPayCom.Value,=,1)
+	F.Intrinsic.Control.CallSub(PayComUPL)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.CallSub(CallBI)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadRST_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.LoadRST.End
+
+Program.Sub.CallBI.Start
+F.Intrinsic.Control.SetErrorHandler("CallBI_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sParam.Declare(String)
+V.Local.sParamVal.Declare(String)
+V.Local.iBI.Declare(Long)
+
+F.Global.BI.GetIDFromName("ATG_4543_BI_Timecard_Register.rpt",V.Local.iBI)
+V.Local.sParam.Set("Terminal*!*StartDate*!*StopDate")
+F.Intrinsic.String.Concat(V.Caller.Terminal,"*!*",V.Screen.SS_Form1!dtpStart.Value,"*!*",V.Screen.SS_Form1!dtpStop.Value,V.Local.sParamVal)
+F.Intrinsic.String.Split(V.Local.sParam,"*!*",V.Local.sParam)
+F.Intrinsic.String.Split(V.Local.sParamVal,"*!*",V.Local.sParamVal)
+F.Global.BI.PrintReport(V.Local.iBI,0,V.Local.sParam,V.Local.sParamVal,"",False)
+F.Intrinsic.Control.CallSub(Ss_form1_unload)
+
+F.Intrinsic.Control.Label("CallBI_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+F.Intrinsic.Control.EndIf
+Program.Sub.CallBI.End
+
+Program.Sub.PayComUPL.Start
+'TJS
+F.Intrinsic.Control.SetErrorHandler("PayComUPL_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.iCnt.Declare
+V.Local.sDate.Declare
+V.Local.sInd.Declare
+V.Local.sSQL.Declare
+V.Local.bChk.Declare
+V.Local.sRemoteHost.Declare
+V.Local.sRemoteUser.Declare
+V.Local.sRemotePwd.Declare
+V.Local.sRemotePort.Declare
+V.Local.sRemotePath.Declare
+V.Local.sTemp.Declare
+V.Local.sChgDate.Declare
+V.Local.sFileDate.Declare
+V.Local.sDTDate.Declare
+V.Local.sYYYY.Declare
+V.Local.sMM.Declare
+V.Local.sDD.Declare
+V.Local.baValue.Declare(ByteArray)
+V.Local.sECtoR.Declare
+V.Local.sEmp.Declare
+
+V.Local.sChgDate.Set(V.Screen.SS_Form1!dtpStop.Value)
+V.Local.sFileDate.Set(V.Screen.SS_Form1!dtpStop.Value)
+
+F.Intrinsic.String.Format(V.Local.sFileDate,"YYYYMMDD",V.Local.sFileDate)
+
+F.Intrinsic.String.Format(V.Local.sChgDate,"MM/DD/YYYY",V.Local.sChgDate)
+
+F.Intrinsic.Control.If(V.DataTable.dtPayCom.Exists)
+	F.Data.Datatable.Close("dtPayCom")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtIncen.Exists)
+	F.Data.Datatable.Close("dtIncen")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtIncen1.Exists)
+	F.Data.Datatable.Close("dtIncen1")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtUpload.Exists)
+	F.Data.Datatable.Close("dtUpload")
+F.Intrinsic.Control.EndIf
+
+'gather base data
+F.Intrinsic.String.Build("Select EMPLOYEE as 'Employee ID',' ' as 'Department Code',CHARGE_DATE,' ' as 'Date',' ' as 'Punch Time',' ' as 'Punch Type',IF(OVERRIDE = 'V','ROV',IF(OVERRIDE = 'LP','LPM',IF(INDIRECT = 'D','R',IF(INDIRECT = 'S','R','')))) as EC_D,RTRIM(' ') as EC_I,RTRIM(' ') as 'Earning Code',' ' as 'Tax Profile Code',JOB+SUFFIX+SEQUENCE as Comments,' ' as 'Labor Allocation Code',Cast(Cast(WORKED_HOURS as decimal(10,2)) as longvarchar) as 'Hours',RTrim(' ') as Dollars,IF(OVERRIDE <> '',Cast(Cast(RATE as decimal(10,2)) as longvarchar),'') as 'Temporary Rate',' ' as 'DST Flag',' ' as 'Units',' ' as 'Make-Up Time' from ATG_4543_TIMECARD_RG where TERMINAL = '{0}' order by EMPLOYEE,CHARGE_DATE;",V.Caller.Terminal,V.Local.sSQL)
+
+F.Data.Datatable.CreateFromSQL("dtPayCom","con",V.Local.sSQL,True)
+
+F.Intrinsic.Control.If(V.DataTable.dtPayCom.RowCount,=,0)
+	F.Intrinsic.Control.CallSub(ss_form1_unload)
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.SetValueFormat("dtPayCom",-1,"CHARGE_DATE","Date","MM/DD/YYYY")
+
+F.Data.DataTable.RemoveColumn("dtPayCom","CHARGE_DATE")
+
+F.Intrinsic.String.Build("Select EMPLOYEE as 'Employee ID',' ' as 'Department Code','{1}' as 'Date',' ' as 'Punch Time',' ' as 'Punch Type','ICT' as EC_D,RTRIM(' ') as EC_I,RTRIM(' ') as 'Earning Code',' ' as 'Tax Profile Code',RTRIM(PART) as Comments,' ' as 'Labor Allocation Code',' ' as 'Hours',Cast(Cast(INCEN_DOLLARS as decimal(10,2)) as longvarchar) as Dollars,' ' as 'Temporary Rate',' ' as 'DST Flag',' ' as 'Units',' ' as 'Make-Up Time' from ATG_4543_BI_INCEN where TERMINAL = '{0}' order by EMPLOYEE;",V.Caller.Terminal,V.Local.sChgDate,V.Local.sSQL)
+
+F.Data.Datatable.CreateFromSQL("dtIncen1","con",V.Local.sSQL,True)
+
+F.Data.DataView.Create("dtIncen1","dvIncen1",22,"Dollars <> '0.00'","")
+
+F.Data.DataView.ToDataTable("dtIncen1","dvIncen1","dtIncen")
+
+F.Data.Datatable.Merge("dtIncen","dtPayCom",True,1)
+
+F.Data.DataView.Close("dtIncen1","dvIncen1")
+
+F.Data.DataTable.Close("dtIncen1")
+
+F.Data.DataTable.Close("dtIncen")
+
+'Filling department from Employee Master
+F.Data.Dictionary.CreateFromSQL("dictEmpDept","Con","Select EMPLOYEE,DEPT_EMPLOYEE from EMPLOYEE_MSTR")
+F.Data.Dictionary.SetDefaultReturn("dictEmpDept","")
+F.Data.Datatable.FillFromDictionary("dtPayCom","dictEmpDept","Employee ID","Department Code")
+F.Data.Dictionary.Close("dictEmpDept")
+
+'Filling earnings codes for indirect labor
+V.Local.sDate.Set(V.Ambient.Date)
+F.Intrinsic.String.Format(V.Local.sDate,"YY",V.Local.sDate)
+F.Intrinsic.String.Build("%ZIND{0}",V.Local.sDate,V.Local.sInd)
+
+F.Intrinsic.String.Build("Select JOB+SUFFIX+SEQ as JSS,Left(DESCRIPTION,Locate('-',DESCRIPTION,0)-1) as DESCRIPTION from V_JOB_OPERATIONS where JOB like '{0}' and left(SEQ,2) <> '99';",V.Local.sInd, V.Local.sSQL)
+F.Data.Dictionary.CreateFromSQL("dictIndEC","Con",V.Local.sSQL)
+F.Data.Dictionary.SetDefaultReturn("dictIndEC","")
+F.Data.Datatable.FillFromDictionary("dtPayCom","dictIndEC","Comments","EC_I")
+F.Data.Dictionary.Close("dictIndEC")
+
+F.Data.Datatable.AddExpressionColumn("dtPayCom","EC_TEMP","String","IIF(TRIM(EC_D) = '',TRIM(EC_I),TRIM(EC_D))")
+F.Data.Datatable.SetValueFormat("dtPayCom",-1,"EC_TEMP","Earning Code","")
+
+F.Data.Datatable.RemoveColumn("dtPayCom","EC_TEMP")
+F.Data.Datatable.RemoveColumn("dtPayCom","EC_D")
+F.Data.Datatable.RemoveColumn("dtPayCom","EC_I")
+
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtPayCom.RowCount--,1)
+	V.Local.sEmp.Set(V.DataTable.dtPayCom(V.Local.iCnt).Employee ID!FieldValTrim)
+	F.Intrinsic.String.Build("Select PAY_TYPE from V_EMPLOYEE_MSTR where EMPLOYEE = '{0}'",V.Local.sEmp.Trim,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+	F.Intrinsic.Control.If(V.Local.sSQL.Trim,=,"S")
+		F.Data.DataTable.SetValue("dtPaycom",V.Local.iCnt,"Hours","0.00")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+F.Data.DataView.Create("dtPayCom","dvPayCom",22,"Hours <> '0.00'","")
+
+F.Data.DataView.ToDataTable("dtPayCom","dvPayCom","dtUpload")
+
+F.Data.DataView.Close("dtPayCom","dvPayCom")
+
+F.Data.DataTable.Close("dtPayCom")
+
+'Earnings Codes to convert to regular time
+F.Global.Registry.ReadValue(-4543,V.Caller.CompanyCode,"GCG_4543_MX.g2u",4543,3000,6,"",V.Local.sECtoR)
+F.Intrinsic.Control.If(V.Local.sECtoR.Trim,<>,"")
+	F.Data.Dictionary.Create("dictECtoR")
+	F.Intrinsic.String.Split(V.Local.sECtoR,"*!*",V.Local.sECtoR)
+	F.Intrinsic.Control.For(V.Local.iCnt,V.Local.sECtoR.LBound,V.Local.sECtoR.UBound,1)
+		F.Data.Dictionary.AddItem("dictECtoR",V.Local.sECtoR(V.Local.iCnt),"R")
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+	F.Data.DataTable.FillFromDictionary("dtUpload","dictECtoR","Earning Code")
+	F.Data.Dictionary.Close("dictECtoR")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("{0}\CUSTOM\4543",V.Caller.GlobalDir,V.Global.sDir)
+
+F.Intrinsic.File.DirExists(V.Global.sDir,V.Local.bChk)
+
+F.Intrinsic.Control.If(V.Local.bChk,=,False)
+	F.Intrinsic.File.CreateDir(V.Global.sDir)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("Paycom_{0}_{1}.csv",V.Caller.CompanyCode,V.Local.sFileDate,V.Global.sFile)
+
+F.Intrinsic.String.Build("{0}\{1}",V.Global.sDir,V.Global.sFile,V.Global.sPath)
+
+F.Data.Datatable.SaveToCSV("dtUpload",V.Global.sPath,False)
+
+'Deprecated the SFTP upload procedure per Ed
+'F.Data.Datatable.CreateFromSQL("dtSettings","con","Select * from GCG_4543_SETTINGS where REC_ID = '1'")
+
+'F.Intrinsic.Control.If(V.DataTable.dtSettings.RowCount,=,0)
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+'V.Local.sTemp.Set(V.DataTable.dtSettings(0).RemoteHost!FieldValTrim)
+'F.Intrinsic.String.WeakDecryption(V.Local.sTemp,V.Local.sTemp)
+'V.Local.sRemoteHost.Set(V.Local.sTemp)
+
+'V.Local.sTemp.Set(V.DataTable.dtSettings(0).RemoteUser!FieldValTrim)
+'F.Intrinsic.String.WeakDecryption(V.Local.sTemp,V.Local.sTemp)
+'V.Local.sRemoteUser.Set(V.Local.sTemp)
+
+'V.Local.sTemp.Set(V.DataTable.dtSettings(0).RemotePassword!FieldValTrim)
+'F.Intrinsic.String.WeakDecryption(V.Local.sTemp,V.Local.sTemp)
+'V.Local.sRemotePwd.Set(V.Local.sTemp)
+
+'V.Local.sTemp.Set(V.DataTable.dtSettings(0).RemotePort!FieldValTrim)
+'F.Intrinsic.String.WeakDecryption(V.Local.sTemp,V.Local.sTemp)
+'V.Local.sRemotePort.Set(V.Local.sTemp)
+
+'V.Local.sTemp.Set(V.DataTable.dtSettings(0).RemotePath!FieldValTrim)
+'F.Intrinsic.String.WeakDecryption(V.Local.sTemp,V.Local.sTemp)
+'V.Local.sRemotePath.Set(V.Local.sTemp)
+
+'V.Global.sDelFile.Set(V.DataTable.dtSettings(0).DEL_FILE!FieldValTrim)
+
+''SFTP logon credentials.
+'F.Communication.SFTP.SetProperty("SSHAcceptServerAuthentication","true")
+'F.Communication.SFTP.SetProperty("remoteHost",V.Local.sRemoteHost.Trim)
+'F.Communication.SFTP.SetProperty("User",V.Local.sRemoteUser.Trim)
+'F.Communication.SFTP.SetProperty("Password",V.Local.sRemotePwd.Trim)
+'F.Communication.SFTP.SetProperty("remotePort",V.Local.sRemotePort)
+'F.Communication.SFTP.Logon
+''File upload
+'F.Communication.SFTP.SetProperty("RemotePath",V.Local.sRemotePath)
+'F.Communication.SFTP.SetProperty("RemoteFile",V.Global.sFile)
+'F.Communication.SFTP.SetProperty("LocalFile",V.Global.sPath)
+'F.Communication.SFTP.SetProperty("transferMode",2)
+
+'F.Communication.SFTP.Upload
+
+'F.Intrinsic.Control.AddEventHandler("SFTPDirList","ListDir")
+
+'F.Communication.SFTP.ListDirectory
+
+'F.Communication.SFTP.Logoff
+
+'F.Data.Datatable.Close("dtPayCom")
+'F.Data.Datatable.Close("dtSettings")
+
+F.Intrinsic.Control.CallSub(ss_form1_unload)
+
+F.Intrinsic.Control.Label("PayComUPL_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.PayComUPL.End
+
+Program.Sub.ListDir.Start
+'TJS
+F.Intrinsic.Control.SetErrorHandler("ListDir_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Global.sDelFile.Trim,=,"Y")
+	F.Intrinsic.Control.If(V.Args.filename,=,V.Global.sFile)
+		F.Intrinsic.File.DeleteFile(V.Global.sPath)	
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Label("ListDir_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.ListDir.End
+
+program.sub.cmd_txtbegemp_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtbegemp_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.Browser(50,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.SS_Form1.txtBegEmp.Text(V.Local.sRet(0))
+	Gui.SS_Form1.txtEndEmp.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtbegemp_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_txtbegemp_click.End
+
+program.sub.cmd_txtendemp_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtendemp_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.Browser(50,"",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.SS_Form1.txtEndEmp.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtendemp_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_txtendemp_click.End
+
+program.sub.txtbegemp_lostfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtbegemp_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_Form1.txtEndEmp.Text(V.Screen.SS_Form1!txtBegEmp.Text)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtbegemp_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.txtbegemp_lostfocus.End
+
+program.sub.txtbegdept_gotfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtbegdept_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_Form1.txtBegDept.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtbegdept_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.txtbegdept_gotfocus.End
+
+program.sub.txtenddept_gotfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtenddept_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_Form1.txtEndDept.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtenddept_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.txtenddept_gotfocus.End
+
+program.sub.txtbegemp_gotfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtbegemp_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_Form1.txtBegEmp.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtbegemp_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.txtbegemp_gotfocus.End
+
+program.sub.txtendemp_gotfocus.start
+F.Intrinsic.Control.SetErrorHandler("txtendemp_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_Form1.txtEndEmp.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtendemp_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.txtendemp_gotfocus.End
+
+program.sub.cmd_lvwempadd_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvwempadd_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+
+F.Intrinsic.String.Concat("Select EMPLOYEE from V_EMPLOYEE_MSTR where EMPLOYEE = '",V.Screen.SS_Form1!txtBegEmp.Text,"'",V.Local.sSql)
+F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+	F.ODBC.con!rst.Close
+	F.Intrinsic.UI.Msgbox("Invalid beginning employee!","Invalid Employee")
+F.Intrinsic.Control.Else
+	F.ODBC.con!rst.Close
+	F.Intrinsic.String.Concat("Select EMPLOYEE from V_EMPLOYEE_MSTR where EMPLOYEE = '",V.Screen.SS_Form1!txtEndEmp.Text,"'",V.Local.sSql)
+	F.ODBC.Connection!con.OpenRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+		F.ODBC.con!rst.Close
+		F.Intrinsic.UI.Msgbox("Invalid ending employee!","Invalid Employee")
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Close
+		F.Intrinsic.Math.Add(V.Global.iKey,1,V.Global.iKey)
+		Gui.SS_Form1.lvwEmp.AddListItem(V.Global.iKey,V.Screen.SS_Form1!txtBegEmp.Text)
+		Gui.SS_Form1.lvwEmp.SetListItemSubItemText(V.Global.iKey,1,V.Screen.SS_Form1!txtEndEmp.Text)
+		Gui.SS_Form1.txtBegEmp.Text("")
+		Gui.SS_Form1.txtEndEmp.Text("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvwempadd_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_lvwempadd_click.End
+
+program.sub.chkemp_click.start
+F.Intrinsic.Control.SetErrorHandler("chkemp_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chkEmp.Value,=,1)
+	Gui.SS_Form1.txtBegEmp.Enabled(False)
+	Gui.SS_Form1.cmd_txtBegEmp.Enabled(False)
+	Gui.SS_Form1.txtEndEmp.Enabled(False)
+	Gui.SS_Form1.cmd_txtEndEmp.Enabled(False)
+	Gui.SS_Form1.txtBegEmp.Text("")
+	Gui.SS_Form1.txtEndEmp.Text("")
+	Gui.SS_Form1.cmd_lvwEmpAdd.Enabled(False)
+	Gui.SS_Form1.cmd_lvwEmpClear.Enabled(False)
+	Gui.SS_Form1.cmd_lvwEmpDelete.Enabled(False)
+	Gui.SS_Form1.lvwEmp.Enabled(False)
+F.Intrinsic.Control.Else
+	Gui.SS_Form1.txtBegEmp.Enabled(True)
+	Gui.SS_Form1.cmd_txtBegEmp.Enabled(True)
+	Gui.SS_Form1.txtEndEmp.Enabled(True)
+	Gui.SS_Form1.cmd_txtEndEmp.Enabled(True)
+	Gui.SS_Form1.cmd_lvwEmpAdd.Enabled(True)
+	Gui.SS_Form1.cmd_lvwEmpClear.Enabled(True)
+	Gui.SS_Form1.cmd_lvwEmpDelete.Enabled(True)
+	Gui.SS_Form1.lvwEmp.Enabled(True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("chkemp_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.chkemp_click.End
+
+program.sub.cmd_lvwempdelete_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvwempdelete_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iKey.Declare(Long)
+
+V.Local.iKey.Set(V.Screen.SS_Form1!lvwEmp.SelectedItemKey)
+Gui.SS_Form1.lvwEmp.RemoveItem(V.Local.iKey)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvwempdelete_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_lvwempdelete_click.End
+
+program.sub.cmd_lvwempclear_click.start
+F.Intrinsic.Control.SetErrorHandler("cmd_lvwempclear_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.SS_Form1.lvwEmp.ClearItems
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_lvwempclear_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+program.sub.cmd_lvwempclear_click.End
+
+Program.Sub.chkPayCom_Click.Start
+'TJS
+F.Intrinsic.Control.SetErrorHandler("chkPayCom_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.SS_Form1!chkPayCom.Value,=,1)
+	Gui.SS_Form1.chkDept.Value(1)
+	Gui.SS_Form1.chkEmp.Value(1)
+F.Intrinsic.Control.Else
+	Gui.SS_Form1.chkDept.Value(0)
+	Gui.SS_Form1.chkEmp.Value(0)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Label("chkPayCom_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.chkPayCom_Click.End
+
+Program.Sub.SetIcon.Start
+F.Intrinsic.Control.SetErrorHandler("SetIcon_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sError.Declare(String)
+V.Local.sForm.Declare
+V.Local.bExists.Declare
+V.Local.sIcon.Declare
+V.Local.iCounter.Declare
+
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,v.Local.sIcon)
+F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists.Not)
+    F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.Local.sIcon)
+    F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+    F.Intrinsic.Control.If(V.Local.bExists.Not)
+        F.Intrinsic.Control.ExitSub
+    F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.GetFormList(V.Local.sForm)
+F.Intrinsic.String.Split(V.Local.sForm, "*!*", V.Local.sForm)
+
+F.Intrinsic.Control.For(V.Local.iCounter, 0, V.Local.sForm.UBound, 1)
+    Gui.[V.Local.sForm(V.Local.iCounter)]..Icon(V.Local.sIcon)
+F.Intrinsic.Control.Next(V.Local.iCounter)
+
+F.Intrinsic.Control.Label("SetIcon_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_Labor_Timecard_Register.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+Program.Sub.SetIcon.End
+
+program.sub.ss_form1_unload.start
+F.ODBC.Connection!con.Close
+F.Intrinsic.Control.End
+program.sub.ss_form1_unload.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$12:00:00 AM$}$False
+${$5$}$2.0.0.0$}$2
+${$6$}$tsmith$}$20210825130712873$}$xqPbj9atw05FglvzeFsZ9cqXP+qvG6tXvzorxMdmpshkoHVUmmlxrV6iJ5CyhW6X+KJC9mmqlHA=
+Program.Sub.Comments.End
