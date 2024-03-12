@@ -1,0 +1,487 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.fmMX..Create(BaseForm)
+Gui.fmMX..Caption("Paycom SFTP and Payroll Rate Maintenance")
+Gui.fmMX..Size(10200,4455)
+Gui.fmMX..MinX(0)
+Gui.fmMX..MinY(0)
+Gui.fmMX..Position(0,0)
+Gui.fmMX..BackColor(16777200)
+Gui.fmMX..MousePointer(0)
+Gui.fmMX..Event(UnLoad,fmMX_UnLoad)
+Gui.fmMX..AlwaysOnTop(False)
+Gui.fmMX..FontName("Arial")
+Gui.fmMX..FontSize(8)
+Gui.fmMX..ControlBox(True)
+Gui.fmMX..MaxButton(True)
+Gui.fmMX..MinButton(True)
+Gui.fmMX..Moveable(True)
+Gui.fmMX..Sizeable(True)
+Gui.fmMX..ShowInTaskBar(True)
+Gui.fmMX..TitleBar(True)
+Gui.fmMX.txtHost.Create(TextBox,"",True,1965,300,0,105,450,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtUser.Create(TextBox,"",True,1965,300,0,2100,450,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtPwd.Create(TextBox,"",True,1965,300,0,4095,450,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtPort.Create(TextBox,"",True,1965,300,0,6090,450,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtPath.Create(TextBox,"",True,1965,300,0,8085,450,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.lblHost.Create(Label,"Host",True,1935,255,0,105,180,True,0,"Arial",8,16777200,0,0)
+Gui.fmMX.lblHost.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblHost.BorderStyle(0)
+Gui.fmMX.lblUser.Create(Label,"User",True,1935,255,0,2100,180,True,0,"Arial",8,16777200,0,0)
+Gui.fmMX.lblUser.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblUser.BorderStyle(0)
+Gui.fmMX.lblPwd.Create(Label,"Password",True,1935,255,0,4095,180,True,0,"Arial",8,16777200,0,0)
+Gui.fmMX.lblPwd.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblPwd.BorderStyle(0)
+Gui.fmMX.lblPort.Create(Label,"Port",True,1935,255,0,6090,180,True,0,"Arial",8,16777200,0,0)
+Gui.fmMX.lblPort.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblPort.BorderStyle(0)
+Gui.fmMX.lblPath.Create(Label,"Path",True,1935,255,0,8085,180,True,0,"Arial",8,16777200,0,0)
+Gui.fmMX.lblPath.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblPath.BorderStyle(0)
+Gui.fmMX.cmdSave.Create(Button)
+Gui.fmMX.cmdSave.Size(1710,375)
+Gui.fmMX.cmdSave.Position(8340,870)
+Gui.fmMX.cmdSave.Caption("Save SFTP Data")
+Gui.fmMX.cmdSave.Event(Click,cmdSave_Click)
+Gui.fmMX.cmdSave.BackColor(16777200)
+Gui.fmMX.cmdSave.Enabled(True)
+Gui.fmMX.cmdSave.Visible(True)
+Gui.fmMX.cmdSave.Zorder(0)
+Gui.fmMX.cmdSave.FontName("Arial")
+Gui.fmMX.cmdSave.FontSize(8)
+Gui.fmMX.cmdSave.FontStyle(True,False,False,False,False)
+Gui.fmMX.chkDelFile.Create(CheckBox)
+Gui.fmMX.chkDelFile.Size(2055,300)
+Gui.fmMX.chkDelFile.Position(105,870)
+Gui.fmMX.chkDelFile.Caption("Delete Local Files?")
+Gui.fmMX.chkDelFile.FontStyle(True,False,False,False,False)
+Gui.fmMX.chkDelFile.BackColor(16777200)
+Gui.fmMX.chkDelFile.Enabled(True)
+Gui.fmMX.chkDelFile.Visible(True)
+Gui.fmMX.chkDelFile.Zorder(0)
+Gui.fmMX.chkDelFile.FontName("Arial")
+Gui.fmMX.chkDelFile.FontSize(8)
+Gui.fmMX.frameRate.Create(Frame)
+Gui.fmMX.frameRate.Size(9915,2505)
+Gui.fmMX.frameRate.Position(105,1395)
+Gui.fmMX.frameRate.BackColor(16777184)
+Gui.fmMX.frameRate.BorderStyle(0)
+Gui.fmMX.frameRate.Enabled(True)
+Gui.fmMX.frameRate.Visible(True)
+Gui.fmMX.frameRate.Zorder(0)
+Gui.fmMX.frameRate.Caption("")
+Gui.fmMX.frameRate.FontName("Arial")
+Gui.fmMX.frameRate.FontSize(8)
+Gui.fmMX.lblDiffExempt.Create(Label,"Depts Excluded (CSV)",True,1770,210,0,8040,90,True,0,"Arial",8,16777184,1,0)
+Gui.fmMX.lblDiffExempt.BorderStyle(0)
+Gui.fmMX.lblDiffExempt.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblDiffExempt.Parent("frameRate")
+Gui.fmMX.txtDiffExempt.Create(TextboxM)
+Gui.fmMX.txtDiffExempt.Enabled(True)
+Gui.fmMX.txtDiffExempt.Visible(True)
+Gui.fmMX.txtDiffExempt.Zorder(0)
+Gui.fmMX.txtDiffExempt.Size(1770,1260)
+Gui.fmMX.txtDiffExempt.Position(8040,300)
+Gui.fmMX.txtDiffExempt.FontName("Arial")
+Gui.fmMX.txtDiffExempt.FontSize(8)
+Gui.fmMX.txtDiffExempt.Parent("frameRate")
+Gui.fmMX.txtHelpTab.Create(TextBox,"",False,1215,300,0,2280,870,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtHelpTab.Parent("frameRate")
+Gui.fmMX.txtHelpTab.NumericOnly(1)
+Gui.fmMX.txtHelpMach.Create(TextBox,"",False,1215,300,0,780,870,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtHelpMach.Parent("frameRate")
+Gui.fmMX.txtHelpMach.NumericOnly(1)
+Gui.fmMX.lblHelper.Create(Label,"Helper",False,555,210,0,105,915,True,0,"Arial",8,16777184,1,0)
+Gui.fmMX.lblHelper.Parent("frameRate")
+Gui.fmMX.lblHelper.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblHelper.BorderStyle(0)
+Gui.fmMX.lblCaster.Create(Label,"Caster",False,570,210,0,105,360,True,0,"Arial",8,16777184,1,0)
+Gui.fmMX.lblCaster.Parent("frameRate")
+Gui.fmMX.lblCaster.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblCaster.BorderStyle(0)
+Gui.fmMX.txtCastMach.Create(TextBox,"",False,1215,300,0,780,315,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtCastMach.Parent("frameRate")
+Gui.fmMX.txtCastMach.NumericOnly(1)
+Gui.fmMX.lblMach.Create(Label,"Machine Rate",False,1095,210,0,840,120,True,0,"Arial",8,16777184,1,0)
+Gui.fmMX.lblMach.Parent("frameRate")
+Gui.fmMX.lblMach.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblMach.BorderStyle(0)
+Gui.fmMX.lblTable.Create(Label,"Table Rate",False,855,210,0,2460,120,True,0,"Arial",8,16777184,1,0)
+Gui.fmMX.lblTable.Parent("frameRate")
+Gui.fmMX.lblTable.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblTable.BorderStyle(0)
+Gui.fmMX.txtCastTab.Create(TextBox,"",False,1215,300,0,2280,315,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtCastTab.Parent("frameRate")
+Gui.fmMX.txtCastTab.NumericOnly(1)
+Gui.fmMX.cmdRateSave.Create(Button)
+Gui.fmMX.cmdRateSave.Size(2115,375)
+Gui.fmMX.cmdRateSave.Position(7695,1830)
+Gui.fmMX.cmdRateSave.Parent("frameRate")
+Gui.fmMX.cmdRateSave.Caption("Save Data")
+Gui.fmMX.cmdRateSave.BackColor(16777184)
+Gui.fmMX.cmdRateSave.FontStyle(True,False,False,False,False)
+Gui.fmMX.cmdRateSave.DefaultValue("")
+Gui.fmMX.cmdRateSave.Event(Click,cmdRateSave_Click)
+Gui.fmMX.cmdRateSave.Enabled(True)
+Gui.fmMX.cmdRateSave.Visible(True)
+Gui.fmMX.cmdRateSave.Zorder(0)
+Gui.fmMX.cmdRateSave.FontName("Arial")
+Gui.fmMX.cmdRateSave.FontSize(8)
+Gui.fmMX.dtpShiftDiffDate.Create(DatePicker)
+Gui.fmMX.dtpShiftDiffDate.Enabled(True)
+Gui.fmMX.dtpShiftDiffDate.Visible(True)
+Gui.fmMX.dtpShiftDiffDate.Zorder(0)
+Gui.fmMX.dtpShiftDiffDate.Size(1215,300)
+Gui.fmMX.dtpShiftDiffDate.Position(6180,315)
+Gui.fmMX.dtpShiftDiffDate.CheckBox(False)
+Gui.fmMX.dtpShiftDiffDate.FontName("Arial")
+Gui.fmMX.dtpShiftDiffDate.FontSize(8)
+Gui.fmMX.dtpShiftDiffDate.Parent("frameRate")
+Gui.fmMX.lblShiftDiffDate.Create(Label,"Shift Diff Effective Date",True,1845,210,0,5850,90,True,0,"Arial",8,16777184,1,0)
+Gui.fmMX.lblShiftDiffDate.BorderStyle(0)
+Gui.fmMX.lblShiftDiffDate.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblShiftDiffDate.Parent("frameRate")
+Gui.fmMX.txtShiftDiff.Create(TextBox,"",True,1215,300,0,3810,315,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtShiftDiff.NumericOnly(1)
+Gui.fmMX.txtShiftDiff.Parent("frameRate")
+Gui.fmMX.lblShiftDiff.Create(Label,"Shift Differential Rate",True,1725,210,0,3705,120,True,0,"Arial",8,16777184,1,0)
+Gui.fmMX.lblShiftDiff.BorderStyle(0)
+Gui.fmMX.lblShiftDiff.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblShiftDiff.Parent("frameRate")
+Gui.fmMX.txtPrevSftDiff.Create(TextBox,"",True,1215,300,0,3810,945,True,0,"Arial",8,-2147483643,1)
+Gui.fmMX.txtPrevSftDiff.Parent("frameRate")
+Gui.fmMX.txtPrevSftDiff.NumericOnly(1)
+Gui.fmMX.lblPrevSftDiff.Create(Label,"Previous Shift Diff Rate",True,1875,210,0,3705,720,True,0,"Arial",8,16777184,1,0)
+Gui.fmMX.lblPrevSftDiff.BorderStyle(0)
+Gui.fmMX.lblPrevSftDiff.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblPrevSftDiff.Parent("frameRate")
+Gui.fmMX.txtECtoR.Create(TextboxM)
+Gui.fmMX.txtECtoR.Enabled(True)
+Gui.fmMX.txtECtoR.Visible(True)
+Gui.fmMX.txtECtoR.Zorder(0)
+Gui.fmMX.txtECtoR.Size(5955,810)
+Gui.fmMX.txtECtoR.Position(105,1605)
+Gui.fmMX.txtECtoR.FontName("Arial")
+Gui.fmMX.txtECtoR.FontSize(8)
+Gui.fmMX.txtECtoR.Parent("frameRate")
+Gui.fmMX.lblECtoR.Create(Label,"Earnings Codes to Convert to Regular (CSV)",True,3120,210,0,105,1275,True,0,"Arial",8,16777184,1,0)
+Gui.fmMX.lblECtoR.BorderStyle(0)
+Gui.fmMX.lblECtoR.FontStyle(True,False,False,False,False)
+Gui.fmMX.lblECtoR.Parent("frameRate")
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+'TJS, August 2021
+'Project updated to remove ladel premium fields - these are now brought in as direct workcenters.
+
+	'TJS, April 2021
+	'PIAD
+	'This program provides a means of storing the SFTP credentials securely for Paycom.
+F.Intrinsic.Control.CallSub(SetIcon)
+F.Intrinsic.Control.CallSub(ConData)
+F.Intrinsic.Control.CallSub(RateData)
+
+Gui.fmMX..Show
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.ConData.Start
+F.Intrinsic.Control.Try
+V.Local.sTemp.Declare
+V.Local.baValue.Declare(ByteArray)
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+F.Data.Datatable.CreateFromSQL("dtSettings","conts","Select * from GCG_4543_SETTINGS where REC_ID = '1'")
+
+F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.If(V.DataTable.dtSettings.RowCount,=,0)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+V.Local.sTemp.Set(V.DataTable.dtSettings(0).RemoteHost!FieldValTrim)
+F.Intrinsic.String.WeakDecryption(V.Local.sTemp,V.Local.sTemp)
+Gui.fmMX.txtHost.Text(V.Local.sTemp)
+
+V.Local.sTemp.Set(V.DataTable.dtSettings(0).RemoteUser!FieldValTrim)
+F.Intrinsic.String.WeakDecryption(V.Local.sTemp,V.Local.sTemp)
+Gui.fmMX.txtUser.Text(V.Local.sTemp)
+
+V.Local.sTemp.Set(V.DataTable.dtSettings(0).RemotePassword!FieldValTrim)
+F.Intrinsic.String.WeakDecryption(V.Local.sTemp,V.Local.sTemp)
+Gui.fmMX.txtPwd.Text(V.Local.sTemp)
+
+V.Local.sTemp.Set(V.DataTable.dtSettings(0).RemotePort!FieldValTrim)
+F.Intrinsic.String.WeakDecryption(V.Local.sTemp,V.Local.sTemp)
+Gui.fmMX.txtPort.Text(V.Local.sTemp)
+
+V.Local.sTemp.Set(V.DataTable.dtSettings(0).RemotePath!FieldValTrim)
+F.Intrinsic.String.WeakDecryption(V.Local.sTemp,V.Local.sTemp)
+Gui.fmMX.txtPath.Text(V.Local.sTemp)
+
+V.Local.sTemp.Set(V.DataTable.dtSettings(0).DEL_FILE!FieldValTrim)
+F.Intrinsic.Control.If(V.Local.sTemp.Trim,=,"Y")
+	Gui.fmMX.chkDelFile.Value(True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.ConData.End
+
+Program.Sub.RateData.Start
+F.Intrinsic.Control.Try
+V.Local.sSQL.Declare
+V.Local.sRegString.Declare
+V.Local.sExcluded.Declare
+V.Local.sECtoR.Declare
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+V.Local.sSQL.Set("Select MACH_RATE,TABLE_RATE from GCG_4543_MX where TYPE = 'CASTER'")
+
+F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+F.Intrinsic.String.Split(V.Local.sSQL,"*!*",V.Local.sSQL)
+
+Gui.fmMX.txtCastMach.Text(V.Local.sSQL(0))
+Gui.fmMX.txtCastTab.Text(V.Local.sSQL(1))
+
+V.Local.sSQL.Set("Select MACH_RATE,TABLE_RATE from GCG_4543_MX where TYPE = 'HELPER'")
+
+F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+F.Intrinsic.String.Split(V.Local.sSQL,"*!*",V.Local.sSQL)
+
+Gui.fmMX.txtHelpMach.Text(V.Local.sSQL(0))
+Gui.fmMX.txtHelpTab.Text(V.Local.sSQL(1))
+
+F.Global.Registry.ReadValue(-4543,V.Caller.CompanyCode,"GCG_4543_MX.g2u",4543,1000,6,"",V.Local.sRegString)
+
+F.Intrinsic.Control.If(V.Local.sRegString.Trim,<>,"")
+	F.Intrinsic.String.Split(V.Local.sRegString,"*!*",V.Local.sRegString)
+	Gui.fmMX.txtShiftDiff.Text(V.Local.sRegString(0))
+	Gui.fmMX.txtPrevSftDiff.Text(V.Local.sRegString(1))
+	Gui.fmMX.dtpShiftDiffDate.Value(V.Local.sRegString(2))
+F.Intrinsic.Control.EndIf
+
+F.Global.Registry.ReadValue(-4543,V.Caller.CompanyCode,"GCG_4543_MX.g2u",4543,2000,6,"",V.Local.sExcluded)
+
+F.Intrinsic.Control.If(V.Local.sExcluded.Trim,<>,"")
+	F.Intrinsic.String.Replace(V.Local.sExcluded,"*!*",",",V.Local.sExcluded)
+	Gui.fmMX.txtDiffExempt.Text(V.Local.sExcluded)
+F.Intrinsic.Control.EndIf
+
+F.Global.Registry.ReadValue(-4543,V.Caller.CompanyCode,"GCG_4543_MX.g2u",4543,3000,6,"",V.Local.sECtoR)
+
+F.Intrinsic.Control.If(V.Local.sECtoR.Trim,<>,"")
+	F.Intrinsic.String.Replace(V.Local.sECtoR,"*!*",",",V.Local.sECtoR)
+	Gui.fmMX.txtECtoR.Text(V.Local.sECtoR)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.RateData.End
+
+Program.Sub.cmdSave_Click.Start
+F.Intrinsic.Control.Try
+V.Local.sHost.Declare
+V.Local.sUser.Declare
+V.Local.sPWD.Declare
+V.Local.sPort.Declare
+V.Local.sPath.Declare
+V.Local.sSQL.Declare
+V.Local.sTemp.Declare
+V.Local.iSize.Declare
+V.Local.baValue.Declare(ByteArray)
+V.Local.bDelFile.Declare
+V.Local.sDelFile.Declare
+
+V.Local.sTemp.Set(V.Screen.fmMX!txtHost.Text.Trim)
+F.Intrinsic.Control.If(V.Local.sTemp.Trim,<>,"")
+	F.Intrinsic.String.WeakEncryption(V.Local.sTemp.Trim,V.Local.sTemp)
+F.Intrinsic.Control.EndIf
+V.Local.sHost.Set(V.Local.sTemp.Trim)
+
+V.Local.sTemp.Set(V.Screen.fmMX!txtUser.Text.Trim)
+F.Intrinsic.Control.If(V.Local.sTemp.Trim,<>,"")
+	F.Intrinsic.String.WeakEncryption(V.Local.sTemp.Trim,V.Local.sTemp)
+F.Intrinsic.Control.EndIf
+V.Local.sUser.Set(V.Local.sTemp.Trim)
+
+V.Local.sTemp.Set(V.Screen.fmMX!txtPwd.Text.Trim)
+F.Intrinsic.Control.If(V.Local.sTemp.Trim,<>,"")
+	F.Intrinsic.String.WeakEncryption(V.Local.sTemp.Trim,V.Local.sTemp)
+F.Intrinsic.Control.EndIf
+V.Local.sPWD.Set(V.Local.sTemp.Trim)
+
+V.Local.sTemp.Set(V.Screen.fmMX!txtPort.Text.Trim)
+F.Intrinsic.Control.If(V.Local.sTemp.Trim,<>,"")
+	F.Intrinsic.String.WeakEncryption(V.Local.sTemp.Trim,V.Local.sTemp)
+F.Intrinsic.Control.EndIf
+V.Local.sPort.Set(V.Local.sTemp.Trim)
+
+V.Local.sTemp.Set(V.Screen.fmMX!txtPath.Text.Trim)
+F.Intrinsic.Control.If(V.Local.sTemp.Trim,<>,"")
+	F.Intrinsic.String.WeakEncryption(V.Local.sTemp.Trim,V.Local.sTemp)
+F.Intrinsic.Control.EndIf
+V.Local.sPath.Set(V.Local.sTemp.Trim)
+
+V.Local.bDelFile.Set(V.Screen.fmMX!chkDelFile.Value)
+F.Intrinsic.Control.If(V.Local.bDelFile,=,True)
+	V.Local.sDelFile.Set("Y")
+F.Intrinsic.Control.Else
+	V.Local.sDelFile.Set("")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+F.ODBC.Connection!conts.ExecuteAndReturn("Select REC_ID from GCG_4543_SETTINGS",V.Local.sSQL)
+
+F.Intrinsic.Control.If(V.Local.sSQL.Trim,=,"")
+	F.ODBC.Connection!conts.Execute("Delete GCG_4543_SETTINGS")
+	F.Intrinsic.String.Build("Insert into GCG_4543_SETTINGS (REC_ID,RemoteHost,RemoteUser,RemotePassword,RemotePort,RemotePath,DEL_FILE) values ('1','{0}','{1}','{2}','{3}','{4}','{5}')",V.Local.sHost,V.Local.sUser,V.Local.sPWD,V.Local.sPort,V.Local.sPath,V.Local.sDelFile.Trim,V.Local.sSQL)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("Update GCG_4543_SETTINGS set RemoteHost = '{0}',RemoteUser = '{1}',RemotePassword = '{2}',RemotePort = '{3}',RemotePath = '{4}',DEL_FILE = '{5}' where REC_ID = '1';",V.Local.sHost,V.Local.sUser,V.Local.sPWD,V.Local.sPort,V.Local.sPath,V.Local.sDelFile,V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+
+F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.cmdRateSave_Click.Start
+F.Intrinsic.Control.Try
+V.Local.fCastMach.Declare
+V.Local.fHelpMach.Declare
+V.Local.fCastTab.Declare
+V.Local.fHelpTab.Declare
+V.Local.sSQL.Declare
+V.Local.sSftDiffRate.Declare
+V.Local.sPrevSftDiffRate.Declare
+V.Local.sSftDiffEffDate.Declare
+V.Local.sRegString.Declare
+V.Local.sExcluded.Declare
+V.Local.sECtoR.Declare
+
+V.Local.sExcluded.Set(V.Screen.fmMX!txtDiffExempt.Text)
+V.Local.sECtoR.Set(V.Screen.fmMX!txtECtoR.Text)
+
+F.Intrinsic.String.Replace(V.Local.sExcluded,",","*!*",V.Local.sExcluded)
+F.Intrinsic.String.Replace(V.Local.sECtoR,",","*!*",V.Local.sECtoR)
+
+F.Global.Registry.AddValue(-4543,V.Caller.CompanyCode,"GCG_4543_MX.g2u",4543,2000,False,"",False,-999,-999,1/1/1980,12:00:00 AM,V.Local.sExcluded)
+F.Global.Registry.AddValue(-4543,V.Caller.CompanyCode,"GCG_4543_MX.g2u",4543,3000,False,"",False,-999,-999,1/1/1980,12:00:00 AM,V.Local.sECtoR)
+
+V.Local.sSftDiffRate.Set(V.Screen.fmMX!txtShiftDiff.Text)
+V.Local.sPrevSftDiffRate.Set(V.Screen.fmMX!txtPrevSftDiff.Text)
+V.Local.sSftDiffEffDate.Set(V.Screen.fmMX!dtpShiftDiffDate.Value)
+
+F.Intrinsic.String.Format(V.Local.sSftDiffRate,"#.00",V.Local.sSftDiffRate)
+F.Intrinsic.String.Format(V.Local.sPrevSftDiffRate,"#.00",V.Local.sPrevSftDiffRate)
+
+F.Intrinsic.String.Format(V.Local.sSftDiffEffDate,"YYYY-MM-DD",V.Local.sSftDiffEffDate)
+
+F.Intrinsic.String.Build("{0}*!*{1}*!*{2}",V.Local.sSftDiffRate,v.Local.sPrevSftDiffRate,V.Local.sSftDiffEffDate,V.Local.sRegString)
+
+F.Global.Registry.AddValue(-4543,V.Caller.CompanyCode,"GCG_4543_MX.g2u",4543,1000,False,"",False,-999,-999,1/1/1980,12:00:00 AM,V.Local.sRegString)
+
+'TJS - Deprecated - VT 27 Aug 2021
+'V.Local.fCastMach.Set(V.Screen.fmMX!txtCastMach.Text)
+'V.Local.fHelpMach.Set(V.Screen.fmMX!txtHelpMach.Text)
+'V.Local.fCastTab.Set(V.Screen.fmMX!txtCastTab.Text)
+'V.Local.fHelpTab.Set(V.Screen.fmMX!txtHelpTab.Text)
+
+'F.ODBC.Connection!conts.OpenCompanyConnection
+
+'V.Local.sSQL.Set("Select * from GCG_4543_MX where TYPE = 'CASTER'")
+
+'F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+
+'F.Intrinsic.Control.If(V.Local.sSQL.Trim,=,"")
+'	F.Intrinsic.String.Build("Insert into GCG_4543_MX (TYPE,MACH_RATE,TABLE_RATE) values ('CASTER','{0}','{1}')",V.Local.fCastMach,V.Local.fCastTab,V.Local.sSQL)
+'F.Intrinsic.Control.Else
+'	F.Intrinsic.String.Build("Update GCG_4543_MX set MACH_RATE = '{0}', TABLE_RATE = '{1}' where TYPE = 'CASTER'",V.Local.fCastMach,V.Local.fCastTab,V.Local.sSQL)
+'F.Intrinsic.Control.EndIf
+
+'F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+
+'V.Local.sSQL.Set("Select * from GCG_4543_MX where TYPE = 'HELPER'")
+
+'F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+
+'F.Intrinsic.Control.If(V.Local.sSQL.Trim,=,"")
+'	F.Intrinsic.String.Build("Insert into GCG_4543_MX (TYPE,MACH_RATE,TABLE_RATE) values ('HELPER','{0}','{1}')",V.Local.fHelpMach,V.Local.fHelpTab,V.Local.sSQL)
+'F.Intrinsic.Control.Else
+'	F.Intrinsic.String.Build("Update GCG_4543_MX set MACH_RATE = '{0}', TABLE_RATE = '{1}' where TYPE = 'HELPER'",V.Local.fHelpMach,V.Local.fHelpTab,V.Local.sSQL)
+'F.Intrinsic.Control.EndIf
+
+'F.ODBC.Connection!conts.Execute(V.Local.sSQL)
+
+'F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRateSave_Click.End
+
+Program.Sub.SetIcon.Start
+F.Intrinsic.Control.Try
+V.Local.sForm.Declare
+V.Local.bExists.Declare
+V.Local.sIcon.Declare
+V.Local.iCounter.Declare
+
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,v.Local.sIcon)
+F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists.Not)
+    F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.Local.sIcon)
+    F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+    F.Intrinsic.Control.If(V.Local.bExists.Not)
+        F.Intrinsic.Control.ExitSub
+    F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.GetFormList(V.Local.sForm)
+F.Intrinsic.String.Split(V.Local.sForm, "*!*", V.Local.sForm)
+
+F.Intrinsic.Control.For(V.Local.iCounter, 0, V.Local.sForm.UBound, 1)
+    Gui.[V.Local.sForm(V.Local.iCounter)]..Icon(V.Local.sIcon)
+F.Intrinsic.Control.Next(V.Local.iCounter)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.CallSub(Error,"SubRoutine",V.Ambient.CurrentSubroutine,"eNumber",V.Ambient.ErrorNumber,"eDescription",V.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetIcon.End
+
+Program.Sub.fmMX_UnLoad.Start
+F.Intrinsic.Control.End
+Program.Sub.fmMX_UnLoad.End
+
+Program.Sub.Error.Start
+V.Local.sError.Declare
+V.Local.iRet.Declare
+V.Local.sSep.Declare
+
+F.Intrinsic.String.Build("-------------------------------------------------------------------------------------",,V.Local.sSep)
+F.Intrinsic.String.Build("({5}-{6}){0}{7}{0}Project: {4}{0}{7}{0}Sub: {1}{0}Error: {2}, {3}", V.Ambient.NewLine, V.Args.SubRoutine, V.Args.eNumber, V.Args.eDescription,V.Caller.ScriptFile,V.Ambient.Date, V.Ambient.Time,V.Local.sSep,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError,"Error",V.Local.iRet)
+Program.Sub.Error.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$tsmith$}$20210825130508585$}$xqPbj9atw05FglvzeFsZ9cqXP+qvG6tXvzorxMdmpshkoHVUmmlxrTg9AHF9/L4Jbw7YErrnXvQ=
+Program.Sub.Comments.End
