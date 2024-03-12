@@ -1,0 +1,62 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Created by skt on 06/05/2014
+'For PIAD
+'This script will launch from the preDelete Hook 32322
+'The purpose is to remove entries in the ATG_Timecard_Shift Table when information was entered wrong.
+'It will take the charge date, employee #, Job #, Suffix #, Sequence, and Workcenter from the edit work order detail screen when the delete button is clicked
+'and perform a SQL Query in the ATG_Timecard_Shift Table to remove the timecard record.
+
+V.Local.sDate.Declare(String)
+V.Local.sEmployee.Declare(String)
+V.Local.sJob.Declare(String)
+V.Local.sSuffix.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sWorkCenter.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.dDate.Declare(Date)
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+'Set the passed data to the appropriate variables.
+V.Local.sDate.Set(V.Passed.000078)
+V.Local.sEmployee.Set(V.Passed.000079)
+V.Local.sJob.Set(V.Passed.000001)
+V.Local.sSuffix.Set(V.Passed.000082)
+V.Local.sSeq.Set(V.Passed.000002)
+V.Local.sWorkCenter.Set(V.Passed.000003)
+'Convert Date string to correct date format and save in date variable
+F.Intrinsic.Date.ConvertDString(V.Local.sDate,"MM/DD/YYYY",V.Local.dDate)
+'Pad the Seq variable so it will have leading 0's
+F.Intrinsic.String.LPad(V.Local.sSeq,0,6,V.Local.sSeq)
+'Set SQL Query
+F.Intrinsic.String.Concat("Select * From ATG_4543_Timcrd_Shft where Charge_Date = '",V.Local.dDate.PervasiveDate,"' and Work_Order = '",V.Local.sJob.Trim,"' and Suffix = '",V.Local.sSuffix.Trim,"' and Sequence = '",V.Local.sSeq.Trim,"' and Workcenter = '",V.Local.sWorkCenter.Trim,"' and Employee = '",V.Local.sEmployee.Trim,"'",V.Local.sSql)
+'Open connection to the Record Set
+F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sSql)
+F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,!=,True)
+	F.ODBC.conx!rst.Delete
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("There is no corresponding Manual Timecard Entry!","Missing Timecard Entry")
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rst.Close
+
+F.Intrinsic.Control.CallSub(Unload)
+
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+Program.Sub.Comments.Start
+${$0$}$GCG_Timecard_Delete$}$SKT$}$6/5/2014
+Program.Sub.Comments.End
+
