@@ -1,0 +1,2025 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_TimeCard..create(BaseForm)
+Gui.F_TimeCard..caption("Manual Time Card Rate Enabled")
+Gui.F_TimeCard..size(17385,6555)
+Gui.F_TimeCard..position(0,0)
+Gui.F_TimeCard..event(UnLoad,ss_form1_unload)
+Gui.F_TimeCard..forecolor(0)
+Gui.F_TimeCard..BackColor(-2147483633)
+Gui.F_TimeCard..maxbutton(False)
+Gui.F_TimeCard..minbutton(False)
+Gui.F_TimeCard..mousepointer(0)
+Gui.F_TimeCard..sizeable(False)
+Gui.F_TimeCard..MinX(0)
+Gui.F_TimeCard..MinY(0)
+Gui.F_TimeCard..AlwaysOnTop(False)
+Gui.F_TimeCard..FontName("Tahoma")
+Gui.F_TimeCard..FontSize(8.25)
+Gui.F_TimeCard..ControlBox(True)
+Gui.F_TimeCard..Moveable(True)
+Gui.F_TimeCard..ShowInTaskBar(True)
+Gui.F_TimeCard..TitleBar(True)
+Gui.F_TimeCard.lbl_dtpCharge.create(label,"Charge Date",True,1800,200,1,100,135,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lbl_dtpCharge.BorderStyle(0)
+Gui.F_TimeCard.dtpCharge.create(datepicker)
+Gui.F_TimeCard.dtpCharge.size(1800,345)
+Gui.F_TimeCard.dtpCharge.position(100,335)
+Gui.F_TimeCard.dtpCharge.tabstop(True)
+Gui.F_TimeCard.dtpCharge.tabindex(1)
+Gui.F_TimeCard.dtpCharge.Enabled(True)
+Gui.F_TimeCard.dtpCharge.Visible(True)
+Gui.F_TimeCard.dtpCharge.Zorder(0)
+Gui.F_TimeCard.dtpCharge.CheckBox(False)
+Gui.F_TimeCard.dtpCharge.FontName("Tahoma")
+Gui.F_TimeCard.dtpCharge.FontSize(8.25)
+Gui.F_TimeCard.lbl_txtEmpID.create(label,"Employee",True,1800,200,1,1965,135,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lbl_txtEmpID.BorderStyle(0)
+Gui.F_TimeCard.txtEmpID.create(textbox,"",True,1140,330,0,1985,335,True,0,"Arial",8,16777215,1)
+Gui.F_TimeCard.txtEmpID.event(GotFocus,txtempid_gotfocus)
+Gui.F_TimeCard.txtEmpID.maxLength(5)
+Gui.F_TimeCard.txtEmpID.event(LostFocus,txtempid_lostfocus)
+Gui.F_TimeCard.txtEmpID.tabstop(True)
+Gui.F_TimeCard.txtEmpID.tabindex(2)
+Gui.F_TimeCard.cmd_txtEmpID.create(button)
+Gui.F_TimeCard.cmd_txtEmpID.caption("^")
+Gui.F_TimeCard.cmd_txtEmpID.size(330,330)
+Gui.F_TimeCard.cmd_txtEmpID.position(3160,335)
+Gui.F_TimeCard.cmd_txtEmpID.event(Click,cmd_txtempid_click)
+Gui.F_TimeCard.cmd_txtEmpID.tabstop(True)
+Gui.F_TimeCard.cmd_txtEmpID.tabindex(3)
+Gui.F_TimeCard.cmd_txtEmpID.Enabled(True)
+Gui.F_TimeCard.cmd_txtEmpID.Visible(True)
+Gui.F_TimeCard.cmd_txtEmpID.Zorder(0)
+Gui.F_TimeCard.cmd_txtEmpID.FontName("Tahoma")
+Gui.F_TimeCard.cmd_txtEmpID.FontSize(8.25)
+Gui.F_TimeCard.lbl_txtEmpName.create(label,"Employee Name",True,1800,200,1,3590,135,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lbl_txtEmpName.BorderStyle(0)
+Gui.F_TimeCard.txtEmpName.create(textbox,"",True,1800,330,0,3605,335,False,0,"Arial",8,16777215,1)
+Gui.F_TimeCard.lbl_txtShift.create(label,"Shift",True,420,200,1,85,835,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lbl_txtShift.BorderStyle(0)
+Gui.F_TimeCard.txtShift.create(textbox,"",True,375,330,0,100,1035,True,1,"Arial",8,16777215,1)
+Gui.F_TimeCard.txtShift.numericonly(2)
+Gui.F_TimeCard.txtShift.event(GotFocus,txtshift_gotfocus)
+Gui.F_TimeCard.txtShift.maxLength(1)
+Gui.F_TimeCard.txtShift.tabstop(True)
+Gui.F_TimeCard.txtShift.tabindex(10)
+Gui.F_TimeCard.lbl_txtRate.create(label,"Rate",True,525,200,1,575,820,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lbl_txtRate.BorderStyle(0)
+Gui.F_TimeCard.txtRate.create(textbox,"",True,810,330,0,575,1035,True,1,"Arial",8,16777215,1)
+Gui.F_TimeCard.txtRate.numericonly(1)
+Gui.F_TimeCard.txtRate.event(GotFocus,txtrate_gotfocus)
+Gui.F_TimeCard.txtRate.event(LostFocus,txtrate_lostfocus)
+Gui.F_TimeCard.txtRate.tabstop(True)
+Gui.F_TimeCard.txtRate.tabindex(11)
+Gui.F_TimeCard.lbl_txtGood.create(label,"Good Parts",True,990,200,1,1480,835,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lbl_txtGood.BorderStyle(0)
+Gui.F_TimeCard.txtGood.create(textbox,"",True,1140,330,0,1480,1035,True,1,"Arial",8,16777215,1)
+Gui.F_TimeCard.txtGood.numericonly(1)
+Gui.F_TimeCard.txtGood.event(GotFocus,txtgood_gotfocus)
+Gui.F_TimeCard.txtGood.event(LostFocus,txtgood_lostfocus)
+Gui.F_TimeCard.txtGood.tabstop(True)
+Gui.F_TimeCard.txtGood.tabindex(12)
+Gui.F_TimeCard.lbl_txtBad.create(label,"Bad Parts",True,1005,200,1,2725,835,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lbl_txtBad.BorderStyle(0)
+Gui.F_TimeCard.txtBad.create(textbox,"",True,1140,330,0,2725,1035,True,1,"Arial",8,16777215,1)
+Gui.F_TimeCard.txtBad.numericonly(1)
+Gui.F_TimeCard.txtBad.event(GotFocus,txtbad_gotfocus)
+Gui.F_TimeCard.txtBad.event(LostFocus,txtbad_lostfocus)
+Gui.F_TimeCard.txtBad.tabstop(True)
+Gui.F_TimeCard.txtBad.tabindex(13)
+Gui.F_TimeCard.cmdAdd.create(button)
+Gui.F_TimeCard.cmdAdd.caption("Add")
+Gui.F_TimeCard.cmdAdd.size(1000,330)
+Gui.F_TimeCard.cmdAdd.position(9820,1035)
+Gui.F_TimeCard.cmdAdd.event(Click,cmdadd_click)
+Gui.F_TimeCard.cmdAdd.tabstop(True)
+Gui.F_TimeCard.cmdAdd.tabindex(18)
+Gui.F_TimeCard.cmdAdd.Enabled(True)
+Gui.F_TimeCard.cmdAdd.Visible(True)
+Gui.F_TimeCard.cmdAdd.Zorder(0)
+Gui.F_TimeCard.cmdAdd.FontName("Tahoma")
+Gui.F_TimeCard.cmdAdd.FontSize(8.25)
+Gui.F_TimeCard.lvwTime.create(listview)
+Gui.F_TimeCard.lvwTime.view(3)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Charge Date",1250,0)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Employee",1000,0)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Employee Name",2750,0)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Work Order",1100,0)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Suffix",750,0)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Sequence",1000,0)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Workcenter",1100,0)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Shift",650,1)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Rate",1100,1)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Good Parts",1100,1)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Bad Parts",1100,1)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Hours Worked",1250,1)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Rate Type",1000,0)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Labor Type",1000,0)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Close",650,0)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Override",0,0)
+Gui.F_TimeCard.lvwTime.addlistviewcolumn("Index",0,0)
+Gui.F_TimeCard.lvwTime.size(17065,4010)
+Gui.F_TimeCard.lvwTime.position(100,1635)
+Gui.F_TimeCard.lvwTime.event(ItemClick,lvwtime_itemclick)
+Gui.F_TimeCard.lvwTime.Enabled(True)
+Gui.F_TimeCard.lvwTime.Visible(True)
+Gui.F_TimeCard.lvwTime.Zorder(0)
+Gui.F_TimeCard.lvwTime.FontName("Tahoma")
+Gui.F_TimeCard.lvwTime.FontSize(8)
+Gui.F_TimeCard.lvwTime.Multiselect(False)
+Gui.F_TimeCard.lvwTime.CheckBoxes(False)
+Gui.F_TimeCard.cmdUpdate.create(button)
+Gui.F_TimeCard.cmdUpdate.caption("Update")
+Gui.F_TimeCard.cmdUpdate.size(1000,330)
+Gui.F_TimeCard.cmdUpdate.position(100,5720)
+Gui.F_TimeCard.cmdUpdate.event(Click,cmdupdate_click)
+Gui.F_TimeCard.cmdUpdate.tabstop(True)
+Gui.F_TimeCard.cmdUpdate.tabindex(20)
+Gui.F_TimeCard.cmdUpdate.Enabled(True)
+Gui.F_TimeCard.cmdUpdate.Visible(True)
+Gui.F_TimeCard.cmdUpdate.Zorder(0)
+Gui.F_TimeCard.cmdUpdate.FontName("Tahoma")
+Gui.F_TimeCard.cmdUpdate.FontSize(8.25)
+Gui.F_TimeCard.txtHrs.create(textbox,"",True,1140,300,0,3965,1035,True,1,"Arial",8,-2147483643,1)
+Gui.F_TimeCard.txtHrs.numericonly(1)
+Gui.F_TimeCard.txtHrs.event(GotFocus,txthrs_gotfocus)
+Gui.F_TimeCard.txtHrs.event(LostFocus,txthrs_lostfocus)
+Gui.F_TimeCard.txtHrs.tabstop(True)
+Gui.F_TimeCard.txtHrs.tabindex(14)
+Gui.F_TimeCard.lbl_txtHrs.create(label,"Hours Worked",True,1110,255,1,3940,835,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lbl_txtHrs.BorderStyle(0)
+Gui.F_TimeCard.txtJob.create(textbox,"",True,900,300,0,5495,335,True,0,"Arial",8,-2147483643,1)
+Gui.F_TimeCard.txtJob.event(GotFocus,txtjob_gotfocus)
+Gui.F_TimeCard.txtJob.maxLength(6)
+Gui.F_TimeCard.txtJob.tabstop(True)
+Gui.F_TimeCard.txtJob.tabindex(4)
+Gui.F_TimeCard.txtSeq.create(textbox,"",True,1140,300,0,7490,335,True,0,"Arial",8,-2147483643,1)
+Gui.F_TimeCard.txtSeq.event(GotFocus,txtseq_gotfocus)
+Gui.F_TimeCard.txtSeq.maxLength(6)
+Gui.F_TimeCard.txtSeq.event(LostFocus,txtseq_lostfocus)
+Gui.F_TimeCard.txtSeq.tabstop(True)
+Gui.F_TimeCard.txtSeq.tabindex(7)
+Gui.F_TimeCard.cmd_txtJob.create(button)
+Gui.F_TimeCard.cmd_txtJob.caption("^")
+Gui.F_TimeCard.cmd_txtJob.size(330,330)
+Gui.F_TimeCard.cmd_txtJob.position(7070,335)
+Gui.F_TimeCard.cmd_txtJob.event(Click,cmd_txtjob_click)
+Gui.F_TimeCard.cmd_txtJob.tabstop(True)
+Gui.F_TimeCard.cmd_txtJob.tabindex(6)
+Gui.F_TimeCard.cmd_txtJob.Enabled(True)
+Gui.F_TimeCard.cmd_txtJob.Visible(True)
+Gui.F_TimeCard.cmd_txtJob.Zorder(0)
+Gui.F_TimeCard.cmd_txtJob.FontName("Tahoma")
+Gui.F_TimeCard.cmd_txtJob.FontSize(8.25)
+Gui.F_TimeCard.txtSuffix.create(textbox,"",True,525,300,0,6490,335,True,0,"Arial",8,-2147483643,1)
+Gui.F_TimeCard.txtSuffix.event(GotFocus,txtsuffix_gotfocus)
+Gui.F_TimeCard.txtSuffix.maxLength(3)
+Gui.F_TimeCard.txtSuffix.event(LostFocus,txtsuffix_lostfocus)
+Gui.F_TimeCard.txtSuffix.tabstop(True)
+Gui.F_TimeCard.txtSuffix.tabindex(5)
+Gui.F_TimeCard.lbl_txtJob.create(label,"Work Order",True,990,255,1,5485,115,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lbl_txtJob.BorderStyle(0)
+Gui.F_TimeCard.lbl_txtSuffix.create(label,"Suffix",True,525,255,1,6470,135,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lbl_txtSuffix.BorderStyle(0)
+Gui.F_TimeCard.lbl_txtSeq.create(label,"Sequence",True,1065,255,1,7490,135,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lbl_txtSeq.BorderStyle(0)
+Gui.F_TimeCard.cmd_txtSeq.create(button)
+Gui.F_TimeCard.cmd_txtSeq.caption("^")
+Gui.F_TimeCard.cmd_txtSeq.size(330,330)
+Gui.F_TimeCard.cmd_txtSeq.position(8655,330)
+Gui.F_TimeCard.cmd_txtSeq.event(Click,cmd_txtseq_click)
+Gui.F_TimeCard.cmd_txtSeq.tabstop(True)
+Gui.F_TimeCard.cmd_txtSeq.tabindex(8)
+Gui.F_TimeCard.cmd_txtSeq.Enabled(True)
+Gui.F_TimeCard.cmd_txtSeq.Visible(True)
+Gui.F_TimeCard.cmd_txtSeq.Zorder(0)
+Gui.F_TimeCard.cmd_txtSeq.FontName("Tahoma")
+Gui.F_TimeCard.cmd_txtSeq.FontSize(8.25)
+Gui.F_TimeCard.lbl_txtWC.create(label,"Workcenter",True,915,255,1,9060,135,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lbl_txtWC.BorderStyle(0)
+Gui.F_TimeCard.txtWC.create(textbox,"",True,1215,300,0,9075,330,False,0,"Arial",8,-2147483643,1)
+Gui.F_TimeCard.txtWC.Event(Change,txtWC_Change)
+Gui.F_TimeCard.cmd_txtWC.create(button)
+Gui.F_TimeCard.cmd_txtWC.caption("^")
+Gui.F_TimeCard.cmd_txtWC.size(330,330)
+Gui.F_TimeCard.cmd_txtWC.position(10320,335)
+Gui.F_TimeCard.cmd_txtWC.event(Click,cmd_txtwc_click)
+Gui.F_TimeCard.cmd_txtWC.tabstop(True)
+Gui.F_TimeCard.cmd_txtWC.tabindex(9)
+Gui.F_TimeCard.cmd_txtWC.Enabled(True)
+Gui.F_TimeCard.cmd_txtWC.Visible(True)
+Gui.F_TimeCard.cmd_txtWC.Zorder(0)
+Gui.F_TimeCard.cmd_txtWC.FontName("Tahoma")
+Gui.F_TimeCard.cmd_txtWC.FontSize(8.25)
+Gui.F_TimeCard.cmdScrap.create(button)
+Gui.F_TimeCard.cmdScrap.caption("Assign Scrap")
+Gui.F_TimeCard.cmdScrap.size(1245,330)
+Gui.F_TimeCard.cmdScrap.position(10920,1035)
+Gui.F_TimeCard.cmdScrap.event(Click,cmdscrap_click)
+Gui.F_TimeCard.cmdScrap.disableonclick(20)
+Gui.F_TimeCard.cmdScrap.tabstop(True)
+Gui.F_TimeCard.cmdScrap.tabindex(19)
+Gui.F_TimeCard.cmdScrap.Enabled(True)
+Gui.F_TimeCard.cmdScrap.Visible(True)
+Gui.F_TimeCard.cmdScrap.Zorder(0)
+Gui.F_TimeCard.cmdScrap.FontName("Tahoma")
+Gui.F_TimeCard.cmdScrap.FontSize(8.25)
+Gui.F_TimeCard.lblRateType.create(label,"Rate Type",True,840,255,1,5180,835,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lblRateType.BorderStyle(0)
+Gui.F_TimeCard.ddlRateType.create(dropdownlist)
+Gui.F_TimeCard.ddlRateType.size(1455,330)
+Gui.F_TimeCard.ddlRateType.position(5185,1035)
+Gui.F_TimeCard.ddlRateType.tabstop(True)
+Gui.F_TimeCard.ddlRateType.tabindex(15)
+Gui.F_TimeCard.ddlRateType.Enabled(True)
+Gui.F_TimeCard.ddlRateType.Visible(True)
+Gui.F_TimeCard.ddlRateType.Zorder(0)
+Gui.F_TimeCard.ddlRateType.FontName("Tahoma")
+Gui.F_TimeCard.ddlRateType.FontSize(8.25)
+Gui.F_TimeCard.cmdDelete.create(button)
+Gui.F_TimeCard.cmdDelete.caption("Delete")
+Gui.F_TimeCard.cmdDelete.size(1000,330)
+Gui.F_TimeCard.cmdDelete.position(1225,5720)
+Gui.F_TimeCard.cmdDelete.event(Click,cmddelete_click)
+Gui.F_TimeCard.cmdDelete.tabstop(True)
+Gui.F_TimeCard.cmdDelete.tabindex(21)
+Gui.F_TimeCard.cmdDelete.Enabled(True)
+Gui.F_TimeCard.cmdDelete.Visible(True)
+Gui.F_TimeCard.cmdDelete.Zorder(0)
+Gui.F_TimeCard.cmdDelete.FontName("Tahoma")
+Gui.F_TimeCard.cmdDelete.FontSize(8.25)
+Gui.F_TimeCard.lblPart.create(label,"Part Number",True,1515,255,1,10740,135,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lblPart.BorderStyle(0)
+Gui.F_TimeCard.txtPart.create(textbox,"",True,2100,300,0,10740,330,False,0,"Arial",8,-2147483643,1)
+Gui.F_TimeCard.ddlLaborType.create(dropdownlist)
+Gui.F_TimeCard.ddlLaborType.size(1455,330)
+Gui.F_TimeCard.ddlLaborType.position(6720,1035)
+Gui.F_TimeCard.ddlLaborType.tabstop(True)
+Gui.F_TimeCard.ddlLaborType.tabindex(16)
+Gui.F_TimeCard.ddlLaborType.Enabled(True)
+Gui.F_TimeCard.ddlLaborType.Visible(True)
+Gui.F_TimeCard.ddlLaborType.Zorder(0)
+Gui.F_TimeCard.ddlLaborType.FontName("Tahoma")
+Gui.F_TimeCard.ddlLaborType.FontSize(8.25)
+Gui.F_TimeCard.lblLaborType.create(label,"Labor Type",True,930,255,1,6705,835,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lblLaborType.BorderStyle(0)
+Gui.F_TimeCard.chkClose.create(checkbox)
+Gui.F_TimeCard.chkClose.caption("Close Operation")
+Gui.F_TimeCard.chkClose.size(1530,300)
+Gui.F_TimeCard.chkClose.position(8255,1035)
+Gui.F_TimeCard.chkClose.tabstop(True)
+Gui.F_TimeCard.chkClose.tabindex(17)
+Gui.F_TimeCard.chkClose.Enabled(True)
+Gui.F_TimeCard.chkClose.Visible(True)
+Gui.F_TimeCard.chkClose.Zorder(0)
+Gui.F_TimeCard.chkClose.FontName("Tahoma")
+Gui.F_TimeCard.chkClose.FontSize(8.25)
+Gui.F_TimeCard.lblTotal.create(label,"Total Hours:",True,915,255,1,12060,5745,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_TimeCard.lblTotal.BorderStyle(0)
+Gui.F_TimeCard.txtTotal.create(textbox,"",True,1200,300,0,13080,5700,False,1,"Arial",8,-2147483643,1)
+Gui.F_TimeCard.txtTotal.numericonly(1)
+Gui.F_TimeCard.frameLadle.Create(Frame)
+Gui.F_TimeCard.frameLadle.Size(2235,975)
+Gui.F_TimeCard.frameLadle.Position(13065,180)
+Gui.F_TimeCard.frameLadle.Enabled(True)
+Gui.F_TimeCard.frameLadle.Visible(False)
+Gui.F_TimeCard.frameLadle.Zorder(0)
+Gui.F_TimeCard.frameLadle.Caption("")
+Gui.F_TimeCard.frameLadle.FontName("Tahoma")
+Gui.F_TimeCard.frameLadle.FontSize(8.25)
+Gui.F_TimeCard.chkMachLadPrem.Create(CheckBox)
+Gui.F_TimeCard.chkMachLadPrem.Size(2070,300)
+Gui.F_TimeCard.chkMachLadPrem.Position(75,150)
+Gui.F_TimeCard.chkMachLadPrem.Parent("frameLadle")
+Gui.F_TimeCard.chkMachLadPrem.Caption("Machine Ladle Premium")
+Gui.F_TimeCard.chkMachLadPrem.Event(Click,LadlePrem_Click)
+Gui.F_TimeCard.chkMachLadPrem.Enabled(True)
+Gui.F_TimeCard.chkMachLadPrem.Visible(True)
+Gui.F_TimeCard.chkMachLadPrem.Zorder(0)
+Gui.F_TimeCard.chkMachLadPrem.FontName("Tahoma")
+Gui.F_TimeCard.chkMachLadPrem.FontSize(8.25)
+Gui.F_TimeCard.chkTabLadPrem.Create(CheckBox)
+Gui.F_TimeCard.chkTabLadPrem.Size(2070,300)
+Gui.F_TimeCard.chkTabLadPrem.Position(75,525)
+Gui.F_TimeCard.chkTabLadPrem.Parent("frameLadle")
+Gui.F_TimeCard.chkTabLadPrem.Caption("Table Ladle Premium")
+Gui.F_TimeCard.chkTabLadPrem.Event(Click,LadlePrem_Click)
+Gui.F_TimeCard.chkTabLadPrem.Enabled(True)
+Gui.F_TimeCard.chkTabLadPrem.Visible(True)
+Gui.F_TimeCard.chkTabLadPrem.Zorder(0)
+Gui.F_TimeCard.chkTabLadPrem.FontName("Tahoma")
+Gui.F_TimeCard.chkTabLadPrem.FontSize(8.25)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.bChk.Declare(Boolean,False)
+Variable.Global.sScrapReason.Declare(String)
+Variable.Global.iKey.Declare(Long,-1)
+Variable.Global.fEmpRate.Declare(Float,0)
+Variable.Global.sRefID.Declare(String)
+Variable.UDT.uTimecard.Define("ChargeDate",Date)
+Variable.UDT.uTimecard.Define("Employee",String)
+Variable.UDT.uTimecard.Define("Good",Float)
+Variable.UDT.uTimecard.Define("Bad",Float)
+Variable.UDT.uTimecard.Define("Hours",Float)
+Variable.UDT.uTimecard.Define("Job",String)
+Variable.UDT.uTimecard.Define("Suffix",String)
+Variable.UDT.uTimecard.Define("Rate",Float)
+Variable.UDT.uTimecard.Define("Seq",String)
+Variable.UDT.uTimecard.Define("Shift",String)
+Variable.UDT.uTimecard.Define("WC",String)
+Variable.UDT.uTimecard.Define("RefID",String)
+Variable.UDT.uTimecard.Define("RateType",String)
+Variable.UDT.uTimecard.Define("LaborType",String)
+Variable.UDT.uTimecard.Define("Close",String)
+Variable.UDT.uTimecard.Define("Flag",String)
+Variable.UDT.uTimecard.Define("ScrapReason",String)
+Variable.UDT.uTimecard.Define("Override",String)
+Variable.uGlobal.uTimecard.Declare("uTimecard")
+Variable.Global.iSelKey.Declare(Long,-1)
+Variable.Global.iSelUDT.Declare(Long,-1)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'TJS, August 2021 - VT
+'Project updated to bring in ladel premiums from designated workcenters.
+
+	'TJS, May 21,2021 - VT -Modify to determine if the rate increase was due to a ladle premium
+	
+		'TJS, Apr 2021 - Quote #12537
+		
+		'Coded by: mla
+		'Project Start Date: 6/20/2011
+		'Notes:
+		'  Piad Precision
+		'Quote 2348
+		'
+F.Intrinsic.Control.If(V.Caller.GSSVersion,<=,"2018.1")
+	F.Intrinsic.Control.CallSub(SetIcon)
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+V.uGlobal.uTimecard.Redim(-1,-1)
+Gui.F_TimeCard.txtBad.Enabled(False)
+Gui.F_TimeCard.txtGood.Enabled(False)
+Gui.F_TimeCard.txtJob.Enabled(False)
+Gui.F_TimeCard.cmd_txtJob.Enabled(False)
+Gui.F_TimeCard.cmd_txtSeq.Enabled(False)
+Gui.F_TimeCard.cmd_txtWC.Enabled(False)
+Gui.F_TimeCard.txtSuffix.Enabled(False)
+Gui.F_TimeCard.txtHrs.Enabled(False)
+Gui.F_TimeCard.txtRate.Enabled(False)
+Gui.F_TimeCard.txtShift.Enabled(False)
+Gui.F_TimeCard.txtSeq.Enabled(False)
+Gui.F_TimeCard.cmdAdd.Enabled(False)
+Gui.F_TimeCard.cmdScrap.Enabled(False)
+Gui.F_TimeCard.ddlRateType.AddItem("Regular",0)
+Gui.F_TimeCard.ddlRateType.AddItem("Time & 1/2",1)
+Gui.F_TimeCard.ddlRateType.AddItem("Double Time",2)
+Gui.F_TimeCard.ddlRateType.Enabled(False)
+Gui.F_TimeCard.ddlLaborType.AddItem("Direct",0)
+Gui.F_TimeCard.ddlLaborType.AddItem("Indirect",1)
+Gui.F_TimeCard.ddlLaborType.Enabled(False)
+Gui.F_TimeCard.chkClose.Enabled(False)
+Gui.F_TimeCard..Show
+Program.Sub.Main.End
+
+Program.Sub.ss_form1_unload.Start
+F.ODBC.Connection!con.Close
+F.Intrinsic.Control.End
+Program.Sub.ss_form1_unload.End
+
+Program.Sub.cmd_txtempid_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtempid_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+'Set SQL Query
+V.Local.sSql.Set("Select EMPLOYEE, NAME from V_EMPLOYEE_MSTR where DATE_TERMINATION = '1900-1-1' ORDER BY EMPLOYEE")
+'Set Browser Titles
+V.Local.sTitles.Set("Employee*!*Employee Name")
+'Set Browser column widths
+V.Local.sWidths.Set("1500*!*5100")
+
+'Split
+F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+'Launch Browser for employee look up
+F.Intrinsic.UI.Browser("Select Employee","con",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,5000,8000,V.Local.sRet)
+'If Cancel is not clicked
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	'Split return value
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	'Place Employee ID in text box
+	Gui.F_TimeCard.txtEmpID.Text(V.Local.sRet(0).Trim)
+	'Place Employee Name in text box
+	Gui.F_TimeCard.txtEmpName.Text(V.Local.sRet(1).Trim)
+	'Enable controls on the form
+	Gui.F_TimeCard.txtBad.Enabled(True)
+	Gui.F_TimeCard.txtGood.Enabled(True)
+	Gui.F_TimeCard.txtJob.Enabled(True)
+	Gui.F_TimeCard.txtSuffix.Enabled(True)
+	Gui.F_TimeCard.cmd_txtJob.Enabled(True)
+	Gui.F_TimeCard.txtHrs.Enabled(True)
+	Gui.F_TimeCard.txtRate.Enabled(True)
+	Gui.F_TimeCard.txtShift.Enabled(True)
+	Gui.F_TimeCard.txtGood.Text(0)
+	Gui.F_TimeCard.txtBad.Text(0)
+	Gui.F_TimeCard.txtHrs.Text(0)
+	Gui.F_TimeCard.cmdAdd.Enabled(True)
+	Gui.F_TimeCard.cmdScrap.Enabled(True)
+	Gui.F_TimeCard.ddlRateType.Enabled(True)
+	Gui.F_TimeCard.ddlRateType.Text("Regular")
+	Gui.F_TimeCard.ddlLaborType.Enabled(True)
+	Gui.F_TimeCard.ddlLaborType.Text("Direct")
+	Gui.F_TimeCard.chkClose.Enabled(True)
+	'Call Empload sub
+	F.Intrinsic.Control.CallSub(Empload)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtempid_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_txtempid_click.End
+
+Program.Sub.EmpLoad.Start
+F.Intrinsic.Control.SetErrorHandler("EmpLoad_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+
+'SQL Query
+F.Intrinsic.String.Concat("Select SHIFT, RATE from V_EMPLOYEE_MSTR where EMPLOYEE = '",V.Screen.F_TimeCard!txtEmpID.Text,"'",V.Local.sSql)
+'Open record set
+F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+'Save shift to shift text box
+Gui.F_TimeCard.txtShift.Text(V.ODBC.con!rst.FieldValTrim!SHIFT)
+'save rate to rate text box
+Gui.F_TimeCard.txtRate.Text(V.ODBC.con!rst.FieldValFloat!RATE)
+'save rate to global variable
+V.Global.fEmpRate.Set(V.ODBC.con!rst.FieldValFloat!RATE)
+'Close Connection
+F.ODBC.con!rst.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("EmpLoad_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.EmpLoad.End
+
+Program.Sub.cmd_txtjob_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtjob_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sParam.Declare(String)
+V.Local.dDate.Declare(Date)
+
+'Check if Employee ID has text
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtEmpID.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No employee selected!","Invalid Selection")
+F.Intrinsic.Control.Else
+	'Set SQL Query to v_job_header
+	V.Local.sSql.Set("Select JOB, SUFFIX, PART, DESCRIPTION from V_JOB_HEADER ORDER BY JOB, SUFFIX")
+	'Set Column Titles
+	V.Local.sTitles.Set("Work Order*!*Suffix*!*Part*!*Description")
+	'Set Column Widths
+	V.Local.sWidths.Set("1000*!*500*!*2000*!*3100")
+
+	'Split strings
+	F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	'Launch Browser for work order selection
+	F.Intrinsic.UI.Browser("Select Work Order","con",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,5000,8000,V.Local.sRet)
+	'Check if Cancel was clicked
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		'If not split return value
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		'Set SQL Query based on Job and Suffix selected
+		F.Intrinsic.String.Concat("Select DATE_CLOSED from V_JOB_HEADER where JOB = '",V.Local.sRet(0).Trim,"' and SUFFIX = '",V.Local.sRet(1).Trim,"'",V.Local.sSql)
+		'Open connection to record
+		F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+		'convert string date to a date value and save in variable
+		F.Intrinsic.Date.ConvertDString("01/01/1900","MM/DD/YYYY",V.Local.dDate)
+		'Check to see if date closed is = 01/01/1900
+		F.Intrinsic.Control.If(V.ODBC.con!rst.FieldVal!DATE_CLOSED,=,V.Local.dDate)
+			'If yes close record
+			F.ODBC.con!rst.Close
+			'set job text box to return value 0 from SQL Query
+			Gui.F_TimeCard.txtJob.Text(V.Local.sRet(0).Trim)
+'			F.Intrinsic.Control.If(V.Local.sRet(1).Trim,=,"")
+'				F.Intrinsic.UI.Msgbox("STOP")
+'			F.Intrinsic.Control.EndIf
+			'Set Suffix to return value 1
+			Gui.F_TimeCard.txtSuffix.Text(V.Local.sRet(1).Trim)
+			'Set part text box to return value 2
+			Gui.F_TimeCard.txtPart.Text(V.Local.sRet(2).Trim)
+			'Enable seq button
+			Gui.F_TimeCard.cmd_txtSeq.Enabled(True)
+			'Enable seq text box
+			Gui.F_TimeCard.txtSeq.Enabled(True)
+			'set seq text box to blank
+			Gui.F_TimeCard.txtSeq.Text("")
+			'set work center text box to blank
+			Gui.F_TimeCard.txtWC.Text("")
+			F.Intrinsic.Control.If(V.Global.sRefID,<>,"")
+				F.Intrinsic.String.Concat("UN!*!!*!!*!!*!!*!",V.Global.sRefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+				F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+				V.Global.sRefID.Set("")
+			F.Intrinsic.Control.EndIf
+			'Set SQL Query
+			F.Intrinsic.String.Concat("Select * from V_IND_LBR_ACCTS where JOB = '",V.Screen.F_TimeCard!txtJob.Text,"' and SUFFIX = '",V.Screen.F_TimeCard!txtSuffix.Text,"'",V.Local.sSql)
+			'Open connection to Record
+			F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+			'Check if EOF is True
+			F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+				'If Yes labor type is Direct
+				Gui.F_TimeCard.ddlLaborType.Text("Direct")
+			F.Intrinsic.Control.Else
+				'Else labor type is Indirect
+				Gui.F_TimeCard.ddlLaborType.Text("Indirect")
+			F.Intrinsic.Control.EndIf
+			'Close connection to record
+			F.ODBC.con!rst.Close
+		F.Intrinsic.Control.Else
+			'Close Connection
+			F.ODBC.con!rst.Close
+			'Disable seq and wc buttons
+			Gui.F_TimeCard.cmd_txtSeq.Enabled(False)
+			Gui.F_TimeCard.cmd_txtWC.Enabled(False)
+			'Disable text box for seq, wc, and set text to blank
+			Gui.F_TimeCard.txtSeq.Enabled(False)
+			Gui.F_TimeCard.txtWC.Enabled(False)
+			Gui.F_TimeCard.txtSeq.Text("")
+			Gui.F_TimeCard.txtWC.Text("")
+			'display message box informing user the job is closed
+			F.Intrinsic.UI.Msgbox("Job is closed!","Job Closed")
+			F.Intrinsic.Control.If(V.Global.sRefID,<>,"")
+				F.Intrinsic.String.Concat("UN!*!!*!!*!!*!!*!",V.Global.sRefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+				F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+				V.Global.sRefID.Set("")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtjob_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_txtjob_click.End
+
+Program.Sub.cmd_txtseq_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtseq_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sParam.Declare(String)
+V.Local.sWC.Declare(String)
+
+'check if Job Text Box is blank
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtJob.Text,=,"")
+	'if yes inform user
+	F.Intrinsic.UI.Msgbox("No work order selected!","Invalid Selection")
+F.Intrinsic.Control.Else
+	'Else Set SQL Query
+	F.Intrinsic.String.Concat("Select SEQ, LMO, WORKCENTER, DESCRIPTION from V_JOB_OPERATIONS_WC where LMO = 'L' and  RTRIM(LTRIM(JOB)) = '",V.Screen.F_TimeCard!txtJob.Text,"' and SUFFIX = '",V.Screen.F_TimeCard!txtSuffix.Text,"' ORDER BY SEQ",V.Local.sSql)
+	'Set Browser Titles
+	V.Local.sTitles.Set("Sequence*!*LMO*!*Workcenter*!*Description")
+	'Set Column widths of browser
+	V.Local.sWidths.Set("1000*!*500*!*1000*!*4200")
+
+	'Split the strings
+	F.Intrinsic.String.Split(V.Local.sTitles,"*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split(V.Local.sWidths,"*!*",V.Local.sWidths)
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	'Launch Browser
+	F.Intrinsic.UI.Browser("Select Work Order","con",V.Local.sSql,V.Local.sTitles,V.Local.sWidths,5000,8000,V.Local.sRet)
+	'Check if cancel was clicked
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		'If not split return value
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		'Set WC to return (2)
+		V.Local.sWC.Set(V.Local.sRet(2).Trim)
+		'Set SQL Query
+		F.Intrinsic.String.Concat("Select WORK_GROUP, PROTOTYPE_WC from V_WORKGROUP_HEAD where WORK_GROUP = '",V.Local.sWC,"'",V.Local.sSql)
+		'Open connection to record
+		F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+		'Check if EOF is true
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+			'if yes use local variable v.local.sWC for text box
+			Gui.F_TimeCard.txtWC.Text(V.Local.sWC)
+		F.Intrinsic.Control.Else
+			'Else set text box to value from sql query
+			Gui.F_TimeCard.txtWC.Text(V.ODBC.con!rst.FieldValTrim!PROTOTYPE_WC)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.con!rst.Close
+		'Set Seq to return value 0
+		Gui.F_TimeCard.txtSeq.Text(V.Local.sRet(0).Trim)
+		'Enable workcenter button
+		Gui.F_TimeCard.cmd_txtWC.Enabled(True)
+		F.Intrinsic.Control.If(V.Global.sRefID,<>,"")
+			F.Intrinsic.String.Concat("UN!*!!*!!*!!*!!*!",V.Global.sRefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+			F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+			V.Global.sRefID.Set("")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtseq_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_txtseq_click.End
+
+Program.Sub.cmd_txtwc_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtwc_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+'check if there job is blank
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtJob.Text,=,"")
+	'if yes inform user
+	F.Intrinsic.UI.Msgbox("No work order selected!","Invalid Selection")
+'check if seq is blank
+F.Intrinsic.Control.ElseIf(V.Screen.F_TimeCard!txtSeq.Text,=,"")
+	'if yes inform user
+	F.Intrinsic.UI.Msgbox("No work order sequence selected!","Invalid Selection")
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	'Launch Work Center Browser
+	F.Intrinsic.UI.Browser(400,"",V.Local.sRet)
+	'Check if Cancel was clicked
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		'If no the split return value
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		'Save Workcenter to text box
+		Gui.F_TimeCard.txtWC.Text(V.Local.sRet(0).Trim)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtwc_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmd_txtwc_click.End
+
+Program.Sub.cmdadd_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdadd_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iIndex.Declare(Long)
+V.Local.sRateType.Declare(String)
+V.Local.sLaborType.Declare(String)
+V.Local.sClose.Declare(String)
+V.Local.iUB.Declare(Long)
+V.Local.iKey.Declare(Long)
+V.Local.sSuffix.Declare(String)
+V.Local.fLadlePrem.Declare
+V.Local.sRate.Declare
+V.Local.sSQL.Declare
+V.Local.sPremWC.Declare
+V.Local.sOvrRide.Declare
+V.Local.sWCPrefix.Declare
+
+F.Intrinsic.Control.CallSub(Addchk)
+
+F.Intrinsic.Control.If(V.Global.bChk,=,False)
+	F.Intrinsic.Control.If(V.Global.iSelKey,=,-1)
+		F.Intrinsic.Math.Add(V.Global.iKey,1,V.Global.iKey)
+		V.Local.iKey.Set(V.Global.iKey)
+	F.Intrinsic.Control.Else
+		V.Local.iKey.Set(V.Global.iSelKey)
+		Gui.F_TimeCard.lvwTime.RemoveItem(V.Local.iKey)
+	F.Intrinsic.Control.EndIf
+	
+	V.Local.sRate.Set(V.Screen.F_TimeCard!txtRate.Text)
+	
+'Deprecated in favor of dedicated workcenters for ladle premium	
+'	F.Intrinsic.String.Left(V.Screen.F_TimeCard!txtWC.Text,2,V.Local.sPremWC)
+'		
+'	F.Intrinsic.Control.If(V.Screen.F_TimeCard!chkMachLadPrem.Value,=,1)
+'		F.ODBC.Connection!conts.OpenCompanyConnection
+'		F.Intrinsic.Control.If(V.Local.sPremWC.Trim,=,"MS","OR",V.Local.sPremWC.Trim,=,"TS")
+'			F.ODBC.Connection!conts.ExecuteAndReturn("Select MACH_RATE from GCG_4543_MX where TYPE = 'CASTER'",V.Local.fLadlePrem)			
+'		F.Intrinsic.Control.ElseIf(V.Screen.F_TimeCard!txtWC.Text,=,"HLPR")
+'			F.ODBC.Connection!conts.ExecuteAndReturn("Select MACH_RATE from GCG_4543_MX where TYPE = 'HELPER'",V.Local.fLadlePrem)
+'		F.Intrinsic.Control.EndIf		
+'		F.ODBC.Connection!conts.Close
+'		F.Intrinsic.Math.Add(V.Local.sRate.Float,V.Local.fLadlePrem,V.Local.sRate)
+'	F.Intrinsic.Control.ElseIf(V.Screen.F_TimeCard!chkTabLadPrem.Value,=,1)
+'		F.ODBC.Connection!conts.OpenCompanyConnection
+'		F.Intrinsic.Control.If(V.Local.sPremWC.Trim,=,"MS","OR",V.Local.sPremWC.Trim,=,"TS")
+'			F.ODBC.Connection!conts.ExecuteAndReturn("Select TABLE_RATE from GCG_4543_MX where TYPE = 'CASTER'",V.Local.fLadlePrem)			
+'		F.Intrinsic.Control.ElseIf(V.Screen.F_TimeCard!txtWC.Text,=,"HLPR")
+'			F.ODBC.Connection!conts.ExecuteAndReturn("Select TABLE_RATE from GCG_4543_MX where TYPE = 'HELPER'",V.Local.fLadlePrem)
+'		F.Intrinsic.Control.EndIf		
+'		F.ODBC.Connection!conts.Close
+'		F.Intrinsic.Math.Add(V.Local.sRate.Float,V.Local.fLadlePrem,V.Local.sRate)
+'	F.Intrinsic.Control.EndIf
+
+	Gui.F_TimeCard.lvwTime.AddListItem(V.Global.iKey,V.Screen.F_TimeCard!dtpCharge.Value)
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,1,V.Screen.F_TimeCard!txtEmpID.Text)
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,2,V.Screen.F_TimeCard!txtEmpName.Text)
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,3,V.Screen.F_TimeCard!txtJob.Text)
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,4,V.Screen.F_TimeCard!txtSuffix.Text)
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,5,V.Screen.F_TimeCard!txtSeq.Text)
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,6,V.Screen.F_TimeCard!txtWC.Text)
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,7,V.Screen.F_TimeCard!txtShift.Text)
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,8,V.Local.sRate)
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,9,V.Screen.F_TimeCard!txtGood.Text)
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,10,V.Screen.F_TimeCard!txtBad.Text)
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,11,V.Screen.F_TimeCard!txtHrs.Text)
+	V.Local.iIndex.Set(V.Screen.F_TimeCard!ddlRateType.ListIndex)
+	F.Intrinsic.Control.SelectCase(V.Local.iIndex)
+		F.Intrinsic.Control.Case(0)
+			V.Local.sRateType.Set("R")
+		F.Intrinsic.Control.Case(1)
+			V.Local.sRateType.Set("O")
+		F.Intrinsic.Control.Case(2)
+			V.Local.sRateType.Set("2")
+	F.Intrinsic.Control.EndSelect
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,12,V.Local.sRateType)
+	V.Local.iIndex.Set(V.Screen.F_TimeCard!ddlLaborType.ListIndex)
+	F.Intrinsic.Control.SelectCase(V.Local.iIndex)
+		F.Intrinsic.Control.Case(0)
+			V.Local.sLaborType.Set("D")
+		F.Intrinsic.Control.Case(1)
+			V.Local.sLaborType.Set("I")
+	F.Intrinsic.Control.EndSelect
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,13,V.Local.sLaborType)
+	F.Intrinsic.Control.If(V.Screen.F_TimeCard!chkClose.Value,=,1)
+		V.Local.sClose.Set("Y")
+	F.Intrinsic.Control.Else
+		V.Local.sClose.Set("")
+	F.Intrinsic.Control.EndIf
+	Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,14,V.Local.sClose)
+	F.Intrinsic.Control.If(V.Global.iSelUDT,<>,-1)
+		V.uGlobal.uTimecard(V.Global.iSelUDT)!Flag.Set("D")
+	F.Intrinsic.Control.EndIf
+		
+	F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtSuffix.Text,=,"")
+		V.Local.sSuffix.Set("")
+	F.Intrinsic.Control.Else
+		V.local.sSuffix.Set(V.Screen.F_TimeCard!txtSuffix.Text)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.String.Left(V.Screen.F_TimeCard!txtWC.Text,2,V.Local.sWCPrefix)
+	
+	F.Intrinsic.Control.If(V.Local.sWCPrefix,=,"#7")
+		Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,15,"LP")
+		V.Local.sOvrRide.Set("LP")
+	F.Intrinsic.Control.Else
+		Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,15,"")
+		V.Local.sOvrRide.Set("")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.uGlobal.uTimecard.UBound,=,-1)
+		V.uGlobal.uTimecard.Redim(0,0)
+		V.uGlobal.uTimecard!ChargeDate.Set(V.Screen.F_TimeCard!dtpCharge.Value)
+		V.uGlobal.uTimecard!Employee.Set(V.Screen.F_TimeCard!txtEmpID.Text)
+		V.uGlobal.uTimecard!Job.Set(V.Screen.F_TimeCard!txtJob.Text)
+		V.uGlobal.uTimecard!Suffix.Set(V.Local.sSuffix.Trim)
+		V.uGlobal.uTimecard!Seq.Set(V.Screen.F_TimeCard!txtSeq.Text)
+		V.uGlobal.uTimecard!WC.Set(V.Screen.F_TimeCard!txtWC.Text)
+		V.uGlobal.uTimecard!Shift.Set(V.Screen.F_TimeCard!txtShift.Text)
+		V.uGlobal.uTimecard!Rate.Set(V.Local.sRate)
+		V.uGlobal.uTimecard!Good.Set(V.Screen.F_TimeCard!txtGood.Text)
+		V.uGlobal.uTimecard!Bad.Set(V.Screen.F_TimeCard!txtBad.Text)
+		V.uGlobal.uTimecard!Hours.Set(V.Screen.F_TimeCard!txtHrs.Text)
+		V.uGlobal.uTimecard!RateType.Set(V.Local.sRateType)
+		V.uGlobal.uTimecard!LaborType.Set(V.Local.sLaborType)
+		V.uGlobal.uTimecard!Close.Set(V.Local.sClose)
+		V.uGlobal.uTimecard!RefID.Set(V.Global.sRefID)
+		V.uGlobal.uTimecard!ScrapReason.Set(V.Global.sScrapReason)
+		V.uGlobal.uTimecard!Override.Set(V.Local.sOvrRide)
+		Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,16,"0")
+	F.Intrinsic.Control.Else
+		V.Local.iUB.Set(V.uGlobal.uTimecard.UBound)
+		F.Intrinsic.Math.Add(V.Local.iUB,1,V.Local.iUB)
+		V.uGlobal.uTimecard.RedimPreserve(V.uGlobal.uTimecard.LBound,V.Local.iUB)
+		V.uGlobal.uTimecard(V.Local.iUB)!ChargeDate.Set(V.Screen.F_TimeCard!dtpCharge.Value)
+		V.uGlobal.uTimecard(V.Local.iUB)!Employee.Set(V.Screen.F_TimeCard!txtEmpID.Text)
+		V.uGlobal.uTimecard(V.Local.iUB)!Job.Set(V.Screen.F_TimeCard!txtJob.Text)
+		V.uGlobal.uTimecard(V.Local.iUB)!Suffix.Set(V.Screen.F_TimeCard!txtSuffix.Text)
+		V.uGlobal.uTimecard(V.Local.iUB)!Seq.Set(V.Screen.F_TimeCard!txtSeq.Text)
+		V.uGlobal.uTimecard(V.Local.iUB)!WC.Set(V.Screen.F_TimeCard!txtWC.Text)
+		V.uGlobal.uTimecard(V.Local.iUB)!Shift.Set(V.Screen.F_TimeCard!txtShift.Text)
+		V.uGlobal.uTimecard(V.Local.iUB)!Rate.Set(V.Local.sRate)
+		V.uGlobal.uTimecard(V.Local.iUB)!Good.Set(V.Screen.F_TimeCard!txtGood.Text)
+		V.uGlobal.uTimecard(V.Local.iUB)!Bad.Set(V.Screen.F_TimeCard!txtBad.Text)
+		V.uGlobal.uTimecard(V.Local.iUB)!Hours.Set(V.Screen.F_TimeCard!txtHrs.Text)
+		V.uGlobal.uTimecard(V.Local.iUB)!RateType.Set(V.Local.sRateType)
+		V.uGlobal.uTimecard(V.Local.iUB)!LaborType.Set(V.Local.sLaborType)
+		V.uGlobal.uTimecard(v.Local.iUB)!Close.Set(V.Local.sClose)
+		V.uGlobal.uTimecard(V.Local.iUB)!RefID.Set(V.Global.sRefID)
+		V.uGlobal.uTimecard(V.Local.iUB)!ScrapReason.Set(V.Global.sScrapReason)
+		V.uGlobal.uTimecard(V.Local.iUB)!Override.Set(V.Local.sOvrRide)
+		Gui.F_TimeCard.lvwTime.SetListItemSubItemText(V.Local.iKey,16,V.Local.iUB)
+	F.Intrinsic.Control.EndIf
+	
+	Gui.F_TimeCard.txtBad.Text("0")
+	Gui.F_TimeCard.txtGood.Text("0")
+	Gui.F_TimeCard.txtHrs.Text("0")
+	Gui.F_TimeCard.txtJob.Text("")
+	Gui.F_TimeCard.txtRate.Text("")
+	Gui.F_TimeCard.txtSeq.Text("")
+	Gui.F_TimeCard.txtShift.Text("")
+	Gui.F_TimeCard.txtSuffix.Text("")
+	Gui.F_TimeCard.txtWC.Text("")
+	Gui.F_TimeCard.txtPart.Text("")
+	V.Global.sRefID.Set("")
+	Gui.F_TimeCard.ddlRateType.Text("Regular")
+	Gui.F_TimeCard.cmd_txtJob.Enabled(True)
+	Gui.F_TimeCard.cmd_txtSeq.Enabled(False)
+	Gui.F_TimeCard.cmd_txtWC.Enabled(False)
+	Gui.F_TimeCard.ddlLaborType.Text("Direct")
+	Gui.F_TimeCard.chkClose.Value(0)
+'	Gui.F_TimeCard.chkMachLadPrem.Value(0)
+'	Gui.F_TimeCard.chkTabLadPrem.Value(0)
+	V.Global.iSelKey.Set(-1)
+	V.Global.iSelUDT.Set(-1)
+	F.Intrinsic.Control.CallSub(Empload)
+	F.Intrinsic.Control.CallSub(Totalhours)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdadd_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdadd_click.End
+
+Program.Sub.AddChk.Start
+F.Intrinsic.Control.SetErrorHandler("AddChk_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Global.bChk.Set(False)
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtEmpID.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No employee selected!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtJob.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No work order selected!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtSeq.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No work order sequence selected!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtWC.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No workcenter selected!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtShift.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No shift selected!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtShift.Text,<>,"1")
+	F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtShift.Text,<>,"2")
+		F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtShift.Text,<>,"3")
+			F.Intrinsic.UI.Msgbox("Invalid shift selected!","Invalid Selection")
+			V.Global.bChk.Set(True)
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtRate.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No rate entered!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+'F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtRate.Text.float,=,0)
+'	F.Intrinsic.UI.Msgbox("Zero rate entered!","Invalid Selection")
+'	V.Global.bChk.Set(True)
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtHrs.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No hours entered!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtHrs.Text.float,=,0)
+	F.Intrinsic.UI.Msgbox("Zero hours entered!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtBad.Text.float,<>,0)
+	F.Intrinsic.Control.If(V.Global.sRefID,=,"")
+		F.Intrinsic.UI.Msgbox("Must assign scrap codes!","Invalid Selection")
+		V.Global.bChk.Set(True)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("AddChk_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.AddChk.End
+
+Program.Sub.txtrate_lostfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtrate_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtRate.Text,=,"")
+	Gui.F_TimeCard.txtRate.Text(0)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtrate_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtrate_lostfocus.End
+
+Program.Sub.txtgood_lostfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtgood_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtGood.Text,=,"")
+	Gui.F_TimeCard.txtGood.Text(0)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtgood_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtgood_lostfocus.End
+
+Program.Sub.txtbad_lostfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtbad_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtBad.Text,=,"")
+	Gui.F_TimeCard.txtBad.Text(0)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtbad_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtbad_lostfocus.End
+
+Program.Sub.txthrs_lostfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txthrs_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtHrs.Text,=,"")
+	Gui.F_TimeCard.txtHrs.Text(0)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txthrs_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txthrs_lostfocus.End
+
+Program.Sub.cmdupdate_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdupdate_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iRet.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.iOrd.Declare(Long)
+V.Local.i.Declare(Long)
+V.Local.sTxt.Declare(String)
+V.Local.dDate.Declare(Date)
+V.Local.sDate.Declare(String)
+V.Local.sWrite.Declare(String)
+V.Local.sFile.Declare(String)
+V.Local.sExecute.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sHrs.Declare(String)
+V.Local.sRate.Declare(String)
+V.Local.sGood.Declare(String)
+V.Local.sBad.Declare(String)
+V.Local.sParam.Declare(String)
+V.Local.sOV.Declare(String)
+
+F.Intrinsic.UI.Msgbox("Are you sure you want to post all records to Global Shop?","Upload Confirmation",4,V.Local.iRet)
+F.Intrinsic.Control.If(V.Local.iRet,=,6)
+	F.Intrinsic.Control.If(V.uGlobal.uTimecard.UBound,=,-1)
+		F.Intrinsic.UI.Msgbox("No records entered!","No Records")
+	F.Intrinsic.Control.Else
+		Gui.F_TimeCard..Enabled(False)
+		F.Intrinsic.UI.InvokeWaitDialog("Uploading records...","Record Upload")
+		Gui.F_TimeCard.txtTotal.Text("")
+		F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uTimecard!Flag,"D")
+		F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uTimecard)
+		F.Intrinsic.Control.For(V.Local.i,V.uGlobal.uTimecard.LBound,V.uGlobal.uTimecard.UBound,1)
+			F.Intrinsic.UI.ChangeWaitStatus("Uploading records...",V.Local.i,V.Local.sRet.LBound,V.Local.sRet.UBound)
+			V.Local.dDate.Set(V.uGlobal.uTimecard(V.Local.i)!ChargeDate)
+			F.Intrinsic.String.Format(V.Local.dDate,"MMDDYY",V.Local.sDate)
+			F.Intrinsic.String.Format(V.uGlobal.uTimecard(V.Local.i)!Hours,"#.00",V.Local.sHrs)
+			F.Intrinsic.String.Format(V.uGlobal.uTimecard(V.Local.i)!Rate,"#.00",V.Local.sRate)
+			F.Intrinsic.String.Format(V.uGlobal.uTimecard(V.Local.i)!Good,"#.00",V.Local.sGood)
+			F.Intrinsic.String.Format(V.uGlobal.uTimecard(V.Local.i)!Bad,"#.00",V.Local.sBad)
+			
+			F.Intrinsic.Control.If(V.Local.sWrite,=,"")
+				F.Intrinsic.String.Concat(V.Local.sDate,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!Employee,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!Job,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!Suffix,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!Seq,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!WC,V.Ambient.Tab,V.Local.sHrs,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!Close,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!LaborType,V.Ambient.Tab,"0001",V.Ambient.Tab,"0001",V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!RateType,V.Ambient.Tab,V.Local.sGood,V.Ambient.Tab,V.Local.sBad,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!ScrapReason,V.Ambient.Tab,V.Local.sRate,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!RefID,V.Local.sWrite)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Concat(V.Local.sWrite,V.Ambient.NewLine,V.Local.sDate,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!Employee,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!Job,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!Suffix,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!Seq,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!WC,V.Ambient.Tab,V.Local.sHrs,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!Close,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!LaborType,V.Ambient.Tab,"0001",V.Ambient.Tab,"0001",V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!RateType,V.Ambient.Tab,V.Local.sGood,V.Ambient.Tab,V.Local.sBad,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!ScrapReason,V.Ambient.Tab,V.Local.sRate,V.Ambient.Tab,V.uGlobal.uTimecard(V.Local.i)!RefID,V.Local.sWrite)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.uGlobal.uTimecard(V.Local.i)!RefID,<>,"")
+				F.Intrinsic.String.Concat("AQ!*!!*!!*!!*!!*!",V.uGlobal.uTimecard(V.Local.i)!RefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+				F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.String.Concat("Select RATE from V_EMPLOYEE_MSTR where EMPLOYEE = '",V.uGlobal.uTimecard(V.Local.i)!Employee,"'",V.Local.sSql)
+			F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+			'MARK
+			F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,<>,True)
+				F.Intrinsic.Control.If(V.ODBC.con!rst.FieldValFloat!RATE,=,V.uGlobal.uTimecard(V.Local.i)!Rate)
+					V.Local.sOV.Set("")
+				F.Intrinsic.Control.Else
+					F.Intrinsic.Control.If(V.uGlobal.uTimecard(V.Local.i)!Override,=,"LP")
+						V.Local.sOV.Set(V.uGlobal.uTimecard(V.Local.i)!Override)
+					F.Intrinsic.Control.Else
+						V.Local.sOV.Set("V")
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rst.Close
+			V.Local.sSql.Set("Select * from ATG_4543_Timcrd_Shft")
+			F.ODBC.Connection!con.OpenRecordsetRW("rst",V.Local.sSql)
+			F.ODBC.con!rst.AddNew
+			F.ODBC.con!rst.Set!Charge_Date(V.Local.dDate)
+			F.ODBC.con!rst.Set!Employee(V.uGlobal.uTimecard(V.Local.i)!Employee)
+			F.ODBC.con!rst.Set!Work_Order(V.uGlobal.uTimecard(V.Local.i)!Job)
+			F.ODBC.con!rst.Set!Suffix(V.uGlobal.uTimecard(V.Local.i)!Suffix)
+			F.ODBC.con!rst.Set!Workcenter(V.uGlobal.uTimecard(V.Local.i)!WC)
+			F.ODBC.con!rst.Set!Sequence(V.uGlobal.uTimecard(V.Local.i)!Seq)
+			F.ODBC.con!rst.Set!Hours(V.Local.sHrs.Float)
+			F.ODBC.con!rst.Set!Shift(V.uGlobal.uTimecard(V.Local.i)!Shift)
+			F.ODBC.con!rst.Set!Override(V.Local.sOV)
+			F.ODBC.con!rst.Update
+			F.ODBC.con!rst.Close
+		F.Intrinsic.Control.Next(V.Local.i)
+		F.Intrinsic.String.Concat(V.Caller.FilesDir,"\",V.Caller.CompanyCode,V.Caller.Terminal,"MOPEN.txt",V.Local.sFile)
+		F.Intrinsic.File.String2File(V.Local.sFile,V.Local.sWrite)
+		
+		F.Intrinsic.String.Concat(V.Caller.CompanyCode,V.Caller.Terminal,"MOPEN.txt",V.Local.sExecute)
+		F.Intrinsic.Task.LaunchGSSSync("JB0455","-c",V.Local.sExecute)
+		V.uGlobal.uTimecard.Redim(-1,-1)
+		Gui.F_TimeCard.lvwTime.ClearItems
+		Gui.F_TimeCard.txtBad.Text("")
+		Gui.F_TimeCard.txtGood.Text("")
+		Gui.F_TimeCard.txtHrs.Text("")
+		Gui.F_TimeCard.txtJob.Text("")
+		Gui.F_TimeCard.txtRate.Text("")
+		Gui.F_TimeCard.txtSeq.Text("")
+		Gui.F_TimeCard.txtShift.Text("")
+		Gui.F_TimeCard.txtSuffix.Text("")
+		Gui.F_TimeCard.txtWC.Text("")
+		Gui.F_TimeCard.txtPart.Text("")
+		Gui.F_TimeCard.txtEmpID.Text("")
+		Gui.F_TimeCard.txtEmpName.Text("")
+		V.Global.sRefID.Set("")
+		Gui.F_TimeCard.txtBad.Enabled(False)
+		Gui.F_TimeCard.txtGood.Enabled(False)
+		Gui.F_TimeCard.txtJob.Enabled(True)
+		Gui.F_TimeCard.txtSuffix.Enabled(True)
+		Gui.F_TimeCard.txtHrs.Enabled(False)
+		Gui.F_TimeCard.txtRate.Enabled(False)
+		Gui.F_TimeCard.txtShift.Enabled(False)
+		Gui.F_TimeCard.cmdAdd.Enabled(False)
+		Gui.F_TimeCard.cmdScrap.Enabled(False)
+		Gui.F_TimeCard.ddlRateType.Text("")
+		Gui.F_TimeCard.ddlRateType.Enabled(False)
+		Gui.F_TimeCard.cmd_txtJob.Enabled(True)
+		Gui.F_TimeCard.cmd_txtSeq.Enabled(False)
+		Gui.F_TimeCard.cmd_txtWC.Enabled(False)
+		Gui.F_TimeCard.ddlLaborType.Text("")
+		Gui.F_TimeCard.ddlLaborType.Enabled(False)
+		Gui.F_TimeCard.chkClose.Enabled(False)
+		Gui.F_TimeCard.chkClose.Value(0)
+		V.Global.iSelKey.Set(-1)
+		V.Global.iSelUDT.Set(-1)
+		F.Intrinsic.UI.CloseWaitDialog
+		Gui.F_TimeCard..Enabled(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdupdate_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdupdate_click.End
+
+Program.Sub.cmdscrap_click.Start
+Gui.F_TimeCard..Enabled(False)
+F.Intrinsic.Control.SetErrorHandler("cmdscrap_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sParam.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.sOutput.Declare(String)
+V.Local.sFile.Declare(String)
+V.Local.fScrap.Declare(Float)
+V.Local.sValue.Declare(String)
+
+F.Intrinsic.Control.CallSub(Scrapchk)
+F.Intrinsic.Control.If(V.Global.bChk,=,False)
+	F.Intrinsic.String.Format(V.Ambient.Now,"MMDDYYYYHHNNSS",V.Local.sDate)
+	F.Intrinsic.String.Concat(V.System.Temp,"\GSS\JB0082",V.Caller.Terminal,V.Local.sDate,".txt",V.Local.sOutput)
+	F.Intrinsic.Control.If(V.Global.sRefID,=,"")
+		F.Intrinsic.String.Concat("SS","!*!",V.Screen.F_TimeCard!txtJob.Text,"!*!",V.Screen.F_TimeCard!txtSuffix.Text,"!*!",V.Screen.F_TimeCard!txtSeq.Text,"!*!",V.Screen.F_TimeCard!txtBad.Text,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sOutput,V.Local.sParam)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat("SS","!*!",V.Screen.F_TimeCard!txtJob.Text,"!*!",V.Screen.F_TimeCard!txtSuffix.Text,"!*!",V.Screen.F_TimeCard!txtSeq.Text,"!*!",V.Screen.F_TimeCard!txtBad.Text,"!*!",V.Global.sRefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sOutput,V.Local.sParam)
+	F.Intrinsic.Control.EndIf
+	F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+	F.Intrinsic.File.File2String(V.Local.sOutput,V.Local.sFile)
+	F.Intrinsic.String.Split(V.Local.sFile,V.Ambient.NewLine,V.Local.sFile)
+	F.Intrinsic.String.Split(V.Local.sFile(29),"::",V.Local.sValue)
+	V.Global.sRefID.Set(V.Local.sValue(1))
+	F.Intrinsic.String.Split(V.Local.sFile(28),"::",V.Local.sValue)
+	V.Local.fScrap.Set(V.Local.sValue(1))
+	F.Intrinsic.String.Split(V.Local.sFile(54),"::",V.Local.sValue)
+	V.Global.sScrapReason.Set(V.Local.sValue(1))
+	Gui.F_TimeCard.txtBad.Text(V.Local.fScrap)
+	F.Intrinsic.Control.If(V.Local.fScrap,=,0)
+		F.Intrinsic.String.Concat("UN!*!!*!!*!!*!!*!",V.Global.sRefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+		F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+		V.Global.sRefID.Set("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Gui.F_TimeCard..Enabled(True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdscrap_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdscrap_click.End
+
+Program.Sub.ScrapChk.Start
+F.Intrinsic.Control.SetErrorHandler("ScrapChk_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+V.Global.bChk.Set(False)
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtEmpID.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No employee selected!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtJob.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No work order selected!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtSeq.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No work order sequence selected!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtWC.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No workcenter selected!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtShift.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No shift selected!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtBad.Text,=,0)
+	F.Intrinsic.UI.Msgbox("No bad parts entered!","Invalid Selection")
+	V.Global.bChk.Set(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ScrapChk_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.ScrapChk.End
+
+Program.Sub.txtshift_gotfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtshift_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_TimeCard.txtShift.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtshift_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtshift_gotfocus.End
+
+Program.Sub.txtrate_gotfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtrate_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_TimeCard.txtRate.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtrate_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtrate_gotfocus.End
+
+Program.Sub.txtgood_gotfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtgood_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_TimeCard.txtGood.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtgood_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtgood_gotfocus.End
+
+Program.Sub.txtbad_gotfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtbad_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_TimeCard.txtBad.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtbad_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtbad_gotfocus.End
+
+Program.Sub.txthrs_gotfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txthrs_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_TimeCard.txtHrs.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txthrs_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_Manual_Time_Card_Rate.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txthrs_gotfocus.End
+
+Program.Sub.cmddelete_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmddelete_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iKey.Declare(Long)
+V.Local.iOrd.Declare(Long)
+V.Local.iRet.Declare(Long)
+V.Local.sRet.Declare(String)
+V.Local.sLine.Declare(String)
+V.Local.dDate.Declare(Date)
+V.Local.sParam.Declare(String)
+'-----------------------------------------------------------------------------------------
+'BJL ADDED FOR FIX ON 12/25/2013 - CUSTOMER SAYS WHEN DELETING A LINE FROM  THE LISTVIEW, IT DOES NOT SUBTRACT THE TIME FROM THE TOTAL HOURS WORKED FIELD
+V.Local.sNewTotal.Declare(String)
+'-----------------------------------------------------------------------------------------
+
+F.Intrinsic.UI.Msgbox("Are you sure you want to delete selectd item?","Delete Confirmation",4,V.Local.iRet)
+F.Intrinsic.Control.If(V.Local.iRet,=,6)
+	V.Local.iKey.Set(V.Screen.F_TimeCard!lvwTime.SelectedItemKey)
+	Gui.F_TimeCard.lvwTime.ListItemKeyToOrdinal(V.Local.iKey,V.Local.iOrd)
+	V.Local.sLine.Set(V.Screen.F_TimeCard!lvwTime.ListItemTextExtended(V.Local.iOrd))
+	F.Intrinsic.Control.If(V.Local.sLine,<>,"")
+
+		F.Intrinsic.String.Split(V.Local.sLine,"*!*",V.Local.sLine)
+'-----------------------------------------------------------------------------------------
+'BJL ADDED FOR FIX ON 12/25/2013 - CUSTOMER SAYS WHEN DELETING A LINE FROM  THE LISTVIEW, IT DOES NOT SUBTRACT THE TIME FROM THE TOTAL HOURS WORKED FIELD
+		F.Intrinsic.Math.Sub(V.Screen.F_TimeCard!txtTotal.Text,V.Local.sLine(11),V.Local.sNewTotal)
+		Gui.F_TimeCard.txtTotal.Text(V.Local.sNewTotal)
+'-----------------------------------------------------------------------------------------
+		V.Local.dDate.Set(V.Local.sLine(0))
+
+		F.Intrinsic.Control.If(V.Local.sLine(4).Trim,<>,"")
+			F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uTimecard!ChargeDate,V.Local.dDate.Trim,V.uGlobal.uTimecard!Employee,V.Local.sLine(1).Trim,V.uGlobal.uTimecard!Job,V.Local.sLine(3).Trim,V.uGlobal.uTimecard!Suffix,V.Local.sLine(4).trim,V.uGlobal.uTimecard!Seq,V.Local.sLine(5).Trim,V.uGlobal.uTimecard!WC,V.Local.sLine(6).Trim,V.Local.sRet)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uTimecard!ChargeDate,V.Local.dDate.Trim,V.uGlobal.uTimecard!Employee,V.Local.sLine(1).Trim,V.uGlobal.uTimecard!Job,V.Local.sLine(3).Trim,V.uGlobal.uTimecard!Seq,V.Local.sLine(5).Trim,V.uGlobal.uTimecard!WC,V.Local.sLine(6).Trim,V.Local.sRet)
+		F.Intrinsic.Control.EndIf
+		
+
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+			F.Intrinsic.Control.If(V.uGlobal.uTimecard(V.Local.sRet(0))!RefID,<>,"")
+				F.Intrinsic.String.Concat("UN!*!!*!!*!!*!!*!",V.uGlobal.uTimecard(V.Local.sRet(0))!RefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+				F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.If(V.Local.sLine(4).Trim,<>,"")
+				F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uTimecard!ChargeDate,V.Local.dDate.Trim,V.uGlobal.uTimecard!Employee,V.Local.sLine(1).Trim,V.uGlobal.uTimecard!Job,V.Local.sLine(3).Trim,V.uglobal.uTimecard!Suffix,V.uGlobal.uTimecard!Seq,V.Local.sLine(5).Trim,V.uGlobal.uTimecard!WC,V.Local.sLine(6).Trim)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.Variable.UDTMultiFlag(V.uGlobal.uTimecard!ChargeDate,V.Local.dDate.Trim,V.uGlobal.uTimecard!Employee,V.Local.sLine(1).Trim,V.uGlobal.uTimecard!Job,V.Local.sLine(3).Trim,V.uGlobal.uTimecard!Seq,V.Local.sLine(5).Trim,V.uGlobal.uTimecard!WC,V.Local.sLine(6).Trim)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uTimecard)
+		F.Intrinsic.Control.EndIf
+		Gui.F_TimeCard.lvwTime.RemoveItem(V.Local.iKey)
+		Gui.F_TimeCard.txtBad.Text("")
+		Gui.F_TimeCard.txtGood.Text("")
+		Gui.F_TimeCard.txtHrs.Text("")
+		Gui.F_TimeCard.txtJob.Text("")
+		Gui.F_TimeCard.txtRate.Text("")
+		Gui.F_TimeCard.txtSeq.Text("")
+		Gui.F_TimeCard.txtShift.Text("")
+		Gui.F_TimeCard.txtSuffix.Text("")
+		Gui.F_TimeCard.txtWC.Text("")
+		Gui.F_TimeCard.txtPart.Text("")
+		V.Global.sRefID.Set("")
+		Gui.F_TimeCard.txtBad.Enabled(False)
+		Gui.F_TimeCard.txtGood.Enabled(False)
+		Gui.F_TimeCard.txtJob.Enabled(True)
+		Gui.F_TimeCard.txtSuffix.Enabled(True)
+		Gui.F_TimeCard.txtHrs.Enabled(False)
+		Gui.F_TimeCard.txtRate.Enabled(False)
+		Gui.F_TimeCard.txtShift.Enabled(False)
+		Gui.F_TimeCard.cmdAdd.Enabled(False)
+		Gui.F_TimeCard.cmdScrap.Enabled(False)
+		Gui.F_TimeCard.ddlRateType.Text("")
+		Gui.F_TimeCard.ddlRateType.Enabled(False)
+		Gui.F_TimeCard.cmd_txtJob.Enabled(True)
+		Gui.F_TimeCard.cmd_txtSeq.Enabled(False)
+		Gui.F_TimeCard.cmd_txtWC.Enabled(False)
+		Gui.F_TimeCard.ddlLaborType.Text("")
+		Gui.F_TimeCard.ddlLaborType.Enabled(False)
+		Gui.F_TimeCard.chkClose.Enabled(False)
+		Gui.F_TimeCard.chkClose.Value(0)
+		V.Global.iSelKey.Set(-1)
+		V.Global.iSelUDT.Set(-1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmddelete_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmddelete_click.End
+
+Program.Sub.txtsuffix_lostfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtsuffix_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sParam.Declare(String)
+V.Local.dDate.Declare(Date)
+
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtEmpID.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No employee selected!","Invalid Selection")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Concat("Select JOB, Suffix, Part, DATE_CLOSED from V_JOB_HEADER where JOB = '",V.Screen.F_TimeCard!txtJob.Text,"' and SUFFIX = '",V.Screen.F_TimeCard!txtSuffix.Text,"'",V.Local.sSql)
+	F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,<>,True)
+		F.Intrinsic.Date.ConvertDString("01/01/1900","MM/DD/YYYY",V.Local.dDate)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.FieldVal!DATE_CLOSED,=,V.Local.dDate)
+			Gui.F_TimeCard.txtPart.Text(V.ODBC.con!rst.FieldValTrim!PART)
+			Gui.F_TimeCard.txtSeq.Text("")
+			Gui.F_TimeCard.txtSeq.Enabled(True)
+			Gui.F_TimeCard.cmd_txtSeq.Enabled(True)
+			Gui.F_TimeCard.cmd_txtWC.Enabled(False)
+			Gui.F_TimeCard.txtWC.Text("")
+			F.ODBC.con!rst.Close
+			F.Intrinsic.Control.If(V.Global.sRefID,<>,"")
+				F.Intrinsic.String.Concat("UN!*!!*!!*!!*!!*!",V.Global.sRefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+				F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+				V.Global.sRefID.Set("")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.String.Concat("Select * from V_IND_LBR_ACCTS where JOB = '",V.Screen.F_TimeCard!txtJob.Text,"' and SUFFIX = '",V.Screen.F_TimeCard!txtSuffix.Text,"'",V.Local.sSql)
+			F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+			F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+				Gui.F_TimeCard.ddlLaborType.Text("Direct")
+			F.Intrinsic.Control.Else
+				Gui.F_TimeCard.ddlLaborType.Text("Indirect")
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rst.Close
+		F.Intrinsic.Control.Else
+			Gui.F_TimeCard.txtSeq.Text("")
+			Gui.F_TimeCard.txtSeq.Enabled(False)
+			Gui.F_TimeCard.cmd_txtSeq.Enabled(False)
+			Gui.F_TimeCard.txtWC.Text("")
+			Gui.F_TimeCard.cmd_txtWC.Enabled(False)
+			F.ODBC.con!rst.Close
+			F.Intrinsic.UI.Msgbox("Job is closed!","Job Closed")
+			F.Intrinsic.Control.If(V.Global.sRefID,<>,"")
+				F.Intrinsic.String.Concat("UN!*!!*!!*!!*!!*!",V.Global.sRefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+				F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+				V.Global.sRefID.Set("")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Close
+		Gui.F_TimeCard.txtSeq.Text("")
+		Gui.F_TimeCard.txtSeq.Enabled(False)
+		Gui.F_TimeCard.cmd_txtSeq.Enabled(False)
+		Gui.F_TimeCard.txtWC.Text("")
+		Gui.F_TimeCard.cmd_txtWC.Enabled(False)
+		F.Intrinsic.Control.If(V.Global.sRefID,<>,"")
+			F.Intrinsic.String.Concat("UN!*!!*!!*!!*!!*!",V.Global.sRefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+			F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+			V.Global.sRefID.Set("")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtsuffix_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtsuffix_lostfocus.End
+
+Program.Sub.txtempid_lostfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtempid_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sParam.Declare(String)
+V.Local.sEmpID.Declare(String)
+V.Local.dChk.Declare(Date)
+
+F.Intrinsic.Date.DateSerial(1900,1,1,V.Local.dChk)
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtEmpID.Text,<>,"")
+	V.Local.sEmpID.Set(V.Screen.F_TimeCard!txtEmpID.Text)
+	F.Intrinsic.String.LPad(V.Local.sEmpID.Trim,"0",5,V.Local.sEmpID)
+	Gui.F_TimeCard.txtEmpID.Text(V.Local.sEmpID)
+	F.Intrinsic.String.Concat("Select EMPLOYEE, NAME, DATE_TERMINATION from V_EMPLOYEE_MSTR where EMPLOYEE = '",V.Screen.F_TimeCard!txtEmpID.Text,"'",V.Local.sSql)
+	F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+	F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,<>,True)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.FieldVal!DATE_TERMINATION,<>,V.Local.dChk)
+			F.Intrinsic.UI.Msgbox("Employee terminated.","Error")
+			F.ODBC.con!rst.Close
+			Gui.F_TimeCard.txtEmpID.Text("")
+			Gui.F_TimeCard.txtEmpName.Text("")
+			Gui.F_TimeCard.txtBad.Enabled(False)
+			Gui.F_TimeCard.txtGood.Enabled(False)
+			Gui.F_TimeCard.txtJob.Enabled(False)
+			Gui.F_TimeCard.txtSuffix.Enabled(False)
+			Gui.F_TimeCard.txtHrs.Enabled(False)
+			Gui.F_TimeCard.txtRate.Enabled(False)
+			Gui.F_TimeCard.txtRate.Text("")
+			Gui.F_TimeCard.txtShift.Enabled(False)
+			Gui.F_TimeCard.txtShift.Text("")
+			Gui.F_TimeCard.cmd_txtJob.Enabled(False)
+			Gui.F_TimeCard.cmd_txtSeq.Enabled(False)
+			Gui.F_TimeCard.cmd_txtWC.Enabled(False)
+			Gui.F_TimeCard.txtGood.Text("")
+			Gui.F_TimeCard.txtBad.Text("")
+			Gui.F_TimeCard.txtHrs.Text("")
+			Gui.F_TimeCard.cmdAdd.Enabled(False)
+			Gui.F_TimeCard.cmdScrap.Enabled(False)
+			Gui.F_TimeCard.ddlRateType.Enabled(False)
+			Gui.F_TimeCard.ddlRateType.Text("")
+			Gui.F_TimeCard.ddlLaborType.Enabled(False)
+			Gui.F_TimeCard.ddlLaborType.Text("")
+			Gui.F_TimeCard.chkClose.Enabled(False)
+			F.Intrinsic.Control.If(V.Global.sRefID,<>,"")
+				F.Intrinsic.String.Concat("UN!*!!*!!*!!*!!*!",V.Global.sRefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+				F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+				V.Global.sRefID.Set("")
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+
+		Gui.F_TimeCard.txtBad.Text(V.ODBC.con!rst.FieldValTrim!EMPLOYEE)
+		Gui.F_TimeCard.txtEmpName.Text(V.ODBC.con!rst.FieldValTrim!NAME)
+		F.ODBC.con!rst.Close
+		Gui.F_TimeCard.txtBad.Enabled(True)
+		Gui.F_TimeCard.txtGood.Enabled(True)
+		Gui.F_TimeCard.txtJob.Enabled(True)
+		Gui.F_TimeCard.txtSuffix.Enabled(True)
+		Gui.F_TimeCard.cmd_txtJob.Enabled(True)
+		Gui.F_TimeCard.txtHrs.Enabled(True)
+		Gui.F_TimeCard.txtRate.Enabled(True)
+		Gui.F_TimeCard.txtShift.Enabled(True)
+		Gui.F_TimeCard.txtGood.Text(0)
+		Gui.F_TimeCard.txtBad.Text(0)
+		Gui.F_TimeCard.txtHrs.Text(0)
+		Gui.F_TimeCard.cmdAdd.Enabled(True)
+		Gui.F_TimeCard.cmdScrap.Enabled(True)
+		Gui.F_TimeCard.ddlRateType.Enabled(True)
+		Gui.F_TimeCard.ddlRateType.Text("Regular")
+		Gui.F_TimeCard.ddlLaborType.Enabled(True)
+		Gui.F_TimeCard.ddlLaborType.Text("Direct")
+		Gui.F_TimeCard.chkClose.Enabled(True)
+		F.Intrinsic.Control.CallSub(Empload)
+	F.Intrinsic.Control.Else
+		F.ODBC.con!rst.Close
+		Gui.F_TimeCard.txtEmpName.Text("")
+		Gui.F_TimeCard.txtBad.Enabled(False)
+		Gui.F_TimeCard.txtGood.Enabled(False)
+		Gui.F_TimeCard.txtJob.Enabled(False)
+		Gui.F_TimeCard.txtSuffix.Enabled(False)
+		Gui.F_TimeCard.txtHrs.Enabled(False)
+		Gui.F_TimeCard.txtRate.Enabled(False)
+		Gui.F_TimeCard.txtRate.Text("")
+		Gui.F_TimeCard.txtShift.Enabled(False)
+		Gui.F_TimeCard.txtShift.Text("")
+		Gui.F_TimeCard.cmd_txtJob.Enabled(False)
+		Gui.F_TimeCard.cmd_txtSeq.Enabled(False)
+		Gui.F_TimeCard.cmd_txtWC.Enabled(False)
+		Gui.F_TimeCard.txtGood.Text("")
+		Gui.F_TimeCard.txtBad.Text("")
+		Gui.F_TimeCard.txtHrs.Text("")
+		Gui.F_TimeCard.cmdAdd.Enabled(False)
+		Gui.F_TimeCard.cmdScrap.Enabled(False)
+		Gui.F_TimeCard.ddlRateType.Enabled(False)
+		Gui.F_TimeCard.ddlRateType.Text("")
+		Gui.F_TimeCard.ddlLaborType.Enabled(False)
+		Gui.F_TimeCard.ddlLaborType.Text("")
+		Gui.F_TimeCard.chkClose.Enabled(False)
+		F.Intrinsic.Control.If(V.Global.sRefID,<>,"")
+			F.Intrinsic.String.Concat("UN!*!!*!!*!!*!!*!",V.Global.sRefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+			F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+			V.Global.sRefID.Set("")
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtempid_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtempid_lostfocus.End
+
+Program.Sub.txtseq_lostfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtseq_lostfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.sWidths.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.sParam.Declare(String)
+V.Local.sSeq.Declare(String)
+V.Local.sWC.Declare(String)
+
+F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtJob.Text,=,"")
+	F.Intrinsic.UI.Msgbox("No work order selected!","Invalid Selection")
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Screen.F_TimeCard!txtSeq.Text,<>,"")
+		V.Local.sSeq.Set(V.Screen.F_TimeCard!txtSeq.Text)
+		F.Intrinsic.String.LPad(V.Local.sSeq.Trim,"0",6,V.Local.sSeq)
+		Gui.F_TimeCard.txtSeq.Text(V.Local.sSeq)
+		F.Intrinsic.String.Concat("Select SEQ, LMO, WORKCENTER, DESCRIPTION from V_JOB_OPERATIONS_WC where LMO = 'L' and  JOB = '",V.Screen.F_TimeCard!txtJob.Text,"' and SUFFIX = '",V.Screen.F_TimeCard!txtSuffix.Text,"' and SEQ = '",V.Screen.F_TimeCard!txtSeq.Text,"'",V.Local.sSql)
+		F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+		F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,<>,True)
+			V.Local.sWC.Set(V.ODBC.con!rst.FieldValTrim!WORKCENTER)
+			F.ODBC.con!rst.Close
+			F.Intrinsic.String.Concat("Select WORK_GROUP, PROTOTYPE_WC from V_WORKGROUP_HEAD where WORK_GROUP = '",V.Local.sWC,"'",V.Local.sSql)
+			F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+			F.Intrinsic.Control.If(V.ODBC.con!rst.EOF,=,True)
+				Gui.F_TimeCard.txtWC.Text(V.Local.sWC)
+			F.Intrinsic.Control.Else
+				Gui.F_TimeCard.txtWC.Text(V.ODBC.con!rst.FieldValTrim!PROTOTYPE_WC)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.con!rst.Close
+			Gui.F_TimeCard.cmd_txtWC.Enabled(True)
+			F.Intrinsic.Control.If(V.Global.sRefID,<>,"")
+				F.Intrinsic.String.Concat("UN!*!!*!!*!!*!!*!",V.Global.sRefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+				F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+				V.Global.sRefID.Set("")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.ODBC.con!rst.Close
+			Gui.F_TimeCard.txtWC.Text("")
+			Gui.F_TimeCard.cmd_txtWC.Enabled(False)
+			F.Intrinsic.Control.If(V.Global.sRefID,<>,"")
+				F.Intrinsic.String.Concat("UN!*!!*!!*!!*!!*!",V.Global.sRefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+				F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+				V.Global.sRefID.Set("")
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtseq_lostfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtseq_lostfocus.End
+
+Program.Sub.txtempid_gotfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtempid_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_TimeCard.txtEmpID.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtempid_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtempid_gotfocus.End
+
+Program.Sub.txtjob_gotfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtjob_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_TimeCard.txtJob.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtjob_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtjob_gotfocus.End
+
+Program.Sub.txtsuffix_gotfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtsuffix_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_TimeCard.txtSuffix.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtsuffix_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtsuffix_gotfocus.End
+
+Program.Sub.txtseq_gotfocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtseq_gotfocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+Gui.F_TimeCard.txtSeq.SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtseq_gotfocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.txtseq_gotfocus.End
+
+Program.Sub.lvwtime_itemclick.Start
+F.Intrinsic.Control.SetErrorHandler("lvwtime_itemclick_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.iKey.Declare(Long)
+V.Local.sSql.Declare(String)
+V.Local.sParam.Declare(String)
+
+F.Intrinsic.Control.If(V.Global.iSelKey,=,-1)
+	F.Intrinsic.Control.If(V.Global.sRefID,<>,"")
+		F.Intrinsic.String.Concat("UN!*!!*!!*!!*!!*!",V.Global.sRefID,"!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!",V.Local.sParam)
+		F.Global.General.CallWrapperSync(2000,V.Local.sParam)
+		V.Global.sRefID.Set("")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+V.Global.iSelKey.Set(V.Screen.F_TimeCard!lvwTime.SelectedItemKey)
+V.Local.iKey.Set(V.Screen.F_TimeCard!lvwTime.SelectedItemSubItem(16))
+V.Global.iSelUDT.Set(V.Local.iKey)
+V.Global.sRefID.Set(V.uGlobal.uTimecard(V.Local.iKey)!RefID)
+Gui.F_TimeCard.txtEmpID.Text(V.uGlobal.uTimecard(V.Local.iKey)!Employee)
+F.Intrinsic.String.Concat("Select NAME from V_EMPLOYEE_MSTR where EMPLOYEE = '",V.Screen.F_TimeCard!txtEmpID.Text,"'",V.Local.sSql)
+F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+Gui.F_TimeCard.txtEmpName.Text(V.ODBC.con!rst.FieldValTrim!NAME)
+F.ODBC.con!rst.Close
+Gui.F_TimeCard.cmd_txtEmpID.Enabled(True)
+Gui.F_TimeCard.txtJob.Text(V.uGlobal.uTimecard(V.Local.iKey)!Job)
+Gui.F_TimeCard.txtSuffix.Text(V.uGlobal.uTimecard(V.Local.iKey)!Suffix)
+Gui.F_TimeCard.cmd_txtJob.Enabled(True)
+Gui.F_TimeCard.txtSeq.Text(V.uGlobal.uTimecard(V.Local.iKey)!Seq)
+Gui.F_TimeCard.cmd_txtSeq.Enabled(True)
+F.Intrinsic.String.Concat("Select JOB, Suffix, Part from V_JOB_HEADER where JOB = '",V.Screen.F_TimeCard!txtJob.Text,"' and SUFFIX = '",V.Screen.F_TimeCard!txtSuffix.Text,"'",V.Local.sSql)
+F.ODBC.Connection!con.OpenLocalRecordsetRO("rst",V.Local.sSql)
+Gui.F_TimeCard.txtPart.Text(V.ODBC.con!rst.FieldValTrim!PART)
+F.ODBC.con!rst.Close
+Gui.F_TimeCard.txtWC.Text(V.uGlobal.uTimecard(V.Local.iKey)!WC)
+Gui.F_TimeCard.cmd_txtWC.Enabled(True)
+Gui.F_TimeCard.txtShift.Text(V.uGlobal.uTimecard(V.Local.iKey)!Shift)
+Gui.F_TimeCard.txtShift.Enabled(True)
+Gui.F_TimeCard.txtRate.Text(V.uGlobal.uTimecard(V.Local.iKey)!Rate)
+Gui.F_TimeCard.txtRate.Enabled(True)
+Gui.F_TimeCard.txtGood.Text(V.uGlobal.uTimecard(V.Local.iKey)!Good)
+Gui.F_TimeCard.txtGood.Enabled(True)
+Gui.F_TimeCard.txtBad.Text(V.uGlobal.uTimecard(V.Local.iKey)!Bad)
+Gui.F_TimeCard.txtBad.Enabled(True)
+Gui.F_TimeCard.txtHrs.Text(V.uGlobal.uTimecard(V.Local.iKey)!Hours)
+Gui.F_TimeCard.txtHrs.Enabled(True)
+F.Intrinsic.Control.SelectCase(V.uGlobal.uTimecard(V.Local.iKey)!RateType)
+	F.Intrinsic.Control.Case("R")
+		Gui.F_TimeCard.ddlRateType.Text("Regular")
+	F.Intrinsic.Control.Case("O")
+		Gui.F_TimeCard.ddlRateType.Text("Time & 1/2")
+	F.Intrinsic.Control.Case("2")
+		Gui.F_TimeCard.ddlRateType.Text("Double Time")
+F.Intrinsic.Control.EndSelect
+Gui.F_TimeCard.ddlRateType.Enabled(True)
+F.Intrinsic.Control.If(V.uGlobal.uTimecard(V.Local.iKey)!LaborType,=,"D")
+	Gui.F_TimeCard.ddlLaborType.Text("Direct")
+F.Intrinsic.Control.Else
+	Gui.F_TimeCard.ddlLaborType.Text("Indirect")
+F.Intrinsic.Control.EndIf
+Gui.F_TimeCard.ddlLaborType.Enabled(True)
+F.Intrinsic.Control.If(V.uGlobal.uTimecard(V.Local.iKey)!Close,=,"Y")
+	Gui.F_TimeCard.chkClose.Value(1)
+F.Intrinsic.Control.Else
+	Gui.F_TimeCard.chkClose.Value(0)
+F.Intrinsic.Control.EndIf
+Gui.F_TimeCard.chkClose.Enabled(True)
+Gui.F_TimeCard.cmdAdd.Enabled(True)
+Gui.F_TimeCard.cmdScrap.Enabled(True)
+
+F.Intrinsic.Control.SelectCase(V.uGlobal.uTimecard(V.Local.iKey)!Override)
+	F.Intrinsic.Control.Case("M")
+		Gui.F_TimeCard.chkMachLadPrem.Value(1)
+	F.Intrinsic.Control.Case("T")
+		Gui.F_TimeCard.chkTabLadPrem.Value(1)
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("lvwtime_itemclick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.lvwtime_itemclick.End
+
+Program.Sub.TotalHours.Start
+F.Intrinsic.Control.SetErrorHandler("TotalHours_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iRet.Declare(Long)
+V.Local.i.Declare(Long)
+V.Local.fNum.Declare(Float)
+
+F.Intrinsic.Variable.UDTSeek(V.uGlobal.uTimecard!Flag,"",0,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	F.Intrinsic.Control.For(V.Local.i,V.Local.sRet.LBound,V.Local.sRet.UBound,1)
+		V.Local.iRet.Set(V.Local.sRet(V.Local.i).Long)
+		F.Intrinsic.Math.Add(V.Local.fNum,V.uGlobal.uTimecard(V.Local.iRet)!Hours,V.Local.fNum)
+	F.Intrinsic.Control.Next(V.Local.i)
+	Gui.F_TimeCard.txtTotal.Text(V.Local.fNum)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("TotalHours_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.TotalHours.End
+
+Program.Sub.LadlePrem_Click.Start
+'TJS
+'Deprecated VT 27 Aug 2021
+F.Intrinsic.Control.SetErrorHandler("LadlePrem_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+F.Intrinsic.Control.SelectCase(V.Args.CONTROLNAME)
+	F.Intrinsic.Control.Case(CHKMACHLADPREM)
+		F.Intrinsic.Control.If(V.Screen.F_TimeCard!chkMachLadPrem.Value,=,1)
+			Gui.F_TimeCard.chkTabLadPrem.Value(0)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case(CHKTABLADPREM)
+		F.Intrinsic.Control.If(V.Screen.F_TimeCard!chkTabLadPrem.Value,=,1)
+			Gui.F_TimeCard.chkMachLadPrem.Value(0)
+		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Label("LadlePrem_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.LadlePrem_Click.End
+
+Program.Sub.txtWC_Change.Start
+'TJS - VT 27 Aug 2021
+F.Intrinsic.Control.SetErrorHandler("txtWC_Change_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sWCPrefix.Declare
+V.Local.sSQL.Declare
+
+F.Intrinsic.String.Left(V.Screen.F_TimeCard!txtWC.Text,2,V.Local.sWCPrefix)
+
+F.Intrinsic.Control.If(V.Local.sWCPrefix,<>,"#7")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("Select STANDARD_BILL from WORKCENTERS where MACHINE = '{0}'",V.Screen.F_TimeCard!txtWC.Text.Trim,V.Local.sSQL)
+
+F.ODBC.Connection!conts.OpenCompanyConnection
+
+F.ODBC.Connection!conts.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+
+F.ODBC.Connection!conts.Close
+
+F.Intrinsic.Control.If(V.Ambient.ExecuteAndReturnEOF)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+Gui.F_TimeCard.txtRate.Text(V.Local.sSQL)
+
+F.Intrinsic.Control.Label("txtWC_Change_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.txtWC_Change.End
+
+Program.Sub.SetIcon.Start
+'TJS
+F.Intrinsic.Control.SetErrorHandler("LadlePrem_Err")
+F.Intrinsic.Control.ClearErrors
+V.Local.sForm.Declare
+V.Local.bExists.Declare
+V.Local.sIcon.Declare
+V.Local.iCounter.Declare
+V.Local.sError.Declare
+
+F.Intrinsic.String.Build("{0}\ART\gss2.ico",V.Caller.GlobalDir,v.Local.sIcon)
+F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists.Not)
+    F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,v.Local.sIcon)
+    F.Intrinsic.File.Exists(V.Local.sIcon, V.Local.bExists)
+    F.Intrinsic.Control.If(V.Local.bExists.Not)
+        F.Intrinsic.Control.ExitSub
+    F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.GetFormList(V.Local.sForm)
+F.Intrinsic.String.Split(V.Local.sForm, "*!*", V.Local.sForm)
+
+F.Intrinsic.Control.For(V.Local.iCounter, 0, V.Local.sForm.UBound, 1)
+    Gui.[V.Local.sForm(V.Local.iCounter)]..Icon(V.Local.sIcon)
+F.Intrinsic.Control.Next(V.Local.iCounter)
+
+F.Intrinsic.Control.Label("LadlePrem_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: ATG_4543_MANUAL_TIMECARD_RATE.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.SetIcon.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$12:00:00 AM$}$False
+${$5$}$2.0.0.0$}$2
+${$6$}$tsmith$}$20210825130644785$}$xqPbj9atw05FglvzeFsZ9cqXP+qvG6tXvzorxMdmpshkoHVUmmlxrY6DhDTtFSbQLIRHmLvg5g4=
+Program.Sub.Comments.End
